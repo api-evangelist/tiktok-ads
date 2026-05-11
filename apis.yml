@@ -1,0 +1,70 @@
+aid: tiktok-ads
+name: TikTok Marketing API
+description: >-
+  TikTok for Business is TikTok's advertising platform that enables brands,
+  agencies, and advertisers to create, manage, and optimize ad campaigns
+  across TikTok and its family of apps. The TikTok Marketing API
+  (business-api.tiktok.com) is a RESTful API that uses OAuth 2.0
+  authentication and lets developers programmatically manage advertiser
+  accounts, campaigns, ad groups, ads, creatives, audiences, reporting,
+  conversions, and pixel/events for performance marketing and measurement.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Advertising
+  - Marketing
+  - Social Media
+  - Ad Campaigns
+  - Performance Marketing
+  - Conversion Tracking
+url: >-
+  https://raw.githubusercontent.com/api-evangelist/tiktok-ads/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: tiktok-ads:marketing-api
+    name: TikTok Marketing API
+    description: >-
+      RESTful Marketing API for managing TikTok ad accounts, campaigns, ad
+      groups, ads, creatives, audiences, conversions, pixels, and reporting.
+      Authentication uses OAuth 2.0 with access tokens issued via
+      business-api.tiktok.com/open_api/v1.3/oauth2/access_token/.
+    humanURL: https://business-api.tiktok.com/portal/docs
+    baseURL: https://business-api.tiktok.com/open_api
+    tags:
+      - Advertising
+      - Marketing
+      - Campaign Management
+      - Audience Management
+      - Reporting
+      - Conversions API
+    properties:
+      - type: Documentation
+        url: https://business-api.tiktok.com/portal/docs
+      - type: Authentication
+        url: >-
+          https://business-api.tiktok.com/portal/docs?id=1738373141733378
+      - type: SDK
+        url: https://github.com/tiktok/tiktok-business-api-sdk
+
+common:
+  - type: Website
+    url: https://www.tiktok.com/business/
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: Developer Portal
+    url: https://business-api.tiktok.com/portal
+  - type: Sign Up
+    url: https://ads.tiktok.com/i18n/signup
+  - type: Pricing
+    url: https://www.tiktok.com/business/en/pricing
+  - type: GitHub SDK
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+  - type: Support
+    url: https://ads.tiktok.com/help/
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/tiktokforbusiness/
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
