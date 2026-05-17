@@ -55,7 +55,7 @@ common:
     url: https://business-api.tiktok.com/portal/docs
   - type: Developer Portal
     url: https://business-api.tiktok.com/portal
-  - type: Sign Up
+  - type: SignUp
     url: https://ads.tiktok.com/i18n/signup
   - type: Pricing
     url: https://www.tiktok.com/business/en/pricing
