@@ -1,0 +1,977 @@
+"""
+TikTok Marketing API - GraphQL Schema
+Derived from the TikTok Marketing REST API (business-api.tiktok.com/open_api)
+Covers campaign management, ad groups, creatives, audiences, pixels, reporting, and attribution.
+"""
+
+# ─────────────────────────────────────────────
+# Scalars
+# ─────────────────────────────────────────────
+
+scalar DateTime
+scalar JSON
+scalar Long
+
+# ─────────────────────────────────────────────
+# Enums
+# ─────────────────────────────────────────────
+
+enum CampaignStatus {
+  CAMPAIGN_STATUS_ENABLE
+  CAMPAIGN_STATUS_DISABLE
+  CAMPAIGN_STATUS_DELETE
+  CAMPAIGN_STATUS_ALL
+}
+
+enum CampaignObjective {
+  REACH
+  TRAFFIC
+  APP_INSTALL
+  VIDEO_VIEWS
+  LEAD_GENERATION
+  CONVERSIONS
+  CATALOG_SALES
+  COMMUNITY_INTERACTION
+  PRODUCT_SALES
+}
+
+enum BudgetMode {
+  BUDGET_MODE_TOTAL
+  BUDGET_MODE_DAY
+  BUDGET_MODE_INFINITE
+}
+
+enum AdGroupStatus {
+  ADGROUP_STATUS_ENABLE
+  ADGROUP_STATUS_DISABLE
+  ADGROUP_STATUS_DELETE
+  ADGROUP_STATUS_ALL
+}
+
+enum AdStatus {
+  AD_STATUS_ENABLE
+  AD_STATUS_DISABLE
+  AD_STATUS_DELETE
+  AD_STATUS_ALL
+}
+
+enum BillingEvent {
+  CPC
+  CPM
+  CPV
+  OCPM
+  OCPC
+}
+
+enum OptimizationGoal {
+  CLICK
+  INSTALL
+  IN_APP_EVENT
+  CONVERSION
+  VIDEO_VIEW
+  REACH
+  LEAD
+  PAGE_EVENT
+  ENGAGED_VIEW
+}
+
+enum Placement {
+  PLACEMENT_TIKTOK
+  PLACEMENT_PANGLE
+  PLACEMENT_GLOBAL_APP_BUNDLE
+}
+
+enum Gender {
+  GENDER_UNLIMITED
+  GENDER_MALE
+  GENDER_FEMALE
+}
+
+enum AudienceType {
+  CUSTOM_AUDIENCE
+  LOOKALIKE_AUDIENCE
+}
+
+enum AudienceStatus {
+  STATUS_ACTIVE
+  STATUS_INACTIVE
+  STATUS_EXPIRED
+  STATUS_PROCESSING
+  STATUS_FAILED
+}
+
+enum CreativeType {
+  SINGLE_IMAGE
+  SINGLE_VIDEO
+  CAROUSEL
+  COLLECTION
+  DYNAMIC
+}
+
+enum LookalikeTaskStatus {
+  STATUS_PROCESSING
+  STATUS_SUCCESS
+  STATUS_FAILED
+  STATUS_CANCELED
+}
+
+enum PixelStatus {
+  ACTIVE
+  INACTIVE
+  DELETED
+}
+
+enum PixelEventType {
+  PAGE_VIEW
+  VIEW_CONTENT
+  ADD_TO_CART
+  INITIATE_CHECKOUT
+  PLACE_ORDER
+  COMPLETE_PAYMENT
+  DOWNLOAD
+  FORM
+  SEARCH
+  SUBSCRIBE
+  CONTACT
+  REGISTRATION
+  CUSTOM
+}
+
+enum AttributionWindowType {
+  CLICK
+  VIEW
+  ENGAGED_VIEW
+}
+
+enum ReportDataLevel {
+  AUCTION_CAMPAIGN
+  AUCTION_ADGROUP
+  AUCTION_AD
+  RESERVATION_CAMPAIGN
+  RESERVATION_ADGROUP
+  RESERVATION_AD
+}
+
+enum ReportType {
+  BASIC
+  AUDIENCE
+  PLAYABLE_MATERIAL
+  CATALOG
+  DSA
+}
+
+enum OrderBy {
+  ASC
+  DESC
+}
+
+enum IdentityType {
+  AUTH_CODE
+  TT_USER
+  BUSINESS_TT_USER
+  CUSTOMIZED_USER
+}
+
+enum CallToAction {
+  LEARN_MORE
+  SHOP_NOW
+  SIGN_UP
+  DOWNLOAD
+  BOOK_NOW
+  CONTACT_US
+  APPLY_NOW
+  SUBSCRIBE
+  GET_QUOTE
+  INSTALL_NOW
+  PLAY_GAME
+  ORDER_NOW
+  OPEN_APP
+}
+
+enum CurrencyCode {
+  USD
+  EUR
+  GBP
+  JPY
+  KRW
+  BRL
+  MXN
+  IDR
+  SGD
+  AUD
+  CAD
+  HKD
+  TWD
+  VND
+  THB
+  MYR
+}
+
+enum AccountStatus {
+  ACCOUNT_STATUS_ENABLE
+  ACCOUNT_STATUS_DISABLE
+  ACCOUNT_STATUS_PUNISHED
+  ACCOUNT_STATUS_REVIEW
+}
+
+# ─────────────────────────────────────────────
+# Core Resource Types
+# ─────────────────────────────────────────────
+
+type AdvertiserAccount {
+  advertiserId: ID!
+  name: String!
+  status: AccountStatus!
+  currency: CurrencyCode!
+  timezone: String!
+  balance: Float!
+  country: String
+  industry: String
+  email: String
+  company: String
+  phoneNumber: String
+  address: String
+  createTime: DateTime!
+  updateTime: DateTime!
+  campaigns(page: Int, pageSize: Int, status: CampaignStatus): CampaignConnection!
+  pixels: [Pixel!]!
+  audiences: [Audience!]!
+}
+
+type Campaign {
+  campaignId: ID!
+  advertiserId: ID!
+  campaignName: String!
+  objective: CampaignObjective!
+  status: CampaignStatus!
+  budgetMode: BudgetMode!
+  budget: Float
+  spendCap: Float
+  dailyBudget: Float
+  startTime: DateTime
+  stopTime: DateTime
+  isNewStructure: Boolean
+  roas: Float
+  splitTest: SplitTest
+  createTime: DateTime!
+  updateTime: DateTime!
+  adGroups(page: Int, pageSize: Int, status: AdGroupStatus): AdGroupConnection!
+}
+
+type AdGroup {
+  adGroupId: ID!
+  campaignId: ID!
+  advertiserId: ID!
+  adGroupName: String!
+  status: AdGroupStatus!
+  placements: [Placement!]!
+  budgetMode: BudgetMode!
+  budget: Float
+  scheduleType: String
+  scheduleStartTime: DateTime
+  scheduleEndTime: DateTime
+  optimizationGoal: OptimizationGoal!
+  billingEvent: BillingEvent!
+  bid: Float
+  bidType: String
+  targeting: TargetingSpec!
+  creativeType: CreativeType
+  frequency: Int
+  frequencySchedule: Int
+  conversionWindow: ConversionWindow
+  createTime: DateTime!
+  updateTime: DateTime!
+  ads(page: Int, pageSize: Int, status: AdStatus): AdConnection!
+}
+
+type Ad {
+  adId: ID!
+  adGroupId: ID!
+  campaignId: ID!
+  advertiserId: ID!
+  adName: String!
+  status: AdStatus!
+  adText: String
+  callToAction: CallToAction
+  landingPageUrl: String
+  displayName: String
+  identity: Identity
+  videoId: String
+  imageIds: [String!]
+  creative: AdCreative
+  trackingPixelId: ID
+  viewabilityPostSessionType: String
+  isAco: Boolean
+  createTime: DateTime!
+  updateTime: DateTime!
+}
+
+type AdCreative {
+  creativeId: ID!
+  advertiserId: ID!
+  creativeName: String!
+  creativeType: CreativeType!
+  videoInfo: VideoInfo
+  imageInfo: ImageInfo
+  carouselInfo: CarouselInfo
+  adText: String
+  callToAction: CallToAction
+  displayName: String
+  appName: String
+  landingPageUrl: String
+  deepLinkUrl: String
+  callToActionId: String
+  creativeAuthorized: Boolean
+  createTime: DateTime!
+  updateTime: DateTime!
+}
+
+type VideoInfo {
+  videoId: String!
+  width: Int
+  height: Int
+  bitRate: Int
+  duration: Float
+  videoUrl: String
+  coverUrl: String
+  format: String
+  size: Long
+}
+
+type ImageInfo {
+  imageId: String!
+  fileName: String
+  width: Int
+  height: Int
+  url: String
+  size: Long
+  format: String
+}
+
+type CarouselInfo {
+  cards: [CarouselCard!]!
+}
+
+type CarouselCard {
+  imageId: String
+  videoId: String
+  adText: String
+  landingPageUrl: String
+  callToAction: CallToAction
+  title: String
+}
+
+type Identity {
+  identityId: String!
+  identityType: IdentityType!
+  identityName: String
+  profileImage: String
+}
+
+type TargetingSpec {
+  geolocation: GeolocationTargeting
+  gender: Gender
+  age: [AgeRange!]
+  languages: [String!]
+  interests: [InterestCategory!]
+  behaviors: [BehaviorCategory!]
+  customAudiences: [ID!]
+  excludedAudiences: [ID!]
+  deviceTypes: [String!]
+  operatingSystems: [OperatingSystemTargeting!]
+  networkTypes: [String!]
+  isp: [String!]
+  carriers: [String!]
+  devicePrice: [DevicePriceRange!]
+  spendingPower: String
+  householdIncome: [String!]
+}
+
+type GeolocationTargeting {
+  locationType: String!
+  locationIds: [String!]!
+  radius: Float
+  unit: String
+}
+
+type AgeRange {
+  minAge: Int
+  maxAge: Int
+}
+
+type InterestCategory {
+  id: String!
+  name: String!
+  parentId: String
+}
+
+type BehaviorCategory {
+  id: String!
+  name: String!
+  audienceType: String
+  groupId: String
+}
+
+type OperatingSystemTargeting {
+  osType: String!
+  minVersion: String
+  maxVersion: String
+}
+
+type DevicePriceRange {
+  minPrice: Float
+  maxPrice: Float
+}
+
+type ConversionWindow {
+  clickWindow: Int
+  viewWindow: Int
+  engagedViewWindow: Int
+}
+
+type Audience {
+  audienceId: ID!
+  advertiserId: ID!
+  name: String!
+  audienceType: AudienceType!
+  status: AudienceStatus!
+  size: Long
+  coveringRatio: Float
+  createTime: DateTime!
+  updateTime: DateTime!
+  expireTime: DateTime
+  isExpired: Boolean
+}
+
+type LookalikeAudience {
+  lookalikeAudienceId: ID!
+  advertiserId: ID!
+  name: String!
+  seedAudienceId: ID!
+  seedAudienceName: String
+  countryCode: String!
+  type: String
+  taskStatus: LookalikeTaskStatus!
+  size: Long
+  createTime: DateTime!
+  updateTime: DateTime!
+}
+
+type Pixel {
+  pixelId: ID!
+  advertiserId: ID!
+  pixelCode: String!
+  name: String!
+  status: PixelStatus!
+  createTime: DateTime!
+  updateTime: DateTime!
+  events: [PixelEvent!]!
+  advancedMatchingEnabled: Boolean
+  cookieBasedEnabled: Boolean
+}
+
+type PixelEvent {
+  eventId: ID!
+  pixelId: ID!
+  eventType: PixelEventType!
+  eventName: String
+  eventValue: Float
+  currency: CurrencyCode
+  contentIds: [String!]
+  contentType: String
+  pageType: String
+  timestamp: DateTime!
+}
+
+type ConversionsApiEvent {
+  eventId: ID!
+  pixelId: ID!
+  eventName: PixelEventType!
+  eventTime: DateTime!
+  value: Float
+  currency: CurrencyCode
+  userEmail: String
+  userPhone: String
+  ip: String
+  userAgent: String
+  pageUrl: String
+  referrerUrl: String
+  contentIds: [String!]
+  contentType: String
+  orderId: String
+  shopId: String
+}
+
+type AttributionReport {
+  reportId: ID!
+  advertiserId: ID!
+  campaignId: ID
+  adGroupId: ID
+  adId: ID
+  windowType: AttributionWindowType!
+  windowDays: Int!
+  conversions: Int!
+  revenue: Float!
+  currency: CurrencyCode!
+  dateStart: String!
+  dateEnd: String!
+}
+
+type ReportRow {
+  dimensions: JSON
+  metrics: ReportMetrics
+}
+
+type ReportMetrics {
+  impressions: Long
+  clicks: Long
+  ctr: Float
+  cpc: Float
+  cpm: Float
+  spend: Float
+  reach: Long
+  frequency: Float
+  videoViews: Long
+  videoViewRate: Float
+  videoPlayActions: Long
+  videoWatched2s: Long
+  videoWatched6s: Long
+  videoWatched25Pct: Long
+  videoWatched50Pct: Long
+  videoWatched75Pct: Long
+  videoWatched100Pct: Long
+  profileVisits: Long
+  likes: Long
+  comments: Long
+  shares: Long
+  follows: Long
+  conversionRate: Float
+  conversions: Long
+  costPerConversion: Float
+  conversionValue: Float
+  roas: Float
+  appInstalls: Long
+  costPerInstall: Float
+  leads: Long
+  costPerLead: Float
+}
+
+type ReportResponse {
+  pageInfo: PageInfo!
+  rows: [ReportRow!]!
+}
+
+type SplitTest {
+  splitTestId: ID!
+  testVariables: [String!]!
+  status: String!
+}
+
+type TargetingRecommendation {
+  recommendedAudiences: [Audience!]!
+  estimatedReach: Long
+  estimatedDailyReach: Long
+}
+
+type ReachEstimate {
+  estimatedReach: Long!
+  estimatedDailyReach: Long!
+  estimatedDailyImpressions: Long!
+  estimatedCurrency: CurrencyCode
+}
+
+type AdSchedule {
+  scheduleId: ID!
+  adGroupId: ID!
+  startTime: DateTime!
+  endTime: DateTime!
+  daysOfWeek: [Int!]
+  hourOfDayStart: Int
+  hourOfDayEnd: Int
+}
+
+type BcAccount {
+  bcId: ID!
+  name: String!
+  status: String!
+  currency: CurrencyCode!
+  timezone: String!
+  createTime: DateTime!
+  advertisers: [AdvertiserAccount!]!
+}
+
+type AppInfo {
+  appId: String!
+  appName: String!
+  platform: String!
+  packageName: String
+  appStoreUrl: String
+}
+
+type Catalog {
+  catalogId: ID!
+  advertiserId: ID!
+  name: String!
+  feedUrl: String
+  feedFormat: String
+  status: String!
+  productCount: Long
+  createTime: DateTime!
+  updateTime: DateTime!
+  products(page: Int, pageSize: Int): ProductConnection!
+}
+
+type Product {
+  productId: ID!
+  catalogId: ID!
+  title: String!
+  description: String
+  link: String!
+  imageLink: String
+  price: Float
+  salePrice: Float
+  currency: CurrencyCode
+  brand: String
+  condition: String
+  availability: String
+  category: String
+}
+
+# ─────────────────────────────────────────────
+# Connection / Pagination Types
+# ─────────────────────────────────────────────
+
+type PageInfo {
+  page: Int!
+  pageSize: Int!
+  totalNumber: Long!
+  totalPage: Int!
+}
+
+type CampaignConnection {
+  pageInfo: PageInfo!
+  campaigns: [Campaign!]!
+}
+
+type AdGroupConnection {
+  pageInfo: PageInfo!
+  adGroups: [AdGroup!]!
+}
+
+type AdConnection {
+  pageInfo: PageInfo!
+  ads: [Ad!]!
+}
+
+type AudienceConnection {
+  pageInfo: PageInfo!
+  audiences: [Audience!]!
+}
+
+type CreativeConnection {
+  pageInfo: PageInfo!
+  creatives: [AdCreative!]!
+}
+
+type ProductConnection {
+  pageInfo: PageInfo!
+  products: [Product!]!
+}
+
+type PixelEventConnection {
+  pageInfo: PageInfo!
+  events: [PixelEvent!]!
+}
+
+# ─────────────────────────────────────────────
+# Input Types
+# ─────────────────────────────────────────────
+
+input CampaignCreateInput {
+  advertiserId: ID!
+  campaignName: String!
+  objective: CampaignObjective!
+  budgetMode: BudgetMode!
+  budget: Float
+  dailyBudget: Float
+  startTime: DateTime
+  stopTime: DateTime
+  spendCap: Float
+}
+
+input CampaignUpdateInput {
+  campaignId: ID!
+  advertiserId: ID!
+  campaignName: String
+  status: CampaignStatus
+  budget: Float
+  dailyBudget: Float
+  startTime: DateTime
+  stopTime: DateTime
+}
+
+input AdGroupCreateInput {
+  campaignId: ID!
+  advertiserId: ID!
+  adGroupName: String!
+  placements: [Placement!]!
+  budgetMode: BudgetMode!
+  budget: Float
+  scheduleStartTime: DateTime!
+  scheduleEndTime: DateTime
+  optimizationGoal: OptimizationGoal!
+  billingEvent: BillingEvent!
+  bid: Float
+  targeting: TargetingSpecInput!
+  creativeType: CreativeType
+}
+
+input AdGroupUpdateInput {
+  adGroupId: ID!
+  advertiserId: ID!
+  adGroupName: String
+  status: AdGroupStatus
+  budget: Float
+  bid: Float
+  targeting: TargetingSpecInput
+}
+
+input TargetingSpecInput {
+  geolocation: GeolocationTargetingInput
+  gender: Gender
+  ageGroups: [String!]
+  languages: [String!]
+  interestCategoryIds: [String!]
+  behaviorCategoryIds: [String!]
+  customAudienceIds: [ID!]
+  excludedAudienceIds: [ID!]
+  deviceTypes: [String!]
+  networkTypes: [String!]
+}
+
+input GeolocationTargetingInput {
+  locationType: String!
+  locationIds: [String!]!
+  radius: Float
+  unit: String
+}
+
+input AdCreateInput {
+  adGroupId: ID!
+  advertiserId: ID!
+  adName: String!
+  adText: String
+  callToAction: CallToAction
+  landingPageUrl: String
+  displayName: String
+  identityId: String
+  identityType: IdentityType
+  videoId: String
+  imageIds: [String!]
+  trackingPixelId: ID
+}
+
+input AdUpdateInput {
+  adId: ID!
+  advertiserId: ID!
+  adName: String
+  status: AdStatus
+  adText: String
+  callToAction: CallToAction
+  landingPageUrl: String
+}
+
+input CustomAudienceCreateInput {
+  advertiserId: ID!
+  name: String!
+  type: String!
+  pixelId: ID
+  pixelEventType: PixelEventType
+  retentionDays: Int
+  fileUrls: [String!]
+  mobileAppId: String
+}
+
+input LookalikeAudienceCreateInput {
+  advertiserId: ID!
+  name: String!
+  seedAudienceId: ID!
+  countryCode: String!
+  type: String
+}
+
+input CreativeCreateInput {
+  advertiserId: ID!
+  creativeName: String!
+  creativeType: CreativeType!
+  videoId: String
+  imageIds: [String!]
+  adText: String
+  callToAction: CallToAction
+  displayName: String
+  landingPageUrl: String
+  deepLinkUrl: String
+  appName: String
+}
+
+input PixelCreateInput {
+  advertiserId: ID!
+  name: String!
+  advancedMatchingEnabled: Boolean
+  cookieBasedEnabled: Boolean
+}
+
+input ConversionsEventInput {
+  pixelId: ID!
+  eventName: PixelEventType!
+  eventTime: DateTime!
+  value: Float
+  currency: CurrencyCode
+  userEmail: String
+  userPhone: String
+  ip: String
+  userAgent: String
+  pageUrl: String
+  referrerUrl: String
+  contentIds: [String!]
+  contentType: String
+  orderId: String
+}
+
+input ReportQueryInput {
+  advertiserId: ID!
+  reportType: ReportType!
+  dataLevel: ReportDataLevel!
+  dimensions: [String!]!
+  metrics: [String!]!
+  startDate: String!
+  endDate: String!
+  filters: [ReportFilterInput!]
+  orderField: String
+  orderType: OrderBy
+  page: Int
+  pageSize: Int
+}
+
+input ReportFilterInput {
+  fieldName: String!
+  filterType: String!
+  filterValue: String!
+}
+
+input ReachEstimateInput {
+  advertiserId: ID!
+  objective: CampaignObjective!
+  budgetMode: BudgetMode!
+  budget: Float
+  targeting: TargetingSpecInput!
+  placements: [Placement!]!
+}
+
+# ─────────────────────────────────────────────
+# Query Root
+# ─────────────────────────────────────────────
+
+type Query {
+  # Advertiser / Account
+  advertiserInfo(advertiserId: ID!): AdvertiserAccount
+  advertiserList(page: Int, pageSize: Int): [AdvertiserAccount!]!
+  bcAccount(bcId: ID!): BcAccount
+
+  # Campaigns
+  campaign(advertiserId: ID!, campaignId: ID!): Campaign
+  campaigns(advertiserId: ID!, page: Int, pageSize: Int, status: CampaignStatus): CampaignConnection!
+
+  # Ad Groups
+  adGroup(advertiserId: ID!, adGroupId: ID!): AdGroup
+  adGroups(advertiserId: ID!, campaignId: ID, page: Int, pageSize: Int, status: AdGroupStatus): AdGroupConnection!
+
+  # Ads
+  ad(advertiserId: ID!, adId: ID!): Ad
+  ads(advertiserId: ID!, adGroupId: ID, campaignId: ID, page: Int, pageSize: Int, status: AdStatus): AdConnection!
+
+  # Creatives
+  creative(advertiserId: ID!, creativeId: ID!): AdCreative
+  creatives(advertiserId: ID!, page: Int, pageSize: Int): CreativeConnection!
+
+  # Audiences
+  audience(advertiserId: ID!, audienceId: ID!): Audience
+  audiences(advertiserId: ID!, page: Int, pageSize: Int): AudienceConnection!
+  lookalikeAudience(advertiserId: ID!, lookalikeAudienceId: ID!): LookalikeAudience
+  lookalikeAudiences(advertiserId: ID!): [LookalikeAudience!]!
+
+  # Pixels & Events
+  pixel(advertiserId: ID!, pixelId: ID!): Pixel
+  pixels(advertiserId: ID!): [Pixel!]!
+  pixelEvents(pixelId: ID!, advertiserId: ID!, page: Int, pageSize: Int): PixelEventConnection!
+
+  # Targeting
+  targetingCategories(advertiserId: ID!, type: String): [InterestCategory!]!
+  behaviorCategories(advertiserId: ID!): [BehaviorCategory!]!
+  geographyList(levelRange: String, countryCodes: [String!]): [JSON!]!
+  reachEstimate(input: ReachEstimateInput!): ReachEstimate!
+  targetingRecommendation(advertiserId: ID!, objective: CampaignObjective!): TargetingRecommendation
+
+  # Reporting
+  report(input: ReportQueryInput!): ReportResponse!
+  attributionReport(advertiserId: ID!, campaignId: ID, adGroupId: ID, windowType: AttributionWindowType!, windowDays: Int!, startDate: String!, endDate: String!): AttributionReport!
+
+  # Catalog / Product
+  catalog(advertiserId: ID!, catalogId: ID!): Catalog
+  catalogs(advertiserId: ID!): [Catalog!]!
+
+  # App / Identity
+  appList(advertiserId: ID!): [AppInfo!]!
+  identities(advertiserId: ID!): [Identity!]!
+
+  # Creatives / Media
+  videoList(advertiserId: ID!, page: Int, pageSize: Int): [VideoInfo!]!
+  imageList(advertiserId: ID!, page: Int, pageSize: Int): [ImageInfo!]!
+}
+
+# ─────────────────────────────────────────────
+# Mutation Root
+# ─────────────────────────────────────────────
+
+type Mutation {
+  # Campaigns
+  createCampaign(input: CampaignCreateInput!): Campaign!
+  updateCampaign(input: CampaignUpdateInput!): Campaign!
+  deleteCampaign(advertiserId: ID!, campaignId: ID!): Boolean!
+  updateCampaignStatus(advertiserId: ID!, campaignIds: [ID!]!, status: CampaignStatus!): Boolean!
+
+  # Ad Groups
+  createAdGroup(input: AdGroupCreateInput!): AdGroup!
+  updateAdGroup(input: AdGroupUpdateInput!): AdGroup!
+  deleteAdGroup(advertiserId: ID!, adGroupId: ID!): Boolean!
+  updateAdGroupStatus(advertiserId: ID!, adGroupIds: [ID!]!, status: AdGroupStatus!): Boolean!
+
+  # Ads
+  createAd(input: AdCreateInput!): Ad!
+  updateAd(input: AdUpdateInput!): Ad!
+  deleteAd(advertiserId: ID!, adId: ID!): Boolean!
+  updateAdStatus(advertiserId: ID!, adIds: [ID!]!, status: AdStatus!): Boolean!
+
+  # Creatives / Media
+  createCreative(input: CreativeCreateInput!): AdCreative!
+  uploadVideo(advertiserId: ID!, filename: String!, fileUrl: String): VideoInfo!
+  uploadImage(advertiserId: ID!, filename: String!, fileUrl: String): ImageInfo!
+  deleteCreative(advertiserId: ID!, creativeId: ID!): Boolean!
+
+  # Audiences
+  createCustomAudience(input: CustomAudienceCreateInput!): Audience!
+  createLookalikeAudience(input: LookalikeAudienceCreateInput!): LookalikeAudience!
+  deleteAudience(advertiserId: ID!, audienceId: ID!): Boolean!
+  shareAudience(advertiserId: ID!, audienceId: ID!, targetAdvertiserIds: [ID!]!): Boolean!
+
+  # Pixels & Conversions
+  createPixel(input: PixelCreateInput!): Pixel!
+  updatePixel(pixelId: ID!, advertiserId: ID!, name: String): Pixel!
+  deletePixel(advertiserId: ID!, pixelId: ID!): Boolean!
+  sendConversionEvent(input: ConversionsEventInput!): Boolean!
+  batchSendConversionEvents(events: [ConversionsEventInput!]!): Int!
+
+  # Budget / Bid adjustments
+  updateBudget(advertiserId: ID!, adGroupId: ID!, budget: Float!, budgetMode: BudgetMode!): AdGroup!
+  updateBid(advertiserId: ID!, adGroupId: ID!, bid: Float!): AdGroup!
+}
