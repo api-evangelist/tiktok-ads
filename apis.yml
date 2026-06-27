@@ -39,7 +39,7 @@ apis:
     url: https://business-api.tiktok.com/portal/docs
   - type: Authentication
     url: https://business-api.tiktok.com/portal/docs?id=1738373141733378
-  - type: SDK
+  - type: SDKs
     url: https://github.com/tiktok/tiktok-business-api-sdk
   - url: graphql/tiktok-ads-graphql.md
     type: GraphQL
@@ -48,9 +48,9 @@ common:
   url: https://www.tiktok.com/business/
 - type: Documentation
   url: https://business-api.tiktok.com/portal/docs
-- type: Developer Portal
+- type: DeveloperPortal
   url: https://business-api.tiktok.com/portal
-- type: SignUp
+- type: Signup
   url: https://ads.tiktok.com/i18n/signup
 - type: Pricing
   url: https://www.tiktok.com/business/en/pricing
