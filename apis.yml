@@ -44,6 +44,8 @@ apis:
   - url: graphql/tiktok-ads-graphql.md
     type: GraphQL
 common:
+- type: DomainSecurity
+  url: security/tiktok-ads-domain-security.yml
 - type: Website
   url: https://www.tiktok.com/business/
 - type: Documentation
@@ -60,6 +62,8 @@ common:
   url: https://ads.tiktok.com/help/
 - type: LinkedIn
   url: https://www.linkedin.com/showcase/tiktokforbusiness/
+- url: https://ads.tiktok.com/business/en/blog
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
