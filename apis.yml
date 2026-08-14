@@ -1,11 +1,17 @@
 aid: tiktok-ads
 name: TikTok Marketing API
-description: TikTok for Business is TikTok's advertising platform that enables brands,
-  agencies, and advertisers to create, manage, and optimize ad campaigns across TikTok
-  and its family of apps. The TikTok Marketing API (business-api.tiktok.com) is a
-  RESTful API that uses OAuth 2.0 authentication and lets developers programmatically
-  manage advertiser accounts, campaigns, ad groups, ads, creatives, audiences, reporting,
-  conversions, and pixel/events for performance marketing and measurement.
+description: TikTok for Business is TikTok's advertising platform, where brands, agencies
+  and advertisers create, manage and optimize ad campaigns across TikTok and its family
+  of apps. The TikTok API for Business — the Marketing API at
+  business-api.tiktok.com/open_api/v1.3 — is the REST interface behind it, covering
+  advertiser accounts, campaigns, ad groups, ads, Upgraded Smart+ and GMV Max automation,
+  creatives and files, product catalogs, custom and lookalike audiences, Business Center
+  asset and member administration, conversion measurement through the Events API, and
+  synchronous plus asynchronous reporting. Access is granted by a three-legged advertiser
+  authorization that issues a long-lived token presented in an Access-Token header, with
+  permissions expressed as a three-level hierarchy of numeric scope IDs. TikTok also
+  operates a hosted Model Context Protocol server that packages roughly 400 of these
+  endpoints as OAuth-protected MCP tools for AI agents.
 type: Index
 accessModel:
   pricing: unknown
@@ -26,16 +32,23 @@ tags:
 - Ad Campaigns
 - Performance Marketing
 - Conversion Tracking
+- Audience Management
+- Reporting
+- Product Catalog
+- Agent Ready
 url: https://raw.githubusercontent.com/api-evangelist/tiktok-ads/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 apis:
 - aid: tiktok-ads:marketing-api
   name: TikTok Marketing API
   description: RESTful Marketing API for managing TikTok ad accounts, campaigns, ad
-    groups, ads, creatives, audiences, conversions, pixels, and reporting. Authentication
-    uses OAuth 2.0 with access tokens issued via business-api.tiktok.com/open_api/v1.3/oauth2/access_token/.
+    groups, ads, Upgraded Smart+ and GMV Max campaigns, creatives, files, catalogs,
+    audiences, Business Centers, conversions, pixels and reporting. Authorization is
+    three-legged advertiser consent; the resulting long-lived token is sent in the
+    Access-Token request header. 202 operations across 19 tags are published as
+    machine-readable OpenAPI by TikTok itself.
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
@@ -46,35 +59,114 @@ apis:
   - Reporting
   - Conversions API
   properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-marketing-api-openapi.yml
+  - type: Overlay
+    url: overlays/tiktok-ads-marketing-api-overlay.yaml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
   - type: Documentation
     url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
   - type: Authentication
-    url: https://business-api.tiktok.com/portal/docs?id=1738373141733378
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
   - type: SDKs
     url: https://github.com/tiktok/tiktok-business-api-sdk
-  - url: graphql/tiktok-ads-graphql.md
-    type: GraphQL
 common:
+- type: OpenAPI
+  url: openapi/tiktok-ads-marketing-api-openapi.yml
+- type: Overlay
+  url: overlays/tiktok-ads-marketing-api-overlay.yaml
+- type: MCPServer
+  url: mcp/tiktok-ads-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/tiktok-ads-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/tiktok-ads-agentic-access.yml
+- type: LLMsTxt
+  url: llms/tiktok-ads-llms.txt
+- type: WellKnown
+  url: well-known/tiktok-ads-well-known.yml
+- type: Authentication
+  url: authentication/tiktok-ads-authentication.yml
+- type: OAuthScopes
+  url: scopes/tiktok-ads-scopes.yml
+- type: Conventions
+  url: conventions/tiktok-ads-conventions.yml
+- type: ErrorCatalog
+  url: errors/tiktok-ads-error-codes.yml
+- type: DataModel
+  url: data-model/tiktok-ads-data-model.yml
+- type: RateLimits
+  url: rate-limits/tiktok-ads-rate-limits.yml
+- type: Plans
+  url: plans/tiktok-ads-plans-pricing.yml
+- type: Sandbox
+  url: sandbox/tiktok-ads-sandbox.yml
+- type: Webhooks
+  url: asyncapi/tiktok-ads-webhooks.yml
+- type: Lifecycle
+  url: lifecycle/tiktok-ads-lifecycle.yml
+- type: StatusPage
+  url: https://business-api.tiktok.com/portal/api-service-status
+- type: Deprecation
+  url: https://business-api.tiktok.com/portal/docs?id=1740578661644289
+- type: ChangeLog
+  url: changelog/tiktok-ads-changelog.yml
+- type: Conformance
+  url: conformance/tiktok-ads-conformance.yml
+- type: Packages
+  url: packages/tiktok-ads-packages.yml
+- type: SDKs
+  url: packages/tiktok-ads-packages.yml
 - type: DomainSecurity
   url: security/tiktok-ads-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/tiktok-ads-vulnerability-disclosure.yml
+- type: Security
+  url: https://hackerone.com/tiktok
 - type: Website
   url: https://www.tiktok.com/business/
-- type: Documentation
-  url: https://business-api.tiktok.com/portal/docs
 - type: DeveloperPortal
   url: https://business-api.tiktok.com/portal
-- type: Signup
-  url: https://ads.tiktok.com/i18n/signup
-- type: Pricing
-  url: https://www.tiktok.com/business/en/pricing
-- type: GitHub SDK
-  url: https://github.com/tiktok/tiktok-business-api-sdk
+- type: Documentation
+  url: https://business-api.tiktok.com/portal/docs
+- type: APIReference
+  url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+- type: GettingStarted
+  url: https://business-api.tiktok.com/portal/docs?id=1735713609895937
+- type: Postman
+  url: https://business-api.tiktok.com/portal/docs?id=1747849403155521
 - type: Support
   url: https://ads.tiktok.com/help/
+- type: GitHubOrganization
+  url: https://github.com/tiktok
+- type: SourceCode
+  url: https://github.com/tiktok/tiktok-business-api-sdk
+- type: Blog
+  url: https://ads.tiktok.com/business/en/blog
+- type: DeveloperBlog
+  url: https://business-api.tiktok.com/portal/blog
+- type: Pricing
+  url: https://www.tiktok.com/business/en/pricing
+- type: SignUp
+  url: https://ads.tiktok.com/i18n/signup
+- type: Login
+  url: https://ads.tiktok.com/i18n/login
+- type: TermsOfService
+  url: https://www.tiktok.com/legal/page/global/terms-of-service/en
+- type: PrivacyPolicy
+  url: https://www.tiktok.com/legal/page/global/privacy-policy/en
 - type: LinkedIn
   url: https://www.linkedin.com/showcase/tiktokforbusiness/
-- url: https://ads.tiktok.com/business/en/blog
-  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 33
+  pass: local-v1
