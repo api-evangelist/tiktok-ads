@@ -1,0 +1,169 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs/rate-limits/v1.3
+docs: https://business-api.tiktok.com/portal/docs/rate-limits/v1.3
+also:
+  mcp: https://business-api.tiktok.com/portal/docs/tiktok-ads-mcp-server/v1.3
+  sandbox: https://business-api.tiktok.com/portal/docs?id=1738855331457026
+  tto_api: https://business-api.tiktok.com/portal/docs?id=1825117901366274
+signalling:
+  response_headers: []
+  headers_note: >-
+    TikTok publishes NO rate-limit response headers. There is no X-RateLimit-*, no RateLimit-*, and no
+    Retry-After. Throttling is signalled in the JSON body only: the HTTP status stays 200 and the envelope
+    carries "code": 40100. An agent therefore cannot read remaining quota from a successful response — it
+    can only detect exhaustion after the fact, by parsing the body. A live unauthenticated GET to
+    https://business-api.tiktok.com/open_api/v1.3/advertiser/info/ on 2026-08-13 returned HTTP 200 with
+    {"code": 40104, ...} and no rate-limit headers of any kind, confirming the docs.
+  http_status_on_exhaustion: 200
+  error_code_on_exhaustion: 40100
+  error_field: code
+  retry_after_header: false
+  recovery:
+    qps: retry after the current second
+    qpm: suspend calls for 5 minutes
+    qpd: suspend until 00:00:00 UTC+0, when the daily counter resets
+scope: per developer application (global limits) and per endpoint (endpoint-specific limits)
+tiers:
+  - name: Basic
+    default: true
+    qps: 10
+    qpm: 600
+    qpd: 864000
+  - name: Advanced
+    qps: 20
+    qpm: 1200
+    qpd: 1728000
+  - name: Premium
+    qps: 30
+    qpm: 1800
+    qpd: 2592000
+  - name: Ultimate
+    qps: 50
+    qpm: 3000
+    qpd: 4320000
+tier_note: >-
+  All apps start at Basic. Increases are granted one level at a time by application through
+  My Apps > App Detail > Authorization, with a stated business reason. Events API limits are the same at
+  every level, so no application is needed for those.
+endpoint_limits:
+  - endpoint: /creative/quick_optimization/create/
+    basic: {qps: 1, qpm: 30, qpd: 5000}
+    advanced: {qps: 2, qpm: 60, qpd: 10000}
+    premium: {qps: 3, qpm: 180, qpd: 15000}
+    ultimate: {qps: 3, qpm: 180, qpd: 15000}
+  - endpoint: /creative/smart_video/create/
+    basic: {qps: 1, qpm: 30, qpd: 5000}
+    advanced: {qps: 2, qpm: 60, qpd: 10000}
+    premium: {qps: 3, qpm: 180, qpd: 15000}
+    ultimate: {qps: 3, qpm: 180, qpd: 15000}
+  - endpoint: /ad/create/
+    basic: {qps: 5, qpm: 150, qpd: 86400}
+    advanced: {qps: 10, qpm: 200, qpd: 86400}
+    premium: {qps: 10, qpm: 300, qpd: 86400}
+    ultimate: {qps: 15, qpm: 300, qpd: 86400}
+  - endpoint: /video_template/task/create/
+    basic: {qps: 1, qpm: 30, qpd: 5000}
+    advanced: {qps: 2, qpm: 60, qpd: 10000}
+    premium: {qps: 3, qpm: 180, qpd: 15000}
+    ultimate: {qps: 3, qpm: 180, qpd: 15000}
+  - endpoint: /catalog/product/file/
+    basic: {qps: 5, qpm: 300, qpd: 432000}
+    advanced: {qps: 5, qpm: 300, qpd: 432000}
+    premium: {qps: 10, qpm: 600, qpd: 864000}
+    ultimate: {qps: 10, qpm: 600, qpd: 864000}
+  - endpoint: /catalog/product/upload/
+    basic: {qps: 5, qpm: 300, qpd: 432000}
+    advanced: {qps: 5, qpm: 300, qpd: 432000}
+    premium: {qps: 10, qpm: 600, qpd: 864000}
+    ultimate: {qps: 10, qpm: 600, qpd: 864000}
+  - endpoint: /catalog/product/update/
+    basic: {qps: 2, qpm: 120, qpd: 172800}
+    advanced: {qps: 2, qpm: 120, qpd: 172800}
+    premium: {qps: 5, qpm: 300, qpd: 432000}
+    ultimate: {qps: 5, qpm: 300, qpd: 432000}
+  - endpoint: /catalog/product/delete/
+    basic: {qps: 2, qpm: 120, qpd: 172800}
+    advanced: {qps: 2, qpm: 120, qpd: 172800}
+    premium: {qps: 5, qpm: 300, qpd: 432000}
+    ultimate: {qps: 5, qpm: 300, qpd: 432000}
+  - endpoint: /report/task/create/
+    label: Asynchronous reports (POST)
+    basic: {qps: 2, qpm: 60, qpd: 4500}
+    advanced: {qps: 2, qpm: 60, qpd: 4500}
+    premium: {qps: 2, qpm: 60, qpd: 4500}
+    ultimate: {qps: 2, qpm: 60, qpd: 4500}
+  - endpoint: /event/track/
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /app/track/
+    label: App Events (POST)
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /app/batch/
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /pixel/track/
+    label: Web Events (POST)
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /pixel/batch/
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /offline/track/
+    label: Offline Events (POST)
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: /offline/batch/
+    basic: {qps: 1000, qpm: 600000, qpd: 86400000}
+    advanced: {qps: 1000, qpm: 600000, qpd: 86400000}
+    premium: {qps: 1000, qpm: 600000, qpd: 86400000}
+    ultimate: {qps: 1000, qpm: 600000, qpd: 86400000}
+  - endpoint: Streaming API
+    basic: {qps: 10000, qpm: 600000, qpd: 864000000}
+    advanced: {qps: 20000, qpm: 1200000, qpd: 1728000000}
+    premium: {qps: 30000, qpm: 1800000, qpd: 2592000000}
+    ultimate: {qps: 50000, qpm: 3000000, qpd: 4320000000}
+  - endpoint: /campaign/copy/task/create/
+    basic: {qps: 1, qpm: 30, qpd: 432000}
+    advanced: {qps: 1, qpm: 30, qpd: 432000}
+    premium: {qps: 1, qpm: 30, qpd: 432000}
+    ultimate: {qps: 1, qpm: 30, qpd: 432000}
+  - endpoint: /campaign/copy/task/check/
+    basic: {qps: 2, qpm: 60, qpd: 864000}
+    advanced: {qps: 2, qpm: 60, qpd: 864000}
+    premium: {qps: 2, qpm: 60, qpd: 864000}
+    ultimate: {qps: 2, qpm: 60, qpd: 864000}
+  - endpoint: /gmv_max/report/get/
+    basic: {qps: 8, qpm: 240, qpd: 20000}
+    advanced: {qps: 12, qpm: 360, qpd: 30000}
+    premium: {qps: 20, qpm: 600, qpd: 50000}
+    ultimate: {qps: 20, qpm: 600, qpd: 50000}
+surface_limits:
+  - surface: sandbox environment
+    qps: 1
+    qpm: 30
+    qpd: 1000
+    scope: per endpoint
+  - surface: TikTok for Business MCP Server
+    qps: 3
+    scope: per tool per TikTok for Business user
+    note: >-
+      Additionally, smart_plus_ad_create / smart_plus_ad_update / smart_plus_ad_status_update must be kept
+      to one operation per 5 seconds for a single Upgraded Smart+ Ad or a concurrency error is triggered.
+best_practices:
+  - Use the bulk form of read endpoints (pass multiple ids in filtering) instead of one request per id.
+  - Client-side rate limiting (token bucket) or a message queue with bounded consumers.
+limit_count: 24

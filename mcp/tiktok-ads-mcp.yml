@@ -1,0 +1,131 @@
+generated: '2026-08-13'
+method: searched
+status: published
+source: https://business-api.tiktok.com/portal/docs/tiktok-ads-mcp-server/v1.3
+docs:
+  overview: https://business-api.tiktok.com/portal/docs/tiktok-ads-mcp-server/v1.3
+  connect: https://business-api.tiktok.com/portal/docs/how-to-connect-to-tiktok-for-business-mcp-server/v1.3
+  tools: https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3
+server:
+  name: TikTok for Business MCP Server
+  vendor: TikTok
+  transport: http
+deployment:
+  mode: remote
+  endpoint: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+  auth: oauth
+  verified: probed
+  note: >-
+    TikTok ships TWO remote endpoints for the same server, differing only in tool-loading strategy. Both
+    were probed on 2026-08-13 and both answered HTTP 401 with a WWW-Authenticate Bearer challenge carrying
+    an RFC 9728 resource_metadata pointer — i.e. they are live, agent-reachable HTTPS MCP endpoints behind
+    OAuth. There is no npx/pip package and no stdio mode; this is a hosted surface only.
+endpoints:
+  - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+    strategy: full-disclosure
+    tools_loaded_at_connect: ~400
+    recommended_for: Claude and other large-context agents
+    probe:
+      method: POST tools/list
+      http_status: 401
+      www_authenticate: >-
+        Bearer resource_metadata="https://business-api.tiktok.com/.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-flat"
+  - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer
+    strategy: progressive-disclosure
+    tools_loaded_at_connect: ~40
+    recommended_for: token-constrained agents; remaining tools are discovered on demand
+    probe:
+      method: POST tools/list
+      http_status: 401
+      www_authenticate: >-
+        Bearer resource_metadata="https://business-api.tiktok.com/.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-layer"
+authentication:
+  type: oauth2
+  spec: RFC 9728 protected resource + RFC 8414 authorization server metadata (both served, see well-known/)
+  scopes: [mcp:tt4b]
+  authorization_endpoint: https://business-api.tiktok.com/portal/mcp-tt4b-authorize
+  token_endpoint: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth/token
+  registration_endpoint: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth/register
+  revocation_endpoint: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth/revoke
+  grant_types: [authorization_code, refresh_token]
+  pkce: [S256]
+  dynamic_client_registration: true
+  token_endpoint_auth_methods: [none]
+  developer_app_required: false
+  note: >-
+    TikTok documents that no developer account, developer app, API key or allowlist application is needed
+    to use the MCP server — a TikTok for Business account and an MCP-capable agent are sufficient. User
+    authorization is valid for a 30-day window and must then be renewed.
+limits:
+  rate_limit: 3 QPS per tool per TikTok for Business user
+  concurrency: >-
+    smart_plus_ad_create, smart_plus_ad_update and smart_plus_ad_status_update must be throttled to no more
+    than one operation per 5 seconds for a single Upgraded Smart+ Ad
+  authorization_lifespan_days: 30
+tools:
+  count_published: 377
+  count_claimed_by_vendor: ~400
+  schemas_available: false
+  schemas_note: >-
+    tools/list is OAuth-gated (401 anonymous), so per-tool inputSchema could not be read. TikTok does
+    publish the complete tool name -> REST endpoint binding, which is captured in
+    mcp/tiktok-ads-tool-crosswalk.yml; for the 191 tools bound to an operation in
+    openapi/tiktok-ads-marketing-api-openapi.yml, that operation's parameters and requestBody ARE the
+    tool's real input contract.
+  categories:
+    - Ad
+    - Ad Comments
+    - Ad Comments - Blocked Words
+    - Ad Group
+    - Advertiser
+    - App
+    - Audience
+    - Automated Rules
+    - Business Center
+    - Business Center Payment Portfolio
+    - CRM Events
+    - Campaign
+    - Catalog
+    - Catalog Diagnostics
+    - Change Log
+    - Creative
+    - Custom Conversions
+    - Files (images, videos, and music)
+    - GMV Max
+    - Identity
+    - Leads
+    - Negative Keywords
+    - Offline Events
+    - Page
+    - Pixel
+    - Playble Ads
+    - Reporting
+    - Showcase
+    - Spark Ads Recommendation
+    - Spark Ads Using Authorized Posts
+    - Split test
+    - Subscription
+    - Terms
+    - TikTok One
+    - TikTok Shop
+    - Tools
+    - Upgraded Smart+
+    - User
+crosswalk: mcp/tiktok-ads-tool-crosswalk.yml
+x-evidence:
+  fetched: '2026-08-13'
+  probes:
+    - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+      method: POST
+      body: '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+      http_status: 401
+    - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer
+      method: POST
+      body: '{"jsonrpc":"2.0","id":1,"method":"initialize"}'
+      http_status: 401
+    - url: https://business-api.tiktok.com/.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-flat
+      method: GET
+      http_status: 200
+    - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth/.well-known/oauth-authorization-server
+      method: GET
+      http_status: 200

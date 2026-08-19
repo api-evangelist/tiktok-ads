@@ -1,0 +1,110 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs?id=1738855331457026
+docs: https://business-api.tiktok.com/portal/docs?id=1738855331457026
+available: true
+model: separate-host
+separation:
+  production_base_url: https://business-api.tiktok.com/open_api
+  sandbox_base_url: https://sandbox-ads.tiktok.com/open_api
+  mechanism: >-
+    Test and live are separated by HOST, not by key prefix or a mode flag. There is no sk_test_/sk_live_
+    style prefix — a sandbox token and a production token are visually indistinguishable, and the only
+    thing that decides which environment you hit is the base URL you point at. Swapping the host is the
+    entire switch.
+  key_prefixes: []
+provisioning:
+  scope: one sandbox ad account per developer app
+  steps:
+    - Go to the TikTok API for Business homepage and open My Apps.
+    - Open the developer app the sandbox account should belong to.
+    - Click "Create a Sandbox Ad Account".
+    - Set name, ad account country, currency and timezone, then Create.
+    - Generate an access token and read the sandbox advertiser ID from the app detail page.
+  permissions: >-
+    The sandbox account inherits the permission scope configured on the developer app; there is no separate
+    sandbox permission model.
+  legacy_note: >-
+    Sandbox accounts created before 4 November 2020 are dead — their advertiser IDs and access tokens no
+    longer work and a new sandbox account must be created.
+rate_limits:
+  qps: 1
+  qpm: 30
+  qpd: 1000
+  scope: per endpoint
+  note: >-
+    Far tighter than production. Because the limit is per endpoint, five calls to five different endpoints
+    inside one second are fine, but two calls to the same endpoint are not.
+test_data:
+  mock_reporting: true
+  endpoint: https://sandbox-ads.tiktok.com/open_api/v1.3/report/integrated/get/
+  method: GET
+  note: >-
+    All sandbox accounts are pre-populated with mock reporting data. The shape matches production but the
+    values are synthetic and unrelated to anything you configured — an audience report may return countries
+    your ads never ran in, and many metrics return "0" or "-". Asynchronous reports are NOT backed by mock
+    data.
+  supported_settings:
+    time_range: 2020-12-08 to 2020-12-19
+    service_type: [AUCTION]
+    report_type: [BASIC, AUDIENCE]
+    data_level: [AUCTION_CAMPAIGN, AUCTION_ADGROUP, AUCTION_AD]
+    dimensions: all dimensions supported for the report_type
+    metrics: all metrics supported for the report_type; some return 0 or -
+    filters: all filters supported for the report_type
+    lifetime: 'true supported'
+    ordering: not supported (order_field / order_type ignored)
+  prerequisite: at least one campaign, one ad group and one ad in the sandbox account
+  magic_values: []
+  test_cards: []
+  test_clock: false
+supported_endpoints:
+  - /ad/create/
+  - /ad/get/
+  - /ad/update/
+  - /ad/status/update/
+  - /adgroup/create/
+  - /adgroup/get/
+  - /adgroup/update/
+  - /adgroup/status/update/
+  - /campaign/create/
+  - /campaign/get/
+  - /campaign/update/
+  - /campaign/status/update/
+  - /file/image/ad/upload/
+  - /file/video/ad/upload/
+  - /report/integrated/get/
+  - /term/check/
+  - /term/confirm/
+  - /term/get/
+  - /user/info/
+  - /identity/create/
+  - /identity/get/
+  - /identity/delete/
+coverage:
+  supported_endpoint_count: 21
+  marketing_api_operation_count: 202
+  note: >-
+    21 of the 202 operations in the first-party OpenAPI set are callable in sandbox — roughly one in ten.
+    Campaign/ad-group/ad CRUD, file upload, terms, identity and synchronous reporting work; Business Center,
+    catalog, audience, creative tooling, GMV Max, Smart+ and the whole measurement surface do not. TikTok
+    states the long-term plan is full coverage.
+error_codes_specific_to_sandbox:
+  - code: 40008
+    meaning: endpoint not implemented — includes using an unsupported endpoint in sandbox
+  - code: 40009
+    meaning: the parameter or method is not supported in sandbox
+  - code: 40013
+    meaning: sandbox account does not exist
+  - code: 40014
+    meaning: requested functionality, operation or endpoint is not supported in the sandbox environment
+related:
+  api_playground:
+    url: https://business-api.tiktok.com/portal/api-playground
+    docs: https://business-api.tiktok.com/portal/docs?id=1826537506816001
+    available_endpoints: https://business-api.tiktok.com/portal/docs?id=1826537624043586
+    note: browser-based request console on the developer portal, separate from the sandbox environment
+  postman:
+    url: https://tiktok.postman.co/workspace/TikTok-API-For-Business~cf223b0e-a943-4e26-8443-b8618153a70a/collection/33151601-6700a660-d048-429b-9626-500e2f29b7a4?action=share&creator=33151601
+    docs: https://business-api.tiktok.com/portal/docs?id=1747849403155521
+    note: TikTok states this is not a complete list of endpoints

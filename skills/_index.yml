@@ -1,0 +1,35 @@
+generated: '2026-08-13'
+method: generated
+source: openapi/tiktok-ads-marketing-api-openapi.yml
+note: >-
+  One skill per marquee flow, grounded only in operationIds that exist verbatim in the first-party OpenAPI
+  set (all 42 referenced ids were grep-verified against the spec before writing). The behavioural rules in
+  each skill come from conventions/, errors/, rate-limits/, scopes/ and sandbox/ — in particular the two
+  things an agent will otherwise get wrong on this API: HTTP 200 does not mean success, and there is no
+  idempotency key, so no write is safe to blind-retry. TikTok publishes no AGENTS.md or skill files of its
+  own; searched the developer portal doc tree and the tiktok GitHub organisation.
+skills:
+  - file: tiktok-ads-launch-smart-plus-campaign.md
+    name: Launch an Upgraded Smart+ campaign on TikTok
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Advertiser Info, Smart_plus Campaign Create, Smart_plus Adgroup Create, Smart_plus Ad Create, Smart_plus Ad Review_info, Smart_plus Campaign Get, Smart_plus Material_report Overview, Smart_plus Ad Status Update]
+  - file: tiktok-ads-pull-performance-report.md
+    name: Pull a TikTok Ads performance report
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Advertiser Info, Report Integrated Get, Report Task Create, Report Task Check, Report Task Cancel]
+  - file: tiktok-ads-build-custom-audience.md
+    name: Build and share a TikTok custom audience
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Dmp Custom_audience File Upload, Dmp Custom_audience Create, Dmp Custom_audience List, Dmp Custom_audience Get, Dmp Custom_audience Lookalike Create, Dmp Custom_audience Share, Dmp Saved_audience Create]
+  - file: tiktok-ads-onboard-product-catalog.md
+    name: Onboard a product catalog to TikTok
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Catalog Available_country Get, Catalog Create, Catalog Get, Catalog Feed Create, Catalog Product File, Catalog Feed Log, Catalog Overview, Catalog Eventsource Bind]
+  - file: tiktok-ads-launch-gmv-max-campaign.md
+    name: Launch a TikTok GMV Max shop campaign
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Gmv_max Store List, Gmv_max Store Shop_ad_usage_check, Gmv_max Identity Get, Gmv_max Bid Recommend, Campaign Gmv_max Create, Campaign Gmv_max Info, Gmv_max Report Get, Gmv_max Video Get]
+  - file: tiktok-ads-manage-business-center-assets.md
+    name: Manage TikTok Business Center assets and members
+    api: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: [Bc Get, Bc Asset Get, Bc Asset_group Create, Bc Asset Assign, Bc Asset Unassign, Bc Member Get, Bc Member Invite, Bc Balance Get, Bc Transfer, Bc Transaction Get]

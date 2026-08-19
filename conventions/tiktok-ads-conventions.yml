@@ -1,0 +1,116 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://business-api.tiktok.com/portal/docs?id=1735713875563521 ,
+  https://business-api.tiktok.com/portal/docs?id=1749734684478466 ,
+  https://business-api.tiktok.com/portal/docs/rate-limits/v1.3 ,
+  https://business-api.tiktok.com/portal/docs?id=1759977800177665 , and
+  openapi/tiktok-ads-marketing-api-openapi.yml
+base_url:
+  production: https://business-api.tiktok.com/open_api/v1.3
+  sandbox: https://sandbox-ads.tiktok.com/open_api/v1.3
+  form: <base_url>/<api_version>/<endpoint>/
+  trailing_slash: required
+  trailing_slash_note: >-
+    Every endpoint path ends in a slash and the slash is load-bearing. TikTok documents that calling
+    /tt_user/oauth2/refresh_token (no trailing slash) returns "404 page not found" while
+    /tt_user/oauth2/refresh_token/ works. This is the single most common integration mistake against
+    this API.
+authentication:
+  style: opaque long-lived token in a custom header
+  header: Access-Token
+  see: authentication/tiktok-ads-authentication.yml
+idempotency:
+  supported: false
+  header: null
+  note: >-
+    TikTok publishes no idempotency key, no client-supplied request id, and no safe-retry contract for the
+    Marketing API. Retrying a POST such as /campaign/create/ after a timeout can create a duplicate object;
+    there is no documented way to make a write exactly-once. Two adjacent facts are worth recording because
+    they are often mistaken for idempotency and are not: (1) return code 40050 "Duplicated requests have
+    been sent" is server-side duplicate REJECTION, not client-controlled deduplication — the client cannot
+    choose the key or the window; (2) the Appendix documents "Object ID uniqueness" as a data rule about
+    ids, not a request-replay guarantee. On the delivery side TikTok is explicit in the opposite direction:
+    webhooks are at-least-once and the docs tell the CONSUMER to make its own processing idempotent, which
+    is TikTok asking for the property it does not itself provide.
+  duplicate_rejection_code: 40050
+  webhook_delivery: at-least-once — consumers must dedupe
+pagination:
+  style: page-number
+  request_params:
+    page: 1-based page number
+    page_size: page size
+    filtering: JSON-encoded filter object; also the mechanism for bulk reads
+  response_field: data.page_info
+  response_fields:
+    page: current page
+    page_size: page size
+    total_number: total matching records
+    total_page: total pages
+  note: >-
+    Offset/page pagination throughout — no cursors, no Link headers. Read endpoints accept arrays of ids in
+    `filtering` and TikTok's published best practice is to batch ids into one call rather than paginate one
+    id at a time, because rate limits are per request, not per record.
+bulk:
+  supported: true
+  mechanism: pass multiple ids in the `filtering` query object on GET endpoints
+  docs: https://business-api.tiktok.com/portal/docs/rate-limits/v1.3
+async_jobs:
+  pattern: create-task / check-status / download
+  note: >-
+    Long-running work is modelled as an explicit three-call task pattern rather than a callback. Reporting
+    uses /report/task/create/ -> /report/task/check/ -> /report/task/download/; the Change Log uses
+    /changelog/task/create/ -> /changelog/task/check/ -> /changelog/task/download/; campaign copying uses
+    /campaign/copy/task/create/ -> /campaign/copy/task/check/. Poll until status = SUCCESS.
+field_selection:
+  supported: true
+  param: fields
+  note: many read endpoints take a `fields` array to select returned attributes
+metadata:
+  supported: false
+  note: no arbitrary key/value metadata bag on TikTok objects
+request_tracing:
+  response_field: request_id
+  response_headers: [X-TT-LOGID, x-tt-trace-id, x-tt-trace-host]
+  note: >-
+    Every response body carries `request_id`, and the edge additionally returns X-TT-LOGID and a W3C-shaped
+    x-tt-trace-id. Both were observed on a live call on 2026-08-13. Quote request_id on support tickets.
+  webhook_header: x-tt-logid
+versioning:
+  scheme: uri-path
+  current: v1.3
+  see: lifecycle/tiktok-ads-lifecycle.yml
+error_envelope:
+  format: proprietary
+  rfc9457: false
+  http_status_on_error: 200
+  fields: [code, message, request_id, data]
+  see: errors/tiktok-ads-error-codes.yml
+  note: >-
+    The most consequential convention on this API. HTTP status is not the error channel — `code` is. A
+    client that checks response.ok and moves on will treat every TikTok error as a success.
+rate_limit_signalling:
+  response_headers: []
+  error_code: 40100
+  http_status: 200
+  see: rate-limits/tiktok-ads-rate-limits.yml
+  note: no X-RateLimit-*, no RateLimit-*, no Retry-After — exhaustion is only visible in the body
+content_types:
+  request: [application/json, application/x-www-form-urlencoded, multipart/form-data]
+  response: [application/json]
+  note: >-
+    /oauth2/access_token/ takes application/json; the equivalent form-encoded flow is a DIFFERENT endpoint,
+    /oauth/token/. File upload endpoints take multipart/form-data.
+data_types:
+  ids: strings
+  note: >-
+    v1.3 changed ids from numbers to strings (app_id, advertiser_ids). Treat every TikTok id as an opaque
+    string — some exceed the safe integer range.
+cross_links:
+  authentication: authentication/tiktok-ads-authentication.yml
+  scopes: scopes/tiktok-ads-scopes.yml
+  errors: errors/tiktok-ads-error-codes.yml
+  rate_limits: rate-limits/tiktok-ads-rate-limits.yml
+  lifecycle: lifecycle/tiktok-ads-lifecycle.yml
+  webhooks: asyncapi/tiktok-ads-webhooks.yml
+  sandbox: sandbox/tiktok-ads-sandbox.yml

@@ -1,0 +1,1 @@
+{"authorization_servers":["https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth"],"bearer_methods_supported":["header"],"resource":"https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat","scopes_supported":["mcp:tt4b"]}

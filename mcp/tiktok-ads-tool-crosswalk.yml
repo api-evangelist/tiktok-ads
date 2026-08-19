@@ -1,0 +1,2512 @@
+generated: '2026-08-13'
+method: derived
+source: https://business-api.tiktok.com/portal/docs/available-tools-in-tiktok-for-business-mcp-server/v1.3 + openapi/tiktok-ads-marketing-api-openapi.yml
+note: 'TikTok publishes the MCP tool -> REST endpoint binding itself, one row per tool, in the "Available tools in TikTok
+  for Business MCP Server" reference. Every crosswalk row below is that published binding, with the REST operationId resolved
+  against the first-party OpenAPI set. Rows are confidence: high because the provider stated the binding — not because the
+  live tools/list schema was read; tools/list is OAuth-gated (HTTP 401) so per-tool inputSchema requires authenticated introspection.
+  Where a tool is high-confidence bound, its real input contract is the parameters + requestBody of the named operation in
+  the OpenAPI.'
+surfaces:
+  openapi:
+    file: openapi/tiktok-ads-marketing-api-openapi.yml
+    operations: 202
+    gated: false
+  mcp:
+    endpoints:
+    - https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+    - https://business-api.tiktok.com/open_mcp/tt-ads-mcp-layer
+    tools_list_gated: true
+    http_status: 401
+    auth: oauth2 (scope mcp:tt4b)
+  graphql:
+    endpoint: null
+    note: TikTok publishes no GraphQL endpoint for the Marketing API
+coverage:
+  tools_published: 377
+  tools_bound_to_openapi: 191
+  tools_without_openapi_operation: 186
+  rest_operations_total: 202
+  rest_operations_with_a_tool: 191
+crosswalk:
+- tool: adgroup_quota_get
+  category: Ad Group
+  endpoint: /v1.3/adgroup/quota/
+  rest:
+  - Adgroup Quota
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: advertiser_info_get
+  category: Advertiser
+  endpoint: /v1.3/advertiser/info/
+  rest:
+  - Advertiser Info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: advertiser_update
+  category: Advertiser
+  endpoint: /v1.3/advertiser/update/
+  rest:
+  - Advertiser Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_create
+  category: App
+  endpoint: /v1.3/app/create/
+  rest:
+  - App Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_info_get
+  category: App
+  endpoint: /v1.3/app/info/
+  rest:
+  - App Info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_list_get
+  category: App
+  endpoint: /v1.3/app/list/
+  rest:
+  - App List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_optimization_event_get
+  category: App
+  endpoint: /v1.3/app/optimization_event/
+  rest:
+  - App Optimization_event
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_optimization_event_retargeting_get
+  category: App
+  endpoint: /v1.3/app/optimization_event/retargeting/
+  rest:
+  - App Optimization_event Retargeting
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: app_update
+  category: App
+  endpoint: /v1.3/app/update/
+  rest:
+  - App Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: audience_insight_overlap_get
+  category: Audience
+  endpoint: /v1.3/audience/insight/overlap/
+  rest:
+  - Audience Insight Overlap
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_apply
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/apply/
+  rest:
+  - Dmp Custom_audience Apply
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_apply_log_get
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/apply/log/
+  rest:
+  - Dmp Custom_audience Apply Log
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_create
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/create/
+  rest:
+  - Dmp Custom_audience Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_delete
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/delete/
+  rest:
+  - Dmp Custom_audience Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_get
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/get/
+  rest:
+  - Dmp Custom_audience Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_list_get
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/list/
+  rest:
+  - Dmp Custom_audience List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_lookalike_create
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/lookalike/create/
+  rest:
+  - Dmp Custom_audience Lookalike Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_lookalike_update
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/lookalike/update/
+  rest:
+  - Dmp Custom_audience Lookalike Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_rule_create
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/rule/create/
+  rest:
+  - Dmp Custom_audience Rule Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_share_get
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/share/
+  rest:
+  - Dmp Custom_audience Share
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_share_cancel
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/share/cancel/
+  rest:
+  - Dmp Custom_audience Share Cancel
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_share_log_get
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/share/log/
+  rest:
+  - Dmp Custom_audience Share Log
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_custom_audience_update
+  category: Audience
+  endpoint: /v1.3/dmp/custom_audience/update/
+  rest:
+  - Dmp Custom_audience Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_saved_audience_create
+  category: Audience
+  endpoint: /v1.3/dmp/saved_audience/create/
+  rest:
+  - Dmp Saved_audience Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_saved_audience_delete
+  category: Audience
+  endpoint: /v1.3/dmp/saved_audience/delete/
+  rest:
+  - Dmp Saved_audience Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: dmp_saved_audience_list_get
+  category: Audience
+  endpoint: /v1.3/dmp/saved_audience/list/
+  rest:
+  - Dmp Saved_audience List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pangle_audience_package_get
+  category: Audience
+  endpoint: /v1.3/pangle_audience_package/get/
+  rest:
+  - Pangle_audience_package Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pangle_block_list_get
+  category: Audience
+  endpoint: /v1.3/pangle_block_list/get/
+  rest:
+  - Pangle_block_list Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pangle_block_list_update
+  category: Audience
+  endpoint: /v1.3/pangle_block_list/update/
+  rest:
+  - Pangle_block_list Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_account_transaction_get
+  category: Business Center
+  endpoint: /v1.3/bc/account/transaction/get/
+  rest:
+  - Bc Account Transaction Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_admin_delete
+  category: Business Center
+  endpoint: /v1.3/bc/asset/admin/delete/
+  rest:
+  - Bc Asset Admin Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_admin_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/admin/get/
+  rest:
+  - Bc Asset Admin Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_assign
+  category: Business Center
+  endpoint: /v1.3/bc/asset/assign/
+  rest:
+  - Bc Asset Assign
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/get/
+  rest:
+  - Bc Asset Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_member_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/member/get/
+  rest:
+  - Bc Asset Member Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_partner_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/partner/get/
+  rest:
+  - Bc Asset Partner Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_unassign
+  category: Business Center
+  endpoint: /v1.3/bc/asset/unassign/
+  rest:
+  - Bc Asset Unassign
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_group_create
+  category: Business Center
+  endpoint: /v1.3/bc/asset_group/create/
+  rest:
+  - Bc Asset_group Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_group_delete
+  category: Business Center
+  endpoint: /v1.3/bc/asset_group/delete/
+  rest:
+  - Bc Asset_group Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_group_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset_group/get/
+  rest:
+  - Bc Asset_group Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_group_list
+  category: Business Center
+  endpoint: /v1.3/bc/asset_group/list/
+  rest:
+  - Bc Asset_group List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_asset_group_update
+  category: Business Center
+  endpoint: /v1.3/bc/asset_group/update/
+  rest:
+  - Bc Asset_group Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_balance_get
+  category: Business Center
+  endpoint: /v1.3/bc/balance/get/
+  rest:
+  - Bc Balance Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_billing_group_create
+  category: Business Center
+  endpoint: /v1.3/bc/billing_group/create/
+  rest:
+  - Bc Billing_group Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_billing_group_get
+  category: Business Center
+  endpoint: /v1.3/bc/billing_group/get/
+  rest:
+  - Bc Billing_group Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_billing_group_update
+  category: Business Center
+  endpoint: /v1.3/bc/billing_group/update/
+  rest:
+  - Bc Billing_group Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_get
+  category: Business Center
+  endpoint: /v1.3/bc/get/
+  rest:
+  - Bc Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_invoice_unpaid_get
+  category: Business Center
+  endpoint: /v1.3/bc/invoice/unpaid/get/
+  rest:
+  - Bc Invoice Unpaid Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_member_delete
+  category: Business Center
+  endpoint: /v1.3/bc/member/delete/
+  rest:
+  - Bc Member Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_member_get
+  category: Business Center
+  endpoint: /v1.3/bc/member/get/
+  rest:
+  - Bc Member Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_member_invite
+  category: Business Center
+  endpoint: /v1.3/bc/member/invite/
+  rest:
+  - Bc Member Invite
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_member_update
+  category: Business Center
+  endpoint: /v1.3/bc/member/update/
+  rest:
+  - Bc Member Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_partner_add
+  category: Business Center
+  endpoint: /v1.3/bc/partner/add/
+  rest:
+  - Bc Partner Add
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_partner_asset_delete
+  category: Business Center
+  endpoint: /v1.3/bc/partner/asset/delete/
+  rest:
+  - Bc Partner Asset Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_partner_asset_get
+  category: Business Center
+  endpoint: /v1.3/bc/partner/asset/get/
+  rest:
+  - Bc Partner Asset Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_partner_delete
+  category: Business Center
+  endpoint: /v1.3/bc/partner/delete/
+  rest:
+  - Bc Partner Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_partner_get
+  category: Business Center
+  endpoint: /v1.3/bc/partner/get/
+  rest:
+  - Bc Partner Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_pixel_link_get
+  category: Business Center
+  endpoint: /v1.3/bc/pixel/link/get/
+  rest:
+  - Bc Pixel Link Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_pixel_link_update
+  category: Business Center
+  endpoint: /v1.3/bc/pixel/link/update/
+  rest:
+  - Bc Pixel Link Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_pixel_transfer
+  category: Business Center
+  endpoint: /v1.3/bc/pixel/transfer/
+  rest:
+  - Bc Pixel Transfer
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_transaction_get
+  category: Business Center
+  endpoint: /v1.3/bc/transaction/get/
+  rest:
+  - Bc Transaction Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: bc_transfer
+  category: Business Center
+  endpoint: /v1.3/bc/transfer/
+  rest:
+  - Bc Transfer
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_check
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/check/
+  rest:
+  - Blockedword Check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_create
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/create/
+  rest:
+  - Blockedword Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_delete
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/delete/
+  rest:
+  - Blockedword Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_list_get
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/list/
+  rest:
+  - Blockedword List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_task_check
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/task/check/
+  rest:
+  - Blockedword Task Check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_task_create
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/task/create/
+  rest:
+  - Blockedword Task Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: blockedword_update
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/update/
+  rest:
+  - Blockedword Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_available_country_get
+  category: Catalog
+  endpoint: /v1.3/catalog/available_country/get/
+  rest:
+  - Catalog Available_country Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_capitalize_migrate
+  category: Catalog
+  endpoint: /v1.3/catalog/capitalize/
+  rest:
+  - Catalog Capitalize
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_create
+  category: Catalog
+  endpoint: /v1.3/catalog/create/
+  rest:
+  - Catalog Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_delete
+  category: Catalog
+  endpoint: /v1.3/catalog/delete/
+  rest:
+  - Catalog Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_eventsource_bind
+  category: Catalog
+  endpoint: /v1.3/catalog/eventsource/bind/
+  rest:
+  - Catalog Eventsource Bind
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_eventsource_unbind
+  category: Catalog
+  endpoint: /v1.3/catalog/eventsource/unbind/
+  rest:
+  - Catalog Eventsource Unbind
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_eventsource_bind_get
+  category: Catalog
+  endpoint: /v1.3/catalog/eventsource_bind/get/
+  rest:
+  - Catalog Eventsource_bind Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_feed_create
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/create/
+  rest:
+  - Catalog Feed Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_feed_delete
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/delete/
+  rest:
+  - Catalog Feed Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_feed_get
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/get/
+  rest:
+  - Catalog Feed Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_feed_log_get
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/log/
+  rest:
+  - Catalog Feed Log
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_feed_update
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/update/
+  rest:
+  - Catalog Feed Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_get
+  category: Catalog
+  endpoint: /v1.3/catalog/get/
+  rest:
+  - Catalog Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_lexicon_get
+  category: Catalog
+  endpoint: /v1.3/catalog/lexicon/get/
+  rest:
+  - Catalog Lexicon Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_location_currency_get
+  category: Catalog
+  endpoint: /v1.3/catalog/location_currency/get/
+  rest:
+  - Catalog Location_currency Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_overview_get
+  category: Catalog
+  endpoint: /v1.3/catalog/overview/
+  rest:
+  - Catalog Overview
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_product_delete
+  category: Catalog
+  endpoint: /v1.3/catalog/product/delete/
+  rest:
+  - Catalog Product Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_product_file_upload
+  category: Catalog
+  endpoint: /v1.3/catalog/product/file/
+  rest:
+  - Catalog Product File
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_product_log_get
+  category: Catalog
+  endpoint: /v1.3/catalog/product/log/
+  rest:
+  - Catalog Product Log
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_set_delete
+  category: Catalog
+  endpoint: /v1.3/catalog/set/delete/
+  rest:
+  - Catalog Set Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_set_get
+  category: Catalog
+  endpoint: /v1.3/catalog/set/get/
+  rest:
+  - Catalog Set Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_set_product_get
+  category: Catalog
+  endpoint: /v1.3/catalog/set/product/get/
+  rest:
+  - Catalog Set Product Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_set_update
+  category: Catalog
+  endpoint: /v1.3/catalog/set/update/
+  rest:
+  - Catalog Set Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_update
+  category: Catalog
+  endpoint: /v1.3/catalog/update/
+  rest:
+  - Catalog Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_video_delete
+  category: Catalog
+  endpoint: /v1.3/catalog/video/delete/
+  rest:
+  - Catalog Video Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_video_file_upload
+  category: Catalog
+  endpoint: /v1.3/catalog/video/file/
+  rest:
+  - Catalog Video File
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: catalog_video_get
+  category: Catalog
+  endpoint: /v1.3/catalog/video/get/
+  rest:
+  - Catalog Video Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_delete
+  category: Ad Comments
+  endpoint: /v1.3/comment/delete/
+  rest:
+  - Comment Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_list_get
+  category: Ad Comments
+  endpoint: /v1.3/comment/list/
+  rest:
+  - Comment List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_post_create
+  category: Ad Comments
+  endpoint: /v1.3/comment/post/
+  rest:
+  - Comment Post
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_reference_get
+  category: Ad Comments
+  endpoint: /v1.3/comment/reference/
+  rest:
+  - Comment Reference
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_status_update
+  category: Ad Comments
+  endpoint: /v1.3/comment/status/update/
+  rest:
+  - Comment Status Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_task_check
+  category: Ad Comments
+  endpoint: /v1.3/comment/task/check/
+  rest:
+  - Comment Task Check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: comment_task_create
+  category: Ad Comments
+  endpoint: /v1.3/comment/task/create/
+  rest:
+  - Comment Task Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_asset_delete
+  category: Creative
+  endpoint: /v1.3/creative/asset/delete/
+  rest:
+  - Creative Asset Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_asset_share_get
+  category: Creative
+  endpoint: /v1.3/creative/asset/share/
+  rest:
+  - Creative Asset Share
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_image_edit_get
+  category: Creative
+  endpoint: /v1.3/creative/image/edit/
+  rest:
+  - Creative Image Edit
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_portfolio_create
+  category: Creative
+  endpoint: /v1.3/creative/portfolio/create/
+  rest:
+  - Creative Portfolio Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_portfolio_get
+  category: Creative
+  endpoint: /v1.3/creative/portfolio/get/
+  rest:
+  - Creative Portfolio Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_portfolio_list_get
+  category: Creative
+  endpoint: /v1.3/creative/portfolio/list/
+  rest:
+  - Creative Portfolio List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: creative_smart_text_get
+  category: Creative
+  endpoint: /v1.3/creative/smart_text/generate/
+  rest:
+  - Creative Smart_text Generate
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_create
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/create/
+  rest:
+  - Campaign Gmv_max Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_info_get
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/info/
+  rest:
+  - Campaign Gmv_max Info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_session_create
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/session/create/
+  rest:
+  - Campaign Gmv_max Session Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_session_delete
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/session/delete/
+  rest:
+  - Campaign Gmv_max Session Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_session_get
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/session/get/
+  rest:
+  - Campaign Gmv_max Session Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_session_list_get
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/session/list/
+  rest:
+  - Campaign Gmv_max Session List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_session_update
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/session/update/
+  rest:
+  - Campaign Gmv_max Session Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: campaign_gmv_max_update
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/update/
+  rest:
+  - Campaign Gmv_max Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_bid_recommend_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/bid/recommend/
+  rest:
+  - Gmv_max Bid Recommend
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_exclusive_authorization_create
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/exclusive_authorization/create/
+  rest:
+  - Gmv_max Exclusive_authorization Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_exclusive_authorization_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/exclusive_authorization/get/
+  rest:
+  - Gmv_max Exclusive_authorization Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_identity_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/identity/get/
+  rest:
+  - Gmv_max Identity Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_occupied_custom_shop_ads_list_check
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/occupied_custom_shop_ads/list/
+  rest:
+  - Gmv_max Occupied_custom_shop_ads List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_report_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/report/get/
+  rest:
+  - Gmv_max Report Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_store_list_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/store/list/
+  rest:
+  - Gmv_max Store List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_store_shop_ad_usage_check_check
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/store/shop_ad_usage_check/
+  rest:
+  - Gmv_max Store Shop_ad_usage_check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: gmv_max_video_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/video/get/
+  rest:
+  - Gmv_max Video Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: offline_create
+  category: Offline Events
+  endpoint: /v1.3/offline/create/
+  rest:
+  - Offline Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: offline_delete
+  category: Offline Events
+  endpoint: /v1.3/offline/delete/
+  rest:
+  - Offline Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: offline_get
+  category: Offline Events
+  endpoint: /v1.3/offline/get/
+  rest:
+  - Offline Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: offline_update
+  category: Offline Events
+  endpoint: /v1.3/offline/update/
+  rest:
+  - Offline Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_batch_bind_get
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/batch_bind/
+  rest:
+  - Optimizer Rule Batch_bind
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_create
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/create/
+  rest:
+  - Optimizer Rule Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_get
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/get/
+  rest:
+  - Optimizer Rule Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_list_get
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/list/
+  rest:
+  - Optimizer Rule List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_result_get
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/result/get/
+  rest:
+  - Optimizer Rule Result Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_result_list_get
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/result/list/
+  rest:
+  - Optimizer Rule Result List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: optimizer_rule_update
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/update/
+  rest:
+  - Optimizer Rule Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_create
+  category: Pixel
+  endpoint: /v1.3/pixel/create/
+  rest:
+  - Pixel Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_event_create
+  category: Pixel
+  endpoint: /v1.3/pixel/event/create/
+  rest:
+  - Pixel Event Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_event_delete
+  category: Pixel
+  endpoint: /v1.3/pixel/event/delete/
+  rest:
+  - Pixel Event Delete
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_event_update
+  category: Pixel
+  endpoint: /v1.3/pixel/event/update/
+  rest:
+  - Pixel Event Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_list_get
+  category: Pixel
+  endpoint: /v1.3/pixel/list/
+  rest:
+  - Pixel List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: pixel_update
+  category: Pixel
+  endpoint: /v1.3/pixel/update/
+  rest:
+  - Pixel Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: playable_get
+  category: Playble Ads
+  endpoint: /v1.3/playable/get/
+  rest:
+  - Playable Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: playable_save
+  category: Playble Ads
+  endpoint: /v1.3/playable/save/
+  rest:
+  - Playable Save
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: playable_validate
+  category: Playble Ads
+  endpoint: /v1.3/playable/validate/
+  rest:
+  - Playable Validate
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: report_integrated_get
+  category: Reporting
+  endpoint: /v1.3/report/integrated/get/
+  rest:
+  - Report Integrated Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: report_task_cancel
+  category: Reporting
+  endpoint: /v1.3/report/task/cancel/
+  rest:
+  - Report Task Cancel
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: report_task_check
+  category: Reporting
+  endpoint: /v1.3/report/task/check/
+  rest:
+  - Report Task Check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: report_task_create
+  category: Reporting
+  endpoint: /v1.3/report/task/create/
+  rest:
+  - Report Task Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_appeal
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/appeal/
+  rest:
+  - Smart_plus Ad Appeal
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_create
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/create/
+  rest:
+  - Smart_plus Ad Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_get
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/get/
+  rest:
+  - Smart_plus Ad Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_material_status_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/material_status/update/
+  rest:
+  - Smart_plus Ad Material_status Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_review_info_get
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/review_info/
+  rest:
+  - Smart_plus Ad Review_info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_status_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/status/update/
+  rest:
+  - Smart_plus Ad Status Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_ad_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/update/
+  rest:
+  - Smart_plus Ad Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_adgroup_create
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/adgroup/create/
+  rest:
+  - Smart_plus Adgroup Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_adgroup_get
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/adgroup/get/
+  rest:
+  - Smart_plus Adgroup Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_adgroup_status_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/adgroup/status/update/
+  rest:
+  - Smart_plus Adgroup Status Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_adgroup_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/adgroup/update/
+  rest:
+  - Smart_plus Adgroup Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_campaign_create
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/campaign/create/
+  rest:
+  - Smart_plus Campaign Create
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_campaign_get
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/campaign/get/
+  rest:
+  - Smart_plus Campaign Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_campaign_status_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/campaign/status/update/
+  rest:
+  - Smart_plus Campaign Status Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_campaign_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/campaign/update/
+  rest:
+  - Smart_plus Campaign Update
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_material_review_info_get
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/material/review_info/
+  rest:
+  - Smart_plus Material Review_info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_material_report_breakdown_run
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/material_report/breakdown/
+  rest:
+  - Smart_plus Material_report Breakdown
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: smart_plus_material_report_overview_run
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/material_report/overview/
+  rest:
+  - Smart_plus Material_report Overview
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: term_check
+  category: Terms
+  endpoint: /v1.3/term/check/
+  rest:
+  - Term Check
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: term_confirm
+  category: Terms
+  endpoint: /v1.3/term/confirm/
+  rest:
+  - Term Confirm
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: term_get
+  category: Terms
+  endpoint: /v1.3/term/get/
+  rest:
+  - Term Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: search_region_get
+  category: Tools
+  endpoint: /v1.3/search/region/
+  rest:
+  - Search Region
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_bid_recommend
+  category: Tools
+  endpoint: /v1.3/tool/bid/recommend/
+  rest:
+  - Tool Bid Recommend
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_open_url_get
+  category: Tools
+  endpoint: /v1.3/tool/open_url/
+  rest:
+  - Tool Open_url
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_timezone_get
+  category: Tools
+  endpoint: /v1.3/tool/timezone/
+  rest:
+  - Tool Timezone
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_url_validate
+  category: Tools
+  endpoint: /v1.3/tool/url_validate/
+  rest:
+  - Tool Url_validate
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_vbo_status_check
+  category: Tools
+  endpoint: /v1.3/tool/vbo_status/
+  rest:
+  - Tool Vbo_status
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_os_version_get
+  category: Tools
+  endpoint: /v1.3/tool/os_version/
+  rest:
+  - Tool Os_version
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_phone_region_code_get
+  category: Tools
+  endpoint: /v1.3/tool/phone_region_code/
+  rest:
+  - Tool Phone_region_code
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_action_category_get
+  category: Tools
+  endpoint: /v1.3/tool/action_category/
+  rest:
+  - Tool Action_category
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_brand_safety_partner_authorize_status_get
+  category: Tools
+  endpoint: /v1.3/tool/brand_safety/partner/authorize/status/
+  rest:
+  - Tool Brand_safety Partner Authorize Status
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_carrier_get
+  category: Tools
+  endpoint: /v1.3/tool/carrier/
+  rest:
+  - Tool Carrier
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_contextual_tag_get
+  category: Tools
+  endpoint: /v1.3/tool/contextual_tag/get/
+  rest:
+  - Tool Contextual_tag Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_contextual_tag_info_get
+  category: Tools
+  endpoint: /v1.3/tool/contextual_tag/info/
+  rest:
+  - Tool Contextual_tag Info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_hashtag_get
+  category: Tools
+  endpoint: /v1.3/tool/hashtag/get/
+  rest:
+  - Tool Hashtag Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_hashtag_recommend_search
+  category: Tools
+  endpoint: /v1.3/tool/hashtag/recommend/
+  rest:
+  - Tool Hashtag Recommend
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_interest_keyword_get
+  category: Tools
+  endpoint: /v1.3/tool/interest_keyword/get/
+  rest:
+  - Tool Interest_keyword Get
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_targeting_info_get
+  category: Tools
+  endpoint: /v1.3/tool/targeting/info/
+  rest:
+  - Tool Targeting Info
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_targeting_list_get
+  category: Tools
+  endpoint: /v1.3/tool/targeting/list/
+  rest:
+  - Tool Targeting List
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+- tool: tool_targeting_search
+  category: Tools
+  endpoint: /v1.3/tool/targeting/search/
+  rest:
+  - Tool Targeting Search
+  binding: rest
+  confidence: high
+  note: Binding published by TikTok in the Available tools table; operationId verified in openapi/tiktok-ads-marketing-api-openapi.yml
+mcp_only:
+- tool: ad_audience_size_estimate
+  category: Ad
+  endpoint: /v1.3/ad/audience_size/estimate/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ad_create
+  category: Ad
+  endpoint: /v1.3/ad/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ad_get
+  category: Ad
+  endpoint: /v1.3/ad/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ad_review_info_get
+  category: Ad
+  endpoint: /v1.3/ad/review_info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ad_status_update
+  category: Ad
+  endpoint: /v1.3/ad/status/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ad_update
+  category: Ad
+  endpoint: /v1.3/ad/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_appeal
+  category: Ad Group
+  endpoint: /v1.3/adgroup/appeal/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_budget_update
+  category: Ad Group
+  endpoint: /v1.3/adgroup/budget/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_get
+  category: Ad Group
+  endpoint: /v1.3/adgroup/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_review_info_get
+  category: Ad Group
+  endpoint: /v1.3/adgroup/review_info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_rf_create
+  category: Ad Group
+  endpoint: /v1.3/adgroup/rf/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_rf_estimated_info_get
+  category: Ad Group
+  endpoint: /v1.3/adgroup/rf/estimated/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_rf_update
+  category: Ad Group
+  endpoint: /v1.3/adgroup/rf/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: rf_contract_query_get
+  category: Ad Group
+  endpoint: /v1.3/rf/contract/query/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: rf_delivery_timezone_get
+  category: Ad Group
+  endpoint: /v1.3/rf/delivery/timezone/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: rf_inventory_estimate
+  category: Ad Group
+  endpoint: /v1.3/rf/inventory/estimate/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: rf_order_cancel
+  category: Ad Group
+  endpoint: /v1.3/rf/order/cancel/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_status_update
+  category: Ad Group
+  endpoint: /v1.3/adgroup/status/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_create
+  category: Ad Group
+  endpoint: /v1.3/adgroup/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: adgroup_update
+  category: Ad Group
+  endpoint: /v1.3/adgroup/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: advertiser_balance_get
+  category: Advertiser
+  endpoint: /v1.3/advertiser/balance/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: advertiser_transaction_get
+  category: Advertiser
+  endpoint: /v1.3/advertiser/transaction/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: auth_advertiser_get
+  category: Advertiser
+  endpoint: /v1.3/oauth2/advertiser/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: audience_insight_info_get
+  category: Audience
+  endpoint: /v1.3/audience/insight/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: audience_segment_operate
+  category: Audience
+  endpoint: /v1.3/segment/audience/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: asset_bind_quota_get
+  category: Business Center
+  endpoint: /v1.3/asset/bind/quota/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_account_budget_changelog_get
+  category: Business Center
+  endpoint: /v1.3/bc/account/budget/changelog/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_account_cost_get
+  category: Business Center
+  endpoint: /v1.3/bc/account/cost/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_attribute_get
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/attribute/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_create
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_disable
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/disable/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_qualification_get
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/qualification/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_unionpay_info_check
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/unionpay_info/check/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_advertiser_unionpay_info_submit
+  category: Business Center
+  endpoint: /v1.3/bc/advertiser/unionpay_info/submit/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_asset_account_authorization_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/account/authorization/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_asset_advertiser_assign
+  category: Business Center
+  endpoint: /v1.3/bc/asset/advertiser/assign/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_asset_advertiser_assigned_get
+  category: Business Center
+  endpoint: /v1.3/bc/asset/advertiser/assigned/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_asset_advertiser_unassign
+  category: Business Center
+  endpoint: /v1.3/bc/asset/advertiser/unassign/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_billing_group_advertiser_list
+  category: Business Center
+  endpoint: /v1.3/bc/billing_group/advertiser/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_invoice_get
+  category: Business Center
+  endpoint: /v1.3/bc/invoice/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_invoice_task_create
+  category: Business Center
+  endpoint: /v1.3/bc/invoice/task/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_invoice_task_get
+  category: Business Center
+  endpoint: /v1.3/bc/invoice/task/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: bc_invoice_task_list
+  category: Business Center
+  endpoint: /v1.3/bc/invoice/task/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: blockedword_task_download
+  category: Ad Comments - Blocked Words
+  endpoint: /v1.3/blockedword/task/download/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_copy_task_check
+  category: Campaign
+  endpoint: /v1.3/campaign/copy/task/check/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_copy_task_create
+  category: Campaign
+  endpoint: /v1.3/campaign/copy/task/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_create
+  category: Campaign
+  endpoint: /v1.3/campaign/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_get
+  category: Campaign
+  endpoint: /v1.3/campaign/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_quota_info_get
+  category: Campaign
+  endpoint: /v1.3/campaign/quota/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_status_update
+  category: Campaign
+  endpoint: /v1.3/campaign/status/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_update
+  category: Campaign
+  endpoint: /v1.3/campaign/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_feed_switch_update
+  category: Catalog
+  endpoint: /v1.3/catalog/feed/switch/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_insight_category_get
+  category: Catalog
+  endpoint: /v1.3/catalog/insight/category/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_insight_filter_get
+  category: Catalog
+  endpoint: /v1.3/catalog/insight/filter/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_insight_product_get
+  category: Catalog
+  endpoint: /v1.3/catalog/insight/product/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_product_get
+  category: Catalog
+  endpoint: /v1.3/catalog/product/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_product_update
+  category: Catalog
+  endpoint: /v1.3/catalog/product/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_product_upload
+  category: Catalog
+  endpoint: /v1.3/catalog/product/upload/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_set_create
+  category: Catalog
+  endpoint: /v1.3/catalog/set/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_video_log_get
+  category: Catalog
+  endpoint: /v1.3/catalog/video/log/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: catalog_video_package_get
+  category: Catalog
+  endpoint: /v1.3/catalog/video_package/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: diagnostic_catalog_get
+  category: Catalog Diagnostics
+  endpoint: /v1.3/diagnostic/catalog/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: diagnostic_catalog_eventsource_issue_get
+  category: Catalog Diagnostics
+  endpoint: /v1.3/diagnostic/catalog/eventsource/issue/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: diagnostic_catalog_eventsource_metric_get
+  category: Catalog Diagnostics
+  endpoint: /v1.3/diagnostic/catalog/eventsource/metric/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: diagnostic_catalog_product_task_create
+  category: Catalog Diagnostics
+  endpoint: /v1.3/diagnostic/catalog/product/task/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: diagnostic_catalog_product_task_get
+  category: Catalog Diagnostics
+  endpoint: /v1.3/diagnostic/catalog/product/task/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: changelog_get
+  category: Change Log
+  endpoint: /v1.3/changelog/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: changelog_task_check
+  category: Change Log
+  endpoint: /v1.3/changelog/task/check/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: changelog_task_create
+  category: Change Log
+  endpoint: /v1.3/changelog/task/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: changelog_task_download
+  category: Change Log
+  endpoint: /v1.3/changelog/task/download/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: comment_task_download
+  category: Ad Comments
+  endpoint: /v1.3/comment/task/download/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_ads_preview_create
+  category: Creative
+  endpoint: /v1.3/creative/ads_preview/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_auto_message_create
+  category: Creative
+  endpoint: /v1.3/creative/auto_message/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_auto_message_get
+  category: Creative
+  endpoint: /v1.3/creative/auto_message/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_cta_recommend_get
+  category: Creative
+  endpoint: /v1.3/creative/cta/recommend/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_portfolio_delete
+  category: Creative
+  endpoint: /v1.3/creative/portfolio/delete/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: video_fix_task_create
+  category: Creative
+  endpoint: /v1.3/video/fix/task/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: video_fix_task_get
+  category: Creative
+  endpoint: /v1.3/video/fix/task/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: crm_list_get
+  category: CRM Events
+  endpoint: /v1.3/crm/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: crm_create
+  category: CRM Events
+  endpoint: /v1.3/crm/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: ctm_message_event_set_get
+  category: CRM Events
+  endpoint: /v1.3/ctm/message_event_set/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: custom_conversion_create
+  category: Custom Conversions
+  endpoint: /v1.3/custom_conversion/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: custom_conversion_delete
+  category: Custom Conversions
+  endpoint: /v1.3/custom_conversion/delete/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: custom_conversion_get
+  category: Custom Conversions
+  endpoint: /v1.3/custom_conversion/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: custom_conversion_list_get
+  category: Custom Conversions
+  endpoint: /v1.3/custom_conversion/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: custom_conversion_update
+  category: Custom Conversions
+  endpoint: /v1.3/custom_conversion/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_image_ad_info_get
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/image/ad/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_image_ad_search
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/image/ad/search/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_image_ad_update
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/image/ad/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_image_ad_upload
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/image/ad/upload/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_music_get
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/music/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_music_upload
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/music/upload/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_name_check
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/name/check/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_temporarily_upload
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/temporarily/upload/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_video_ad_info_get
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/video/ad/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_video_ad_search
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/video/ad/search/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_video_ad_update
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/video/ad/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_video_ad_upload
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/video/ad/upload/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: file_video_suggestcover_get
+  category: Files (images, videos, and music)
+  endpoint: /v1.3/file/video/suggestcover/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: gmv_max_campaign_get
+  category: GMV Max
+  endpoint: /v1.3/gmv_max/campaign/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: gmv_max_creative_update
+  category: GMV Max
+  endpoint: /v1.3/campaign/gmv_max/creative/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_get
+  category: Identity
+  endpoint: /v1.3/identity/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_info_get
+  category: Identity
+  endpoint: /v1.3/identity/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_live_get
+  category: Identity
+  endpoint: /v1.3/identity/live/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_music_authorization_get
+  category: Identity
+  endpoint: /v1.3/identity/music/authorization/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_video_get
+  category: Identity
+  endpoint: /v1.3/identity/video/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_video_info_get
+  category: Identity
+  endpoint: /v1.3/identity/video/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: identity_native_series_get
+  category: Identity
+  endpoint: /v1.3/identity/native_series/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: lead_field_get
+  category: Leads
+  endpoint: /v1.3/lead/field/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: lead_get
+  category: Leads
+  endpoint: /v1.3/lead/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: optimizer_rule_update_status_update
+  category: Automated Rules
+  endpoint: /v1.3/optimizer/rule/update/status/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: page_field_get
+  category: Page
+  endpoint: /v1.3/page/field/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: page_get
+  category: Page
+  endpoint: /v1.3/page/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: page_lead_task_create
+  category: Page
+  endpoint: /v1.3/page/lead/task/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: page_library_get
+  category: Page
+  endpoint: /v1.3/page/library/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: page_library_transfer
+  category: Page
+  endpoint: /v1.3/page/library/transfer/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_advertiser_get
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/advertiser/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_advertiser_update
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/advertiser/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_create
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_credit_line_update
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/credit_line/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_get
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: payment_portfolio_user_get
+  category: Business Center Payment Portfolio
+  endpoint: /v1.3/payment_portfolio/user/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: pixel_instant_page_event_get
+  category: Pixel
+  endpoint: /v1.3/pixel/instant_page/event/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: creative_report_get
+  category: Reporting
+  endpoint: /v1.3/creative/report/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: report_ad_benchmark_get
+  category: Reporting
+  endpoint: /v1.3/report/ad_benchmark/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: report_task_download
+  category: Reporting
+  endpoint: /v1.3/report/task/download/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: report_video_performance_get
+  category: Reporting
+  endpoint: /v1.3/report/video_performance/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: search_ad_negative_keyword_add
+  category: Negative Keywords
+  endpoint: /v1.3/search_ad/negative_keyword/add/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: search_ad_negative_keyword_delete
+  category: Negative Keywords
+  endpoint: /v1.3/search_ad/negative_keyword/delete/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: search_ad_negative_keyword_get
+  category: Negative Keywords
+  endpoint: /v1.3/search_ad/negative_keyword/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: search_ad_negative_keyword_update
+  category: Negative Keywords
+  endpoint: /v1.3/search_ad/negative_keyword/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: showcase_identity_get
+  category: Showcase
+  endpoint: /v1.3/showcase/identity/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: showcase_product_get
+  category: Showcase
+  endpoint: /v1.3/showcase/product/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: showcase_region_get
+  category: Showcase
+  endpoint: /v1.3/showcase/region/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: smart_plus_ad_preview
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/ad/preview/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: smart_plus_adgroup_budget_update
+  category: Upgraded Smart+
+  endpoint: /v1.3/smart_plus/adgroup/budget/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: spark_ad_recommend_get
+  category: Spark Ads Recommendation
+  endpoint: /v1.3/spark_ad/recommend/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: split_test_create
+  category: Split test
+  endpoint: /v1.3/split_test/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: split_test_end_get
+  category: Split test
+  endpoint: /v1.3/split_test/end/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: split_test_promote_run
+  category: Split test
+  endpoint: /v1.3/split_test/promote/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: split_test_result_get
+  category: Split test
+  endpoint: /v1.3/split_test/result/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: split_test_update
+  category: Split test
+  endpoint: /v1.3/split_test/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: store_list_get
+  category: TikTok Shop
+  endpoint: /v1.3/store/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: store_product_get
+  category: TikTok Shop
+  endpoint: /v1.3/store/product/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: subscription_get
+  category: Subscription
+  endpoint: /v1.3/subscription/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: subscription_subscribe_create
+  category: Subscription
+  endpoint: /v1.3/subscription/subscribe/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: subscription_unsubscribe_cancel
+  category: Subscription
+  endpoint: /v1.3/subscription/unsubscribe/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: campaign_label_get
+  category: Tools
+  endpoint: /v1.3/campaign_label/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: minis_get
+  category: Tools
+  endpoint: /v1.3/minis/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_diagnosis_get
+  category: Tools
+  endpoint: /v1.3/tool/diagnosis/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_search_diagnosis_health_get
+  category: Tools
+  endpoint: /v1.3/tool/diagnosis/search/health/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_search_keyword_idea_get
+  category: Tools
+  endpoint: /v1.3/tool/search_keyword/keyword_idea/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_search_keyword_recommend
+  category: Tools
+  endpoint: /v1.3/tool/search_keyword/recommend/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_language_get
+  category: Tools
+  endpoint: /v1.3/tool/language/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_region_get
+  category: Tools
+  endpoint: /v1.3/tool/region/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: targeting_search
+  category: Tools
+  endpoint: /v1.3/targeting/search/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tiktok_inventory_filters_get
+  category: Tools
+  endpoint: /v1.3/tiktok_inventory_filters/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tiktok_inventory_filters_update
+  category: Tools
+  endpoint: /v1.3/tiktok_inventory_filters/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_content_exclusion_get
+  category: Tools
+  endpoint: /v1.3/tool/content_exclusion/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_content_exclusion_info_get
+  category: Tools
+  endpoint: /v1.3/tool/content_exclusion/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_device_model_get
+  category: Tools
+  endpoint: /v1.3/tool/device_model/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_interest_category_get
+  category: Tools
+  endpoint: /v1.3/tool/interest_category/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_interest_keyword_recommend_search
+  category: Tools
+  endpoint: /v1.3/tool/interest_keyword/recommend/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tool_targeting_category_recommend_get
+  category: Tools
+  endpoint: /v1.3/tool/targeting_category/recommend/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tt_video_authorize_apply
+  category: Spark Ads Using Authorized Posts
+  endpoint: /v1.3/tt_video/authorize/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tt_video_info_get
+  category: Spark Ads Using Authorized Posts
+  endpoint: /v1.3/tt_video/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tt_video_list_get
+  category: Spark Ads Using Authorized Posts
+  endpoint: /v1.3/tt_video/list/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tt_video_unbind
+  category: Spark Ads Using Authorized Posts
+  endpoint: /v1.3/tt_video/unbind/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_oauth2_info_get
+  category: TikTok One
+  endpoint: /v1.3/tto/oauth2/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_oauth2_tcm_get
+  category: TikTok One
+  endpoint: /v1.3/tto/oauth2/tcm/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_anchor_create
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/anchor/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_anchor_delete
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/anchor/delete/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_anchor_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/anchor/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_brand_profile_create
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/brand/profile/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_brand_profile_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/brand/profile/get/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_campaign_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/campaign/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_campaign_create
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/campaign/create/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_campaign_link
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/campaign/link/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_campaign_link_status_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/campaign/link/status/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_campaign_update
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/campaign/update/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_category_label_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/category/label/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_rank_get
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/rank/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tto_tcm_report
+  category: TikTok One
+  endpoint: /v1.3/tto/tcm/report/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tcm_tt_video_apply
+  category: TikTok One
+  endpoint: /v1.3/tcm/tt_video/apply/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: tcm_tt_video_status_get
+  category: TikTok One
+  endpoint: /v1.3/tcm/tt_video/status/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+- tool: user_info_get
+  category: User
+  endpoint: /v1.3/user/info/
+  reason: TikTok publishes this endpoint in the MCP tool table, but it is not among the 202 operations in the first-party
+    SDK OpenAPI set; the contract for it exists only in the HTML API reference
+rest_only:
+- capability: Audience
+  operations:
+  - Dmp Custom_audience File Upload
+- capability: Campaign Creation
+  operations:
+  - Gmv_max Custom_anchor_video_list Get
+- capability: Creative Management
+  operations:
+  - Creative Shareable_link Create
+  - Discovery Detail
+  - Discovery Trending_list
+  - Playable Delete
+  - Playable Upload
+- capability: Measurement
+  operations:
+  - Pixel Event Stats
+- capability: untagged
+  operations:
+  - Bc Create
+  - Bc Image Upload
+  - Bc Member Assign

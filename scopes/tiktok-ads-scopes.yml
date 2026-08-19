@@ -1,0 +1,993 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs?id=1753986142651394
+docs: https://business-api.tiktok.com/portal/docs?id=1753986142651394
+model: numeric-scope-ids
+note: 'TikTok''s Marketing API does not use string OAuth scopes. Permissions are NUMERIC scope IDs returned in the
+  `scope` array of the /oauth2/access_token/ response, organised in a three-level hierarchy: granting a first-level
+  ID implies every second- and third-level permission beneath it. The developer selects the permission set when
+  creating the developer app; the advertiser approves it at authorization time, and the token carries only what
+  the advertiser actually approved — not what the developer requested. This artifact is method: searched because
+  derive-oauth-scopes.py found zero oauth2 securitySchemes in the first-party OpenAPI set (the specs declare only
+  the Access-Token header), so the scope model exists only in the docs.'
+token_field: data.scope (number[])
+grant_docs:
+  authorization: https://business-api.tiktok.com/portal/docs?id=1738373141733378
+  authentication: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  app_permissions: https://business-api.tiktok.com/portal/docs?id=1738855280338946
+mcp_scope:
+  scope: mcp:tt4b
+  note: The TikTok for Business MCP Server uses one conventional string scope, mcp:tt4b, advertised in its RFC 9728
+    / RFC 8414 metadata (see well-known/). It is a different scheme from the numeric Marketing API scope IDs and
+    is granted per TikTok for Business user, for 30 days.
+counts:
+  first_level: 21
+  second_level: 74
+  third_level: 72
+  total: 167
+first_level:
+- scope: '1'
+  name: Ad Account Management
+  endpoints: []
+- scope: '2'
+  name: Ads Management
+  endpoints: []
+- scope: '3'
+  name: Audience Management
+  endpoints: []
+- scope: '4'
+  name: Reporting
+  endpoints: []
+- scope: '5'
+  name: Measurement
+  endpoints: []
+- scope: '6'
+  name: Creative Management
+  endpoints: []
+- scope: '7'
+  name: App Management
+  endpoints: []
+- scope: '8'
+  name: Pixel Management
+  endpoints: []
+- scope: '9'
+  name: DPA Catalog Management
+  endpoints: []
+- scope: '10000'
+  name: Reach & Frequency
+  endpoints: []
+- scope: '12000000'
+  name: Lead Management
+  endpoints: []
+- scope: '13000000'
+  name: TikTok Creator Marketplace (TCM)
+  endpoints: []
+- scope: '14000000'
+  name: TikTok Creator
+  endpoints: []
+- scope: '15000000'
+  name: Ad Comments
+  endpoints: []
+- scope: '16000000'
+  name: TikTok business plugin
+  endpoints: []
+- scope: '17000000'
+  name: Automated Rules
+  endpoints: []
+- scope: '18000000'
+  name: TikTok Accounts
+  endpoints: []
+- scope: '19000000'
+  name: Onsite Commerce Store
+  endpoints:
+  - /commerce/store/create/
+  - /commerce/store/bind_to_catalog/
+  - /commerce/window/update/
+  - /commerce/store/get/
+  - /commerce/store/product/get/
+  - /commerce/store/trusted_create/
+  - /store/list/
+- scope: '7043626160646946818'
+  name: Offline Events Management
+  endpoints: []
+- scope: '7050363942434013185'
+  name: Ad Diagnosis
+  endpoints: []
+- scope: '7294180478502830081'
+  name: CRM Event Management
+  endpoints: []
+second_level:
+- scope: '10'
+  name: Ad Account Information
+  endpoints: []
+  parent: '1'
+- scope: '12'
+  name: Terms and Agreements
+  endpoints: []
+  parent: '1'
+- scope: '13'
+  name: Pangle Block List Management
+  endpoints: []
+  parent: '1'
+- scope: '14'
+  name: Pangle Audience Packages
+  endpoints: []
+  parent: '1'
+- scope: '15'
+  name: Business Center
+  endpoints: []
+  parent: '1'
+- scope: '20'
+  name: Campaign
+  endpoints: []
+  parent: '2'
+- scope: '21'
+  name: Ad Group
+  endpoints: []
+  parent: '2'
+- scope: '22'
+  name: Ad
+  endpoints: []
+  parent: '2'
+- scope: '23'
+  name: Change Log
+  endpoints: []
+  parent: '2'
+- scope: '24'
+  name: Split Test
+  endpoints: []
+  parent: '2'
+- scope: '7133464587805982722'
+  name: Search Ads
+  endpoints: []
+  parent: '2'
+- scope: '30'
+  name: Read Custom Audiences
+  endpoints:
+  - /dmp/custom_audience/list/
+  - /dmp/custom_audience/get/
+  - /dmp/saved_audience/list/
+  parent: '3'
+- scope: '31'
+  name: Create and Update Custom Audiences
+  endpoints:
+  - /dmp/custom_audience/file/upload/
+  - /dmp/custom_audience/create/
+  - /dmp/custom_audience/update/
+  - /dmp/custom_audience/delete/
+  - /dmp/custom_audience/rule/create/
+  - /dmp/custom_audience/lookalike/create/
+  - /segment/audience/
+  - /segment/mapping/
+  - /dmp/custom_audience/apply/
+  - /dmp/custom_audience/apply/log/
+  - /dmp/custom_audience/lookalike/update/
+  - /dmp/saved_audience/delete/
+  - /dmp/saved_audience/create/
+  parent: '3'
+- scope: '32'
+  name: Share Custom Audiences
+  endpoints:
+  - /dmp/custom_audience/share/cancel/
+  - /dmp/custom_audience/share/log/
+  - /dmp/custom_audience/share/
+  parent: '3'
+- scope: '40'
+  name: Ad Account Level
+  endpoints: []
+  parent: '4'
+- scope: '41'
+  name: Campaign Level
+  endpoints: []
+  parent: '4'
+- scope: '42'
+  name: Ad Group Level
+  endpoints: []
+  parent: '4'
+- scope: '43'
+  name: Ad Level
+  endpoints: []
+  parent: '4'
+- scope: '44'
+  name: Consolidated Report
+  endpoints:
+  - /report/integrated/get/
+  - /report/task/download/
+  - /report/task/create/
+  - /report/task/check/
+  - /report/subscription/subscribe/
+  - /report/subscription/unsubscribe/
+  - /report/subscription/update/
+  - /report/subscription/get/
+  - /campaign/spc/report/get/
+  parent: '4'
+- scope: '7043626160646815746'
+  name: Ad Insight Report
+  endpoints:
+  - /report/ad_benchmark/get/
+  - /report/video_performance/get/
+  parent: '4'
+- scope: '7231011733974859777'
+  name: Creative Fatigue Insight
+  endpoints:
+  - /creative_fatigue/get/
+  parent: '4'
+- scope: '50'
+  name: Report App Event
+  endpoints:
+  - /app/track/
+  - /app/batch/
+  parent: '5'
+- scope: '51'
+  name: Report Pixel Event
+  endpoints:
+  - /pixel/track/
+  - /pixel/batch/
+  parent: '5'
+- scope: '7224195155857866754'
+  name: Report Conversion Event
+  endpoints:
+  - /event/track/
+  parent: '5'
+- scope: '60'
+  name: Image Management
+  endpoints: []
+  parent: '6'
+- scope: '61'
+  name: Video Management
+  endpoints: []
+  parent: '6'
+- scope: '62'
+  name: Video Template
+  endpoints:
+  - /video_template/task/create/
+  - /video_template/status/get/
+  parent: '6'
+- scope: '63'
+  name: Music management
+  endpoints: []
+  parent: '6'
+- scope: '64'
+  name: Creative tool
+  endpoints:
+  - /creative/status/get/
+  - /creative/quick_optimization/create/
+  - /creative/smart_video/create/
+  - /creative/ads_preview/create/
+  - /creative/video_soundtrack/create/
+  - /creative/image/edit/
+  - /creative/asset/share/
+  parent: '6'
+- scope: '65'
+  name: Get Creative Report
+  endpoints:
+  - /creative/report/get/
+  parent: '6'
+- scope: '66'
+  name: Playable Ads
+  endpoints: []
+  parent: '6'
+- scope: '67'
+  name: Creative Material Verification
+  endpoints: []
+  parent: '6'
+- scope: '68'
+  name: Instant Page Management
+  endpoints: []
+  parent: '6'
+- scope: '69'
+  name: TikTok Posts Management
+  endpoints: []
+  parent: '6'
+- scope: '6110000'
+  name: Creative Recommendation
+  endpoints: []
+  parent: '6'
+- scope: '7050363942434078721'
+  name: Dynamic Scene
+  endpoints: []
+  parent: '6'
+- scope: '7130572512626360322'
+  name: Smart Fix
+  endpoints: []
+  parent: '6'
+- scope: '7176833266039685122'
+  name: File Name Check
+  endpoints: []
+  parent: '6'
+- scope: '70'
+  name: App Management
+  endpoints: []
+  parent: '7'
+- scope: '80'
+  name: Pixel Management
+  endpoints: []
+  parent: '8'
+- scope: '90'
+  name: Catalog Management
+  endpoints: []
+  parent: '9'
+- scope: '91'
+  name: Product Management
+  endpoints: []
+  parent: '9'
+- scope: '92'
+  name: DPA Set Management
+  endpoints: []
+  parent: '9'
+- scope: '94'
+  name: Catalog Video Management
+  endpoints: []
+  parent: '9'
+- scope: '95'
+  name: Template
+  endpoints: []
+  parent: '9'
+- scope: '96'
+  name: Event Source Bind
+  endpoints: []
+  parent: '9'
+- scope: '97'
+  name: Feed
+  endpoints: []
+  parent: '9'
+- scope: '7224195155857915906'
+  name: Diagnostic
+  endpoints: []
+  parent: '9'
+- scope: '100000'
+  name: Create and Update Ad Groups
+  endpoints:
+  - /adgroup/rf/create/
+  - /adgroup/rf/update/
+  - /adgroup/rf/estimated/info/
+  parent: '10000'
+- scope: '100001'
+  name: Inventory and Orders
+  endpoints:
+  - /rf/inventory/estimate/
+  - /rf/order/cancel/
+  parent: '10000'
+- scope: '100002'
+  name: Tools
+  endpoints:
+  - /rf/contract/query/
+  - /rf/delivery/timezone/
+  parent: '10000'
+- scope: '12010000'
+  name: Leads Retrieval
+  endpoints: []
+  parent: '12000000'
+- scope: '12020000'
+  name: Test Leads
+  endpoints: []
+  parent: '12000000'
+- scope: '13010000'
+  name: Create and Update TCM Account
+  endpoints:
+  - /tcm/order/create/v2/
+  parent: '13000000'
+- scope: '13020000'
+  name: Read TCM Account
+  endpoints:
+  - /tcm/creator/discover/
+  - /tcm/similar/creator/
+  - /tcm/report/get/
+  parent: '13000000'
+- scope: '13030000'
+  name: Get Creators Onboarding Status and Invite Creators to TCM
+  endpoints:
+  - /tcm/creator/invite/
+  - /tcm/creator/status/get/
+  parent: '13000000'
+- scope: '13040000'
+  name: Send Spark Ads Invitation to Creators and Get the Status
+  endpoints:
+  - /tcm/spark_ad/apply/
+  - /tcm/spark_ad/status/get/
+  - /tcm/tt_video/status/
+  - /tcm/tt_video/apply/
+  parent: '13000000'
+- scope: '14010000'
+  name: Creator User
+  endpoints: []
+  parent: '14000000'
+- scope: '14020000'
+  name: Creator Media
+  endpoints: []
+  parent: '14000000'
+- scope: '14030000'
+  name: Creator Order
+  endpoints: []
+  parent: '14000000'
+- scope: '15010000'
+  name: Ad Comment Management
+  endpoints: []
+  parent: '15000000'
+- scope: '15020000'
+  name: Blocked Word Management
+  endpoints: []
+  parent: '15000000'
+- scope: '17010000'
+  name: Create and Update Automated Rules
+  endpoints:
+  - /optimizer/rule/create/
+  - /optimizer/rule/update/
+  - /optimizer/rule/batch_bind/
+  - /optimizer/rule/update/status/
+  parent: '17000000'
+- scope: '17020000'
+  name: Read Automated Rules and their Execution Results
+  endpoints:
+  - /optimizer/rule/get/
+  - /optimizer/rule/list/
+  - /optimizer/rule/result/get/
+  - /optimizer/rule/result/list/
+  parent: '17000000'
+- scope: '18010000'
+  name: Business User
+  endpoints: []
+  parent: '18000000'
+- scope: '18020000'
+  name: Business Media
+  endpoints:
+  - /business/video/list/
+  parent: '18000000'
+- scope: '18030000'
+  name: Business Comment
+  endpoints: []
+  parent: '18000000'
+- scope: '7044139020472942593'
+  name: Business Content
+  endpoints: []
+  parent: '18000000'
+- scope: '7050363942434095105'
+  name: Create/Manage Offline Events
+  endpoints:
+  - /offline/create/
+  - /offline/update/
+  - /offline/delete/
+  parent: '7043626160646946818'
+- scope: '7050363942434127873'
+  name: Report Offline Events One by One
+  endpoints:
+  - /offline/track/
+  parent: '7043626160646946818'
+- scope: '7068127621543919617'
+  name: Report Offline Events in Bulk
+  endpoints:
+  - /offline/batch/
+  parent: '7043626160646946818'
+- scope: '7224195155857833986'
+  name: Read Offline Events
+  endpoints:
+  - /offline/get/
+  parent: '7043626160646946818'
+- scope: '7050363942434029569'
+  name: Get and Adopt Diagnosis Suggestion
+  endpoints:
+  - /tool/diagnosis/get/
+  parent: '7050363942434013185'
+- scope: '7294180478502846465'
+  name: Read CRM Event Sets
+  endpoints:
+  - /crm/list/
+  parent: '7294180478502830081'
+third_level:
+- scope: '100'
+  name: Read Ad Account Information
+  endpoints:
+  - /advertiser/info/
+  - /oauth2/advertiser/get/
+  parent: '10'
+- scope: '120'
+  name: Terms and Agreements
+  endpoints:
+  - /term/get/
+  - /term/check/
+  - /term/confirm/
+  parent: '12'
+- scope: '130'
+  name: Pangle Block List Management
+  endpoints:
+  - /pangle_block_list/get/
+  - /pangle_block_list/update/
+  parent: '13'
+- scope: '140'
+  name: Pangle Audience Packages
+  endpoints:
+  - /pangle_audience_package/get/
+  parent: '14'
+- scope: '150'
+  name: Read Business Center
+  endpoints:
+  - /bc/get/
+  - /bc/balance/get/
+  - /bc/transaction/get/
+  parent: '15'
+- scope: '151'
+  name: Create Ad Account
+  endpoints:
+  - /bc/image/upload/
+  - /bc/advertiser/create/
+  - /advertiser/update/
+  - /bc/advertiser/disable/
+  - /bc/advertiser/qualification/get/
+  parent: '15'
+- scope: '152'
+  name: Ad Account Balance and Transaction
+  endpoints:
+  - /bc/transfer/
+  - /advertiser/balance/get/
+  - /advertiser/transaction/get/
+  parent: '15'
+- scope: '153'
+  name: Business Center Asset
+  endpoints:
+  - /bc/asset/get/
+  - /bc/asset/admin/get/
+  - /bc/asset/assign/
+  - /bc/asset/unassign/
+  - /bc/asset/partner/get/
+  - /bc/asset/member/get/
+  - /bc/asset/admin/delete/
+  - /bc/pixel/link/update/
+  - /bc/pixel/link/get/
+  - /bc/pixel/transfer/
+  - /asset/bind/quota/
+  parent: '15'
+- scope: '155'
+  name: Business Center Partner Management
+  endpoints:
+  - /bc/partner/asset/get/
+  - /bc/partner/delete/
+  - /bc/partner/add/
+  - /bc/partner/get/
+  - /bc/partner/asset/delete/
+  parent: '15'
+- scope: '156'
+  name: Business Center Member Management
+  endpoints:
+  - /bc/member/delete/
+  - /bc/member/update/
+  - /bc/member/get/
+  - /bc/member/invite/
+  parent: '15'
+- scope: '157'
+  name: Business Center Billing Group Management
+  endpoints:
+  - /bc/billing_group/update/
+  - /bc/billing_group/get/
+  - /bc/billing_group/create/
+  - /bc/billing_group/advertiser/list/
+  parent: '15'
+- scope: '7078191955347259394'
+  name: Invoice Management
+  endpoints:
+  - /bc/invoice/task/create/
+  - /bc/invoice/get/
+  - /bc/invoice/download/
+  - /bc/invoice/task/get/
+  - /bc/invoice/unpaid/get/
+  - /bc/invoice/task/list/
+  parent: '15'
+- scope: '7153155400966176769'
+  name: Asset Group
+  endpoints:
+  - /bc/asset_group/create/
+  - /bc/asset_group/get/
+  - /bc/asset_group/update/
+  - /bc/asset_group/list/
+  - /bc/asset_group/delete/
+  parent: '15'
+- scope: '200'
+  name: Read Campaigns
+  endpoints:
+  - /campaign/get/
+  - /campaign/quota/get/
+  - /campaign/quota/info/
+  - /campaign/spc/get/
+  - /campaign/copy/task/check/
+  parent: '20'
+- scope: '201'
+  name: Create and Update Campaigns
+  endpoints:
+  - /campaign/create/
+  - /campaign/update/
+  - /campaign/status/update/
+  - /campaign/spc/create/
+  - /campaign/spc/update/
+  - /campaign/copy/task/create/
+  parent: '20'
+- scope: '210'
+  name: Read Ad Groups
+  endpoints:
+  - /adgroup/get/
+  - /adgroup/review_info/
+  - /adgroup/quota/
+  parent: '21'
+- scope: '211'
+  name: Create and Update Ad Groups
+  endpoints:
+  - /adgroup/create/
+  - /adgroup/update/
+  - /ad/audience_size/estimate/
+  - /adgroup/status/update/
+  - /adgroup/budget/update/
+  parent: '21'
+- scope: '220'
+  name: Read Ads
+  endpoints:
+  - /ad/get/
+  - /ad/review_info/
+  - /ad/aco/get/
+  - /showcase/product/get/
+  - /showcase/identity/get/
+  - /showcase/region/get/
+  parent: '22'
+- scope: '221'
+  name: Create and Update Ads
+  endpoints:
+  - /ad/create/
+  - /ad/update/
+  - /ad/aco/create/
+  - /ad/aco/update/
+  - /ad/status/update/
+  - /ad/aco/material_status/update/
+  parent: '22'
+- scope: '230'
+  name: Change Log
+  endpoints:
+  - /changelog/task/create/
+  - /changelog/task/download/
+  - /changelog/task/check/
+  parent: '23'
+- scope: '240'
+  name: Split Test
+  endpoints:
+  - /split_test/promote/
+  - /split_test/result/get/
+  - /split_test/create/
+  - /split_test/end/
+  - /split_test/update/
+  parent: '24'
+- scope: '7133464587805999106'
+  name: Negative Keywords
+  endpoints:
+  - /search_ad/negative_keyword/download/
+  - /search_ad/negative_keyword/add/
+  - /search_ad/negative_keyword/delete/
+  - /search_ad/negative_keyword/update/
+  - /search_ad/negative_keyword/get/
+  parent: '7133464587805982722'
+- scope: '600'
+  name: Read Image Library
+  endpoints:
+  - /file/image/ad/search/
+  - /file/image/ad/info/
+  parent: '60'
+- scope: '601'
+  name: Create and Update Images
+  endpoints:
+  - /file/image/ad/upload/
+  - /file/image/ad/update/
+  parent: '60'
+- scope: '610'
+  name: Read Video Library
+  endpoints:
+  - /file/video/ad/search/
+  - /file/video/ad/info/
+  parent: '61'
+- scope: '611'
+  name: Create and Update Videos
+  endpoints:
+  - /file/video/ad/upload/
+  - /file/video/ad/update/
+  parent: '61'
+- scope: '612'
+  name: Generate Thumbnails for Videos
+  endpoints:
+  - /file/video/suggestcover/
+  parent: '61'
+- scope: '630'
+  name: Read music library
+  endpoints:
+  - /file/music/get/
+  parent: '63'
+- scope: '631'
+  name: Upload music file
+  endpoints:
+  - /file/music/upload/
+  parent: '63'
+- scope: '660'
+  name: Read Playable Ads
+  endpoints:
+  - /playable/get/
+  - /playable/validate/
+  parent: '66'
+- scope: '661'
+  name: Create/Manage Playable Ads
+  endpoints:
+  - /playable/upload/
+  - /playable/save/
+  - /playable/delete/
+  parent: '66'
+- scope: '680'
+  name: Instant Page Management
+  endpoints:
+  - /page/get/
+  parent: '68'
+- scope: '690'
+  name: Query TikTok Posts
+  endpoints:
+  - /tt_video/info/
+  parent: '69'
+- scope: '691'
+  name: Authorize TikTok Posts
+  endpoints:
+  - /tt_video/authorize/
+  - /tt_video/unbind/
+  - /tt_video/list/
+  parent: '69'
+- scope: '692'
+  name: Create Identity
+  endpoints:
+  - /identity/create/
+  parent: '69'
+- scope: '693'
+  name: Query Identity
+  endpoints:
+  - /identity/get/
+  - /identity/info/
+  - /identity/video/get/
+  - /identity/video/info/
+  - /identity/music/authorization/
+  - /identity/live/get/
+  parent: '69'
+- scope: '7176842096345694209'
+  name: Delete Identity
+  endpoints:
+  - /identity/delete/
+  parent: '69'
+- scope: '6110100'
+  name: CTA Recommendation
+  endpoints:
+  - /creative/portfolio/create/
+  - /creative/portfolio/get/
+  - /creative/cta/recommend/
+  - /creative/portfolio/list/
+  parent: '6110000'
+- scope: '6110200'
+  name: Smart Text
+  endpoints:
+  - /creative/smart_text/generate/
+  - /creative/smart_text/feedback/
+  parent: '6110000'
+- scope: '7043626160646864898'
+  name: Core Functions
+  endpoints:
+  - /dynamic_scene/material/submit/
+  - /dynamic_scene/task/create/
+  - /dynamic_scene/get/
+  - /dynamic_scene/task/get/
+  - /dynamic_scene/report/get/
+  parent: '7050363942434078721'
+- scope: '7132385893100437506'
+  name: Fix Task management
+  endpoints:
+  - /video/fix/task/create/
+  - /video/fix/task/get/
+  parent: '7130572512626360322'
+- scope: '700'
+  name: Read Apps
+  endpoints:
+  - /app/list/
+  - /app/info/
+  - /app/optimization_event/
+  - /app/optimization_event/retargeting/
+  parent: '70'
+- scope: '701'
+  name: Create and Update Apps
+  endpoints:
+  - /app/create/
+  - /app/update/
+  parent: '80'
+- scope: '800'
+  name: Read Pixels
+  endpoints:
+  - /pixel/list/
+  parent: '80'
+- scope: '801'
+  name: Create and Update Pixels
+  endpoints:
+  - /pixel/create/
+  - /pixel/update/
+  - /pixel/event/create/
+  - /pixel/event/update/
+  - /pixel/event/delete/
+  - /pixel/instant_page/event/
+  parent: '80'
+- scope: '802'
+  name: Pixel Level Reporting
+  endpoints:
+  - /pixel/event/stats/
+  parent: '80'
+- scope: '900'
+  name: Read Catalogs
+  endpoints:
+  - /catalog/get/
+  - /catalog/lexicon/get/
+  - /catalog/overview/
+  - /catalog/location_currency/get/
+  - /catalog/available_country/get/
+  parent: '90'
+- scope: '901'
+  name: Create and Update Catalog
+  endpoints:
+  - /catalog/create/
+  - /catalog/update/
+  - /catalog/delete/
+  - /catalog/capitalize/
+  parent: '90'
+- scope: '910'
+  name: Read Products
+  endpoints:
+  - /catalog/product/get/
+  - /catalog/product/log/
+  parent: '91'
+- scope: '911'
+  name: Create and Update Product
+  endpoints:
+  - /catalog/product/upload/
+  - /catalog/product/delete/
+  - /catalog/product/file/
+  - /catalog/product/update/
+  parent: '91'
+- scope: '920'
+  name: Get Catalog Set
+  endpoints:
+  - /catalog/set/get/
+  - /catalog/set/product/get/
+  parent: '92'
+- scope: '921'
+  name: Post Catalog Set
+  endpoints:
+  - /catalog/set/create/
+  - /catalog/set/update/
+  - /catalog/set/delete/
+  parent: '92'
+- scope: '940'
+  name: Get Catalog Video
+  endpoints:
+  - /catalog/video_package/get/
+  parent: '94'
+- scope: '941'
+  name: Post Catalog Video
+  endpoints:
+  - /catalog/video_package/update/
+  - /catalog/video_package/create/
+  - /catalog/video_package/delete/
+  parent: '94'
+- scope: '950'
+  name: Template
+  endpoints:
+  - /catalog/template/upload/
+  - /catalog/template_preview/create/
+  parent: '95'
+- scope: '960'
+  name: Read Event Source Bind
+  endpoints:
+  - /catalog/eventsource_bind/get/
+  - /diagnostic/catalog/eventsource/metric/
+  - /diagnostic/catalog/eventsource/issue/
+  parent: '96'
+- scope: '961'
+  name: Create and Delete Event Source Bind
+  endpoints:
+  - /catalog/eventsource/bind/
+  - /catalog/eventsource/unbind/
+  parent: '96'
+- scope: '970'
+  name: Get Feed
+  endpoints:
+  - /catalog/feed/get/
+  - /catalog/feed/log/
+  parent: '97'
+- scope: '971'
+  name: Post Feed
+  endpoints:
+  - /catalog/feed/create/
+  - /catalog/feed/update/
+  - /catalog/feed/delete/
+  - /catalog/feed/switch/
+  parent: '97'
+- scope: '12010100'
+  name: Leads Retrieval
+  endpoints:
+  - /page/field/get/
+  - /page/lead/get/
+  parent: '12010000'
+- scope: '12020100'
+  name: Test Leads
+  endpoints:
+  - /page/lead/mock/create/
+  - /page/lead/mock/get/
+  - /page/lead/mock/delete/
+  - /page/field/get/
+  - /page/lead/task/download/
+  - /page/lead/task/
+  parent: '12020000'
+- scope: '14010100'
+  name: Get Creator Basic Info
+  endpoints: []
+  parent: '14010000'
+- scope: '14010200'
+  name: Get Creator Insights
+  endpoints:
+  - /tcm/creator/public/
+  - /tcm/creator/authorized/
+  parent: '14010000'
+- scope: '14020100'
+  name: Get Creator Media
+  endpoints:
+  - /tcm/creator/public/video/list/
+  - /tcm/creator/authorized/video/list/
+  parent: '14020000'
+- scope: '15010100'
+  name: Read Comments
+  endpoints:
+  - /comment/list/
+  - /comment/reference/
+  - /comment/task/create/
+  - /comment/task/check/
+  - /comment/task/download/
+  parent: '15010000'
+- scope: '15010200'
+  name: Write Comments
+  endpoints:
+  - /comment/status/update/
+  - /comment/delete/
+  - /comment/post/
+  parent: '15010000'
+- scope: '15020100'
+  name: Read Blocked Words
+  endpoints:
+  - /blockedword/list/
+  - /blockedword/task/create/
+  - /blockedword/task/check/
+  - /blockedword/task/download/
+  - /blockedword/check/
+  parent: '15020000'
+- scope: '15020200'
+  name: Write Blocked Words
+  endpoints:
+  - /blockedword/create/
+  - /blockedword/update/
+  - /blockedword/delete/
+  parent: '15020000'
+- scope: '18010100'
+  name: Get Business User Basic Info
+  endpoints:
+  - /business/get/
+  parent: '18010000'
+- scope: '18030100'
+  name: Get Business Comment
+  endpoints:
+  - /business/comment/reply/list/
+  - /business/comment/list/
+  parent: '18030000'
+- scope: '18030200'
+  name: Manage Business Comment
+  endpoints:
+  - /business/comment/create/
+  - /business/comment/delete/
+  - /business/comment/hide/
+  - /business/comment/reply/create/
+  - /business/comment/like/
+  parent: '18030000'
+- scope: '7050363942433996801'
+  name: Video Publish
+  endpoints:
+  - /business/video/publish/
+  - /business/hashtag/suggestion/
+  parent: '7044139020472942593'

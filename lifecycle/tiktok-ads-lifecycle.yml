@@ -1,0 +1,83 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs?id=1740029169927169
+versioning:
+  scheme: uri-path
+  current: v1.3
+  introduced: '2022-08-15'
+  docs: https://business-api.tiktok.com/portal/docs?id=1740029169927169
+  policy: >-
+    Breaking changes land only in a new version; older versions receive no breaking changes. Developers get
+    a stated migration window (a year for v1.2 to v1.3), after which the old version is deprecated and
+    calls to it fail. After the v1.3 release no further updates are made to v1.2 — all new features go to
+    v1.3. Documentation carries a version dropdown and deprecated versions are marked as such.
+  timelines_docs: https://business-api.tiktok.com/portal/docs?id=1740578661644289
+  versions:
+    - version: v1.3
+      introduced: '2022-08-15'
+      available_until: TBD
+      status: current
+    - version: v1.2
+      introduced: '2021-03-19'
+      available_until: '2023-08-15'
+      status: deprecated
+    - version: v1.1
+      introduced: '2020-08-19'
+      available_until: '2021-07-29'
+      status: retired
+    - version: v1.0
+      introduced: null
+      available_until: '2021-01-20'
+      status: retired
+deprecation:
+  policy_url: https://business-api.tiktok.com/portal/docs?id=1740029169927169
+  timelines_url: https://business-api.tiktok.com/portal/docs?id=1740578661644289
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  signalling: >-
+    Deprecation is announced in the Versioning / Timelines docs and in the What's New changelog, and
+    marked in documentation titles (endpoint groups carry a literal "(To be deprecated)" or "(Deprecated)"
+    prefix in the docs tree — for example "(Deprecated) Dynamic Scene", "(To be deprecated) Legacy Smart+",
+    "(To-be-deprecated) Create Video Shopping Ads with products from TikTok Commerce"). There is no
+    machine-readable signal: no Sunset or Deprecation response header, and no `deprecated: true` flag on
+    any of the 202 operations in the first-party OpenAPI set.
+  deprecated_operations: []
+  deprecated_doc_sections:
+    - (Deprecated) Dynamic Scene
+    - (To be deprecated) Legacy Smart+
+    - (To be deprecated) Create a Legacy Smart+ Campaign
+    - (To be deprecated) Create Legacy Smart+ Lead Generation Campaigns
+    - (To be deprecated) Create Legacy Smart+ Web Campaigns
+    - (To be deprecated) Create Legacy Smart+ App Campaigns
+    - (To be deprecated) Create Catalog Listing Ads
+    - (To-be-deprecated) Create Product Shopping Ads
+status_page:
+  url: https://business-api.tiktok.com/portal/api-service-status
+  docs: https://business-api.tiktok.com/portal/docs?id=1847461383861378
+  http_status: 200
+  levels: [No Known Issue, Low Disruption, Major Disruption]
+  incident_history_days: 90
+  notification_channels:
+    - kind: rss
+      url: https://business-api.tiktok.com/marketing_api/api/status_page/incident/rss/
+      http_status: 200
+      verified: >-
+        Fetched 2026-08-13; returns a valid RSS 2.0 channel titled "TikTok API for Business Status" with
+        no open incidents at the time of the probe.
+      recommended_poll: every 30 minutes
+    - kind: webhook
+      event: API_SERVICE_STATUS
+      docs: https://business-api.tiktok.com/portal/docs?id=1810521739537409
+      note: filterable by API product
+    - kind: in-portal banner
+sla:
+  url: null
+  uptime_target: null
+  note: >-
+    TikTok publishes no uptime SLA for the Marketing API. The status page references SLOs in its
+    "Major Disruption" definition ("latency exceeds SLOs globally") but does not publish the SLO values.
+support:
+  docs: https://business-api.tiktok.com/portal/docs?id=1795190020378625
+  ticket_platform: https://ads.tiktok.com/athena/requester/boards
+  help_center: https://ads.tiktok.com/help/

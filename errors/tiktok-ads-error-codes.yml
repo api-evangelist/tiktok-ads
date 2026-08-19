@@ -1,0 +1,436 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs?id=1737172488964097
+http_status_docs: https://business-api.tiktok.com/portal/docs?id=1749734684478466
+format: proprietary-envelope
+note: 'TikTok''s Marketing API does NOT use RFC 9457 problem+json, and does not use HTTP status codes to signal
+  application errors. Almost every response is HTTP 200; success or failure is carried by the numeric `code` field
+  in the JSON envelope, and TikTok says explicitly that the return code takes precedence over the HTTP status. A
+  4xx/5xx HTTP status means the request never reached the API logic (wrong path, wrong method, or a server fault).
+  Agents and clients that branch on HTTP status alone will read every TikTok error as a success. There is no `type`
+  URI, no `title`/`detail` split, and no machine-readable error taxonomy in the OpenAPI: all 202 first-party operations
+  declare only a 200 response whose schema is the generic {code, message, request_id, data} envelope.'
+envelope:
+  media_type: application/json
+  fields:
+    code: integer — 0 success, 20001 partial success, 4xxxx client error, 5xxxx service error
+    message: human-readable message; the only place field-level detail appears
+    request_id: unique request/log id — quote this in support tickets
+    data: payload object; {} on error
+  example_success: '{"code": 0, "message": "OK", "request_id": "...", "data": {...}}'
+  example_error: '{"code": 40002, "message": "Missing required field(s): account_id.", "request_id": "..."}'
+  observed: 'A live unauthenticated GET to https://business-api.tiktok.com/open_api/v1.3/advertiser/info/ on 2026-08-13
+    returned HTTP 200 with {"code": 40104, "message": "Access token is null, you should set it in http header with
+    key Access-Token.", "request_id": "...", "data": {}} — confirming the 200-with-error-code envelope in the wild.'
+http_status_handling:
+- class: 2xx
+  meaning: Request reached the API. Check `code`; only 0 (or 20001) is success.
+- class: 4xx
+  meaning: Request is invalid at the HTTP layer — usually a wrong API path or wrong method (a missing trailing slash
+    is the classic cause of 404 page not found).
+- class: 5xx
+  meaning: Server failed to process the request. Wait ~5 minutes and retry; if it repeats, raise a ticket.
+code_ranges:
+  '0': successful
+  '20001': partially successful
+  4xxxx: client-side error — parameters, permissions, auth, quota
+  5xxxx: service error; refer to the response message
+categories:
+- Advertisers
+- Advertising policy related
+- Async task error
+- Authentication related
+- Blocked access
+- File management related
+- General
+- Internal service error
+- Maintenance
+- Rate limit or quota related
+- Return codes for successful calls
+- Runtime error
+- System related
+count: 72
+problems:
+- code: 20001
+  category: Return codes for successful calls
+  description: Partially successful.
+- code: 40000
+  category: General
+  description: The parameters provided are invalid.
+  remediation: Refer to the API documentation for the correct usage of the parameters and try again.
+- code: 40001
+  category: General
+  description: No permission to perform the related operation.
+  example: '`You don''t have permission to operate this catalog:{catalog_id}.`'
+  remediation: Ensure that you have the necessary permissions and try again. To learn about different levels of
+    permission scope, see [Permission scope](https://ads.tiktok.com/marketing_api/docs?id=1753986142651394).
+- code: 40002
+  category: General
+  description: Parameter error. Please see error message for details.
+  causes: 1. The audience was created with an audience size of 0 (less than 1000 matches were found). 2. The audience
+    is currently being updated or under processing.
+  example: '`Time format should be %Y-%m-%dT%H:%M. Please try again.`'
+  remediation: Refer to the API documentation for the correct usage of the parameters and try again.
+- code: 40006
+  category: General
+  description: The specified API version is incompatible with the provided parameters.
+  causes: using a product that is not supported in the specified API version. using an API version that doesn't
+    exist.
+  example: '`The old API version does not support DPA ad.`'
+  remediation: Ensure that you are using the current API version for the provided parameters and try again..
+- code: 40010
+  category: General
+  description: The domain is not supported in the current version of API.
+  remediation: Ensure that the base_url in the request URL is the correct one (https://business-api.tiktok.com/open_api)
+    and try again. To find out the request URL format, refer to [API Reference-Request URL format](https://ads.tiktok.com/marketing_api/docs?id=1735713875563521#item-link-Request%20URL%20format).
+- code: 40051
+  category: General
+  description: Invalid API version.
+  remediation: Ensure that you are using the correct API version and try again.
+- code: 40007
+  category: General
+  description: The operation/object does not exist.
+  causes: specifying an object (campaign, ad group, ad, etc. ) that doesn't exist. specifying a deprecated URL or
+    a file that doesn't exist.
+  example: '`The ad {} does not exist. `'
+  remediation: Ensure that the object you are operating on exists and validate any URLs used, then try again.
+- code: 40008
+  category: General
+  description: The interface (endpoint) has not been implemented.
+  causes: using an endpoint that does not exist. using an unsupported endpoint in sandbox environment.
+  remediation: Ensure that the endpoint path is correct and try again. When testing in the sandbox environment,
+    only use supported endpoints. Refer to [Sandbox accounts - Endpoints supported in sandbox accounts](https://business-api.tiktok.com/portal/docs?id=1738855331457026#item-link-Endpoints%20supported%20in%20sandbox%20accounts)
+    to learn about the supported endpoints.
+- code: 40009
+  category: General
+  description: The parameter or method is not supported in sandbox.
+  example: '`Unsupported data_level in sandbox environment: %s. `'
+  remediation: Ensure the parameter values supported in the sandbox environment and try again.
+- code: 40011
+  category: General
+  description: Too many IDs are provided in a single request.
+  remediation: Reduce the total number of IDs that is queried in a request, or divide the IDs into batches to be
+    queried in multiple requests, then try again.
+- code: 40013
+  category: General
+  description: Sandbox account does not exist.
+  remediation: Refer to [Sandbox accounts](https://ads.tiktok.com/marketing_api/docs?id=1738855331457026) to learn
+    about how to set up your sandbox account and try again.
+- code: 40014
+  category: General
+  description: Requested functionality, operation, or endpoint is not supported in the sandbox environment.
+  remediation: Refer to [Sandbox accounts](https://ads.tiktok.com/marketing_api/docs?id=1738855331457026) for the
+    features and endpoints supported in the sandbox environment. If the functionality, operation, or endpoint is
+    not supported in the sandbox environment, you may need to test it in the production environment.
+- code: 40050
+  category: General
+  description: Duplicated requests have been sent.
+- code: 40052
+  category: General
+  description: ACO material already exists.
+  remediation: Refer to Automated Creative Optimization and Create ACO ads to find out an introduction to Automated
+    Creative Optimization, and a step-by-step guide on how to create ACO ads.
+- code: 40053
+  category: General
+  description: The Video ID is invalid.
+  remediation: Ensure that you are using a valid video ID and try again. To obtain a valid video ID, you can use
+    [/file/video/ad/info/](https://ads.tiktok.com/marketing_api/docs?id=1740050161973250) or [/file/video/ad/search/](https://ads.tiktok.com/marketing_api/docs?id=1740050472224769).
+- code: 40016
+  category: Rate limit or quota related
+  description: Requests made too frequently.
+  causes: The rate limit for the used endpoint at the developer application level has been reached, thus your request
+    is throttled.
+  remediation: Refer to [Rate limits](https://ads.tiktok.com/marketing_api/docs?id=1740029171730433) to learn about
+    global and endpoint-specific rate limits.
+- code: 40100
+  category: Rate limit or quota related
+  description: Requests made too frequently.
+  causes: The rate limit for the endpoint at the developer application level has been reached, thus your request
+    is throttled.
+  remediation: Refer to [Rate limits](https://ads.tiktok.com/marketing_api/docs?id=1740029171730433) to learn about
+    global and endpoint-specific rate limits.
+- code: 40133
+  category: Rate limit or quota related
+  description: Requests made too frequently.
+  causes: The rate limit for the used endpoint at the advertiser level has been reached, thus your request is throttled.
+  example: '`Advertiser ({ID})''s QPS ({current QPS}) reaches QPS limit {QPS limit} for current path, request is
+    temporarily restricted.`'
+  remediation: Lower the number of calls that you make through the advertiser account to the API endpoint per second.
+- code: 40502
+  category: Rate limit or quota related
+  description: The maximum ad limit has been reached.
+  remediation: Try creating an ad in another ad group or campaign, or deleting existing ads.
+- code: 40132
+  category: Rate limit or quota related
+  description: Requests made too frequently for a certain field value.
+  causes: The `pixel_code` (pixel) passed in [/pixel/track/](https://ads.tiktok.com/marketing_api/docs?id=1740858531237890)
+    or [/pixel/batch/](https://ads.tiktok.com/marketing_api/docs?id=1740858565852225) has been denied because you
+    have used the pixel in too many calls, resulting in a QPS limit being imposed on the `pixel_code`, or your access
+    token may have been leaked and used for malicious attacks.
+  example: '`The request QPS is limited by pixel_code''s value.`'
+  remediation: Retry with a new field value for the field mentioned in the error message, or submit a ticket on
+    [Developer Ticket Platform](https://ads.tiktok.com/athena/requester/boards?identify_key=b25033ef7782d41050cbac74f751d547e9d8ad35a39a541a0f0efbbd51fe722f).
+- code: 40110
+  category: Authentication related
+  description: Invalid authorization code.
+  causes: The authorization code is cancelled, is already used or has expired.
+  example: '`The auth_code is canceled. Please re-authorize and try again with a new auth_code.`'
+  remediation: Use a valid authorization code and try again. To learn about how to obtain the authorization code
+    for Marketing API, refer to [Authorization](https://ads.tiktok.com/marketing_api/docs?id=1738373141733378).
+    To learn about how to obtain the authorization code for Accounts API or TikTok Creator Marketplace API, refer
+    to [Accounts-Authorization](https://ads.tiktok.com/marketing_api/docs?id=1738083939371009) and [Creator Marketplace-Get
+    authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450) respectively.
+- code: 40101
+  category: Authentication related
+  description: Invalid parameter values for authentication.
+  causes: Secret and app ID do not match. The authorization code is invalid.
+  example: '`Invalid auth_code. Not able to get long-term access_token with an old auth_code. Please retry with
+    the old auth_code. `'
+  remediation: Ensure that you are using valid values for authentication and try again. To learn about how to generate
+    a long-term access token for Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+    To learn about how to generate an access token for Accounts API or TikTok Creator Marketplace API, refer to
+    [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481) and [Creator Marketplace-Get
+    authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450) respectively.
+- code: 40102
+  category: Authentication related
+  description: The access token has expired. The interface (endpoint) needs to be called with the latest access
+    token.
+  remediation: Use a valid access token and try again. To learn about how to generate a long-term access token for
+    Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). To
+    learn about how to generate an access token for Accounts API or TikTok Creator Marketplace API, refer to [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481)
+    and [Creator Marketplace-Get authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450)
+    respectively.
+- code: 40104
+  category: Authentication related
+  description: The access token is empty.
+  remediation: Use a valid access token and try again. To learn about how to generate a long-term access token for
+    Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). To
+    learn about how to generate an access token for Accounts API or TikTok Creator Marketplace API, refer to [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481)
+    and [Creator Marketplace-Get authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450)
+    respectively.
+- code: 40105
+  category: Authentication related
+  description: Invalid or incorrect access token.
+  remediation: Use a valid access token and try again. To learn about how to generate a long-term access token for
+    Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162). To
+    learn about how to generate an access token for Accounts API or TikTok Creator Marketplace API, refer to [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481)
+    and [Creator Marketplace-Get authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450)
+    respectively.
+- code: 40106
+  category: Authentication related
+  description: The core user is invalid.
+  remediation: Ensure that you are using a valid access token (`Access-Token`) for the specified advertiser ID (`advertiser_id`)
+    and try again. To learn about how to generate a long-term access token for Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+- code: 40103
+  category: Authentication related
+  description: The refresh token has expired.
+  remediation: Use a valid refresh token and try again. To obtain a valid refresh token, request the user to re-authorize
+    their application via the user authorization workflow. To learn about how to generate a new access token and
+    a new refresh token for Accounts API or TikTok Creator Marketplace API, refer to [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481)
+    and [Creator Marketplace-Get authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450)
+    respectively.
+- code: 40107
+  category: Authentication related
+  description: Invalid or incorrect refresh token.
+  causes: using a refresh token to refresh a long-time access token for Marketing API. using an invalid refresh
+    token.
+  remediation: Use a valid refresh token to refresh only the access token for Accounts API or TikTok Creator Marketplace
+    API. To learn about the differences between the access token expiry for Marketing API and that for Accounts
+    API or TikTok Creator Marketplace API, refer to [FAQs](https://ads.tiktok.com/marketing_api/docs?id=1766042058952706).
+- code: 40108
+  category: Authentication related
+  description: Invalid authorization type.
+  example: '` Invalid value for grant_type: {grant_type} is not supported. `'
+  remediation: Use a valid value for `grant_type` and try again. To learn about the supported `grant_type` values
+    for Accounts API or TikTok Creator Marketplace API, refer to [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481)
+    and [Creator Marketplace-Get authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450)
+    respectively.
+- code: 40109
+  category: Authentication related
+  description: Deciphering Error.
+- code: 40112
+  category: Authentication related
+  description: The provided password is incorrect.
+- code: 40113
+  category: Authentication related
+  description: The app has been blocked or does not exist.
+  causes: incorrect App ID. incorrect secret for the App.
+  example: '`The app_id is inconsistent with the token''s app information. Please retry after correcting it. `'
+  remediation: Find the correct App ID and Secret by navigating to [My Apps](https://ads.tiktok.com/marketing_api/apps/)
+    > App Detail > Basic Information, and try again.
+- code: 40115
+  category: Authentication related
+  description: The authentication timestamp has expired.
+  causes: The authorization code is invalid. The Authentication endpoint doesn't match the authorization code.
+  remediation: Ensure that you are using valid values for authentication and try again. To learn about how to generate
+    a long-term access token for Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+    To learn about how to generate an access token for Accounts API or TikTok Creator Marketplace API, refer to
+    [Accounts-Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738084387220481) and [Creator Marketplace-Get
+    authorization from creators](https://ads.tiktok.com/marketing_api/docs?id=1740027719016450) respectively.
+- code: 40116
+  category: Authentication related
+  description: The authentication signature is invalid.
+- code: 40117
+  category: Authentication related
+  description: The specified method cannot be used.
+- code: 40118
+  category: Authentication related
+  description: The app or advertiser is not on the allowlist for accessing the feature.
+  causes: The feature is only available to advertisers in certain countries or regions. The endpoint is allowlist-only,
+    and you haven't applied for allowlisting.
+- code: 40119
+  category: Authentication related
+  description: Developer and advertisers do not belong to the same company.
+  remediation: Ensure that you are using a valid access token (`Access-Token`) for the specified advertiser ID (`advertiser_id`)
+    and try again. To learn about how to generate a long-term access token for Marketing API, refer to [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+- code: 40121
+  category: Authentication related
+  description: The TikTok user is not a TCM (TikTok Creator Marketplace) creator.
+  causes: The endpoint requires the information of a TCM creator, such as the handle name, and the provided information
+    is of a non-TCM creator.
+  remediation: Provide the information of a TCM creator instead or invite the creator to join TCM, then try again.
+    To find out a step-by-step guide on how to invite creators to TCM, refer to [Invite creators to join TTCM](https://ads.tiktok.com/marketing_api/docs?id=1740027740710914).
+- code: 40122
+  category: Authentication related
+  description: The TCM creator is not in valid regions.
+  remediation: Provide the information of a TCM creator in another region or country and try again.
+- code: 40124
+  category: Authentication related
+  description: The developer profile is not filled in and approved.
+  remediation: Visit https://ads.tiktok.com/marketing_api/developer/register to complete your profile. After your
+    profile has been approved, try again. If you encounter any difficulties in getting your profile approved, submit
+    a ticket on [Developer Ticket Platform](https://ads.tiktok.com/athena/requester/boards?identify_key=b25033ef7782d41050cbac74f751d547e9d8ad35a39a541a0f0efbbd51fe722f).
+- code: 40125
+  category: Authentication related
+  description: The developer doesn't have the permission.
+  causes: missing necessary permissions. unsupported fields.
+  remediation: Ensure that you have the necessary permissions and use supported fields, then try again. To learn
+    about different levels of permission scope, see [Permission scope](https://ads.tiktok.com/marketing_api/docs?id=1753986142651394).
+- code: 41001
+  category: Authentication related
+  description: The interface is offline.
+  remediation: Ensure that the endpoint path is correct and supported by the specified API version, then try again.
+- code: 41002
+  category: Authentication related
+  description: The fields provided are not in use.
+  remediation: Refer to the API documentation for the correct usage of the parameters and try again.
+- code: 40065
+  category: Advertising policy related
+  description: The targeting options are not supported for targeting the age group 13-17 in the US.
+  example: '`"Based on one or more of your choices, ad delivery to US audiences will be subject to age targeting
+    restrictions"`'
+  remediation: If you want to target the age group 13-17 in the US, ensure that you only use the supported targeting
+    options and try again. To learn about the supported targeting options in such cases, see [New age restrictions
+    for ads on TikTok](https://business-api.tiktok.com/portal/docs?id=1788755983247362).If you don't want to target
+    the age group 13-17 in the US, manually specify an `age_groups` value that does not contain `AGE_13_17` and
+    try again.
+- code: 40200
+  category: Async task error
+  description: Task error.
+  remediation: Refer to the API documentation for the correct usage of the parameters and try again.
+- code: 40201
+  category: Async task error
+  description: Task is not ready.
+  remediation: Wait for the task to complete and try again.
+- code: 40202
+  category: Runtime error
+  description: Write or update entity conflict.
+  remediation: Retry may resolve this issue.
+- code: 40300
+  category: Advertisers
+  description: The advertiser does not exist or has been deleted.
+  causes: incorrect advertiser ID (`advertiser_id`).
+  remediation: Ensure that the advertiser ID is valid and try again.
+- code: 40301
+  category: Advertisers
+  description: The advertiser cannot be matched.
+  causes: incorrect advertiser ID (`advertiser_id`).
+  remediation: Ensure that the advertiser ID is valid and try again.
+- code: 40700
+  category: Internal service error
+  description: Internal service validation error.
+  remediation: Refer to the API documentation for the correct usage of the parameters and try again.
+- code: 40901
+  category: File management related
+  description: Video transcoding in process.
+  remediation: Wait for the video transcoding to complete and try again.
+- code: 40902
+  category: File management related
+  description: Unable to fetch the URL.
+  remediation: Retry may resolve this issue.
+- code: 40903
+  category: File management related
+  description: The image URL is unavailable.
+  remediation: Retry may resolve this issue.
+- code: 40913
+  category: File management related
+  description: Unable to fetch the image.
+  remediation: Retry may resolve this issue.
+- code: 40905
+  category: File management related
+  description: The file does not exist.
+  remediation: Provide a correct file path or file URL and try again.
+- code: 40906
+  category: File management related
+  description: The file is empty.
+  remediation: Provide a correct file path or file URL and try again.
+- code: 40907
+  category: File management related
+  description: The file is too large.
+  remediation: Reduce the file size below the size limit and try again.
+- code: 40910
+  category: File management related
+  description: The file has expired.
+  remediation: Provide a correct file path or file URL and try again.
+- code: 40914
+  category: File management related
+  description: The file you want to upload is invalid.
+  remediation: Ensure that the file path or file URL is valid and try again.
+- code: 40908
+  category: File management related
+  description: The file type is unsupported.
+  remediation: Ensure that you use a supported file type and try again.
+- code: 40900
+  category: File management related
+  description: The signature we calculated does not match the signature you provided for the file.
+  causes: incorrect signature for the image, video, or music.
+  remediation: Ensure that the signature you provide matches the corresponding file and try again.
+- code: 40909
+  category: File management related
+  description: The encryption type (`calculate_type`) is unsupported.
+  remediation: Ensure that you use a supported `calculate_type` value and try again.
+- code: 40911
+  category: File management related
+  description: The material's name has a duplicate.
+  remediation: Specify a different name for the material and try again. You can use [/file/name/check/](https://ads.tiktok.com/marketing_api/docs?id=1759130033155073)
+    to check whether a file name has been used for an image or a video.
+- code: 40904
+  category: File management related
+  description: Illegal image content.
+  causes: The format of the image is not supported.
+  remediation: Ensure that you use a supported image format and try again.
+- code: 40912
+  category: File management related
+  description: The image URL is unavailable.
+  remediation: Ensure that you are using a valid image URL and try again. To obtain a valid image URL, you can use
+    [/file/image/ad/info/](https://ads.tiktok.com/marketing_api/docs?id=1740051721711618) or [/file/image/ad/search/](https://ads.tiktok.com/marketing_api/docs?id=1740052016789506).
+- code: 40915
+  category: File management related
+  description: The file you want to upload does not meet the specifications.
+  remediation: Ensure that the file meet the specific requirements of the endpoint and try again.
+- code: 41000
+  category: Blocked access
+  description: The client IP is on the banned country list.
+- code: 50000
+  category: System related
+  description: System error
+- code: 50002
+  category: System related
+  description: Error processing request on TikTok side. Please see error message for details.
+- code: 51305
+  category: System related
+  description: Satellite service error.
+- code: 60001
+  category: Maintenance
+  description: The system is in maintenance.
+  remediation: Wait for the maintenance to complete and retry.

@@ -1,0 +1,107 @@
+generated: '2026-08-13'
+method: probed
+source: live GET probes of every host in apis.yml + openapi servers[], 2026-08-13
+note: >-
+  Two things matter in this probe. First, the classic RFC 8615 discovery surface on TikTok's hosts is
+  empty: business-api.tiktok.com returns a hard 404 for every /.well-known/ path, and www.tiktok.com
+  returns HTTP 200 with an identical 32,656-byte single-page-app HTML shell for EVERY path under
+  /.well-known/ (verified against a nonsense control path), which is a soft 404 and NOT a document.
+  Second, TikTok does serve real, machine-readable well-known metadata — but only for its MCP server,
+  at the RFC 9728 path-suffixed locations. Those are recorded below as hits and saved verbatim.
+hosts:
+  - host: https://business-api.tiktok.com
+    documents:
+      - path: /.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-flat
+        status: 200
+        content_type: application/json
+        real_document: true
+        file: tiktok-ads-oauth-protected-resource-mcp-flat.json
+        spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+      - path: /.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-layer
+        status: 200
+        content_type: application/json
+        real_document: true
+        file: tiktok-ads-oauth-protected-resource-mcp-layer.json
+        spec: RFC 9728 OAuth 2.0 Protected Resource Metadata
+      - path: /open_mcp/tt-ads-mcp-flat/oauth/.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        real_document: true
+        file: tiktok-ads-oauth-authorization-server-mcp-flat.json
+        spec: RFC 8414 OAuth 2.0 Authorization Server Metadata
+      - path: /open_mcp/tt-ads-mcp-layer/oauth/.well-known/oauth-authorization-server
+        status: 200
+        content_type: application/json
+        real_document: true
+        file: tiktok-ads-oauth-authorization-server-mcp-layer.json
+        spec: RFC 8414 OAuth 2.0 Authorization Server Metadata
+      - path: /open_mcp/tt-ads-mcp-flat/oauth/.well-known/openid-configuration
+        status: 200
+        content_type: application/json
+        real_document: true
+        file: null
+        note: byte-identical to the RFC 8414 document above; not saved twice
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+      - path: /.well-known/api-catalog
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /.well-known/agent.json
+        status: 404
+  - host: https://www.tiktok.com
+    note: >-
+      Every path below returned HTTP 200 with the same 32,656-byte TikTok web-app HTML shell. A control
+      request to /legal/page/global/nonsense-xyz-check/en returned the same body, proving this host answers
+      200 for any unknown path. Recorded as misses.
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        real_document: false
+        soft_404: true
+      - path: /.well-known/openid-configuration
+        status: 200
+        real_document: false
+        soft_404: true
+      - path: /.well-known/api-catalog
+        status: 200
+        real_document: false
+        soft_404: true
+      - path: /.well-known/ai-plugin.json
+        status: 200
+        real_document: false
+        soft_404: true
+      - path: /.well-known/agent-card.json
+        status: 200
+        real_document: false
+        soft_404: true
+      - path: /.well-known/agent.json
+        status: 200
+        real_document: false
+        soft_404: true
+  - host: https://ads.tiktok.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+  - host: https://developers.tiktok.com
+    documents:
+      - path: /.well-known/security.txt
+        status: 401
+        note: host answers 401 to unauthenticated requests
+summary:
+  hosts_probed: 4
+  paths_probed: 24
+  real_documents: 5
+  security_txt: false
+  agent_card: false
+  api_catalog: false

@@ -1,0 +1,511 @@
+generated: '2026-08-13'
+method: searched
+source: https://business-api.tiktok.com/portal/docs?id=1740029165513730
+docs: https://business-api.tiktok.com/portal/docs?id=1740029165513730
+title: What's New
+scheme: dated entries grouped by month, each tagged with a change type and a product category
+current_version: v1.3
+cadence: continuous — changes land within v1.3 rather than in numbered releases
+note: 'TikTok runs a dated, categorised changelog for the Marketing API rather than semantic releases. Entries carry
+  a change TYPE (product enhancement, new feature, deprecation notice, doc update) and a product CATEGORY, and each
+  links to the specific endpoint doc that changed. Captured here is the recent window only — the live page is the
+  source of truth and runs back several years. Note the contrast with packages/tiktok-ads-packages.yml: the API
+  shipped changes in every month of 2026, while the first-party Python/JavaScript SDKs have not released since 2026-02-27.'
+also:
+  change_log_api: https://business-api.tiktok.com/portal/docs?id=1738811145996290
+  change_log_api_note: Not to be confused with this changelog. TikTok also ships a Change Log API (/changelog/task/create/,
+    /check/, /download/) that returns the ADVERTISER's own audit trail of edits to their ad accounts, campaigns,
+    ad groups and ads — a different thing entirely.
+window:
+  from: '2026-03-06'
+  to: '2026-08-07'
+  entries_captured: 55
+entries:
+- date: August 7th, 2026
+  month: August, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the enum values `CATEGORY` and `SEASONAL` to the response parameter `content_lineup_type`
+    in /tool/contextual_tag/get/ and /tool/contextual_tag/info/. This update lets you retrieve category lineup and
+    seasonal lineup contextual tags for TikTok Pulse ads, helping ads appear alongside top content in the categories
+    or seasonal events you specify.
+  date_iso: '2026-08-07'
+- date: August 7th, 2026
+  month: August, 2026
+  type: Product enhancement
+  category: Accounts
+  change: We have expanded the length limit of the request parameter `text` in /business/comment/create/ and /business/comment/reply/create/
+    from 150 to 1200 characters. The expanded limit makes it easier to publish longer comments, create comment replies,
+    and respond with more context.
+  date_iso: '2026-08-07'
+- date: August 7th, 2026
+  month: August, 2026
+  type: Product enhancement
+  category: Mentions
+  change: We have expanded the length limit of the request parameter `text` in /business/comment/reply/create/ from
+    150 to 1200 characters. The expanded limit makes it easier to publish a longer reply to a mention and respond
+    with more context.
+  date_iso: '2026-08-07'
+- date: July 31st, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added auto-add support for newly generated assets in your Upgraded Smart+ Instant Messaging Ads
+    with Messenger and WhatsApp, controlled by the `creative_auto_add_toggle` parameter in /smart_plus/ad/create/.
+    By tapping into TikTok's latest trending hooks, music, and text, this update supplies high-quality, ready-to-run
+    creatives that deliver alongside your chosen assets, keeping campaigns relevant while reducing manual creative
+    work.
+  date_iso: '2026-07-31'
+- date: July 24th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced the request parameters `app_attribution_source` and `app_data_source` to the Upgraded
+    Smart+ Ad Group endpoints /smart_plus/adgroup/create/, /smart_plus/adgroup/update/, and /smart_plus/adgroup/get/,
+    giving you clear control over the attribution source used as the reporting source of truth and the data source
+    prioritized during delivery. To support eligibility checks and correct configuration, we have added the response
+    parameter `is_attribution_flex_enable` to /app/info/ and /app/list/, and introduced /tool/available/attribution_source/
+    to retrieve the exact attribution sou
+  date_iso: '2026-07-24'
+- date: July 24th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Others
+  change: 'We have released the Verification API with four new endpoints: /account/verification/filetype/ for the
+    accepted document types in a region, /account/verification/upload/ for uploading documents, /account/verification/submit/
+    for submitting the request, and /account/verification/status/ for tracking outcomes. Together they replace a
+    manual, UI-driven workflow with a programmatic path that scales cleanly across markets and accounts. For detailed
+    steps, see Verify your Business Center account or ad account on TikTok.'
+  date_iso: '2026-07-24'
+- date: July 24th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Accounts
+  change: We have released /business/publish/location/ for retrieving the location tags available to a TikTok account,
+    and extended /business/video/publish/ and /business/photo/publish/ with the request parameters `location_id`
+    and `location_name`. Together these additions let you attach a location tag at publish time, helping local audiences
+    and location-based searchers discover your posts more easily.
+  date_iso: '2026-07-24'
+- date: July 17th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We’ve enhanced basic reports so Native growth metrics can be grouped by either one ID dimension, or by
+    an ID dimension together with `stat_time_day`. This gives you more flexibility to break down performance and
+    spot day-by-day trends.
+  date_iso: '2026-07-17'
+- date: July 17th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Creatives
+  change: We added the request parameter `sort_field` to /file/video/ad/search/, enabling you to sort videos by
+    their last updated time in descending order. This makes it easier to surface the most recently refreshed assets
+    when managing large libraries.
+  date_iso: '2026-07-17'
+- date: July 10th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have expanded support for querying TikTok Native Growth metrics using the `ad_id` and `ad_id_v2` dimensions
+    in synchronous basic reports. This enhancement delivers a granular view of campaign impact, empowering you with
+    deeper insights to refine your advertising strategies.
+  date_iso: '2026-07-10'
+- date: July 10th, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: TikTok One
+  change: We have introduced the response parameters `favorites`, `favorites_organic`, and `favorites_paid` to /tto/tcm/report/.
+    With this update, you can distinguish between organic and paid favorites at both the overall and daily levels,
+    enabling more precise performance analysis for your TikTok One Creator Marketplace videos.
+  date_iso: '2026-07-10'
+- date: July 3rd, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: 'We have rolled out support for the Upgraded Smart+ TikTok Growth Max: Drama Series campaign, allowing
+    you to promote a TikTok Series directly within your ads. Powered by TikTok Growth Max''s high-intent audience
+    targeting, the campaign turns episodic viewing into incremental in-app engagement, purchases, and stronger ROI.'
+  date_iso: '2026-07-03'
+- date: July 3rd, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: MCP
+  change: We have introduced the TikTok for Business MCP Server, giving you a direct bridge between AI agents and
+    the TikTok Ads platform. From campaign creation and audience targeting to real-time bidding adjustments and
+    performance reporting, agents can now execute the complete advertising workflow, boosting operational efficiency
+    and unlocking new automation possibilities for your team.
+  date_iso: '2026-07-03'
+- date: July 3rd, 2026
+  month: July, 2026
+  type: Product enhancement
+  category: Skill Management
+  change: We have launched the My Skills module in the TikTok for Business Developers portal, enabling you to upload
+    your Skills and publish them to the TikTok for Business Agentic Hub. As the centralized marketplace for AI-powered
+    automated advertising solutions on TikTok, the Agentic Hub helps you distribute your Skills to a broader audience.
+    For details, see Skill management.
+  date_iso: '2026-07-03'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded placement options for Upgraded Smart+ Ad Groups by supporting the new `tiktok_subplacements`
+    parameter in /smart_plus/adgroup/create/, /smart_plus/adgroup/update/, and /smart_plus/adgroup/get/ endpoints.
+    With this parameter, your ads can now run on Lemon8 and PineDrama, two app environments where audiences engage
+    in immersive, high-attention experiences that lift performance.
+  date_iso: '2026-06-26'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the request parameter `ad_material_id` to /smart_plus/adgroup/update/, letting you streamline
+    non-creative ad modifications. This update saves you the effort of re-entering all related parameters and keeps
+    your update workflow lean.
+  date_iso: '2026-06-26'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded the Upgraded Smart+ Ad endpoints /smart_plus/ad/create/, /smart_plus/ad/update/, and
+    /smart_plus/ad/get/ with the new `playable_list` parameter for Playable Ads. The format invites users to interact
+    with an app demo in-feed, transforming passive impressions into high-intent engagement that drives better conversion
+    outcomes.
+  date_iso: '2026-06-26'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced the parameter `product_card_type` to the Upgraded Smart+ Ad endpoints /smart_plus/ad/create/,
+    /smart_plus/ad/update/, and /smart_plus/ad/get/. With this addition, the product card display type for Upgraded
+    Smart+ E-commerce Catalog Ads becomes fully configurable, giving you greater creative flexibility to showcase
+    products in the format that drives the strongest engagement.
+  date_iso: '2026-06-26'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the request parameter `call_to_action_id` to /smart_plus/ad/preview/, allowing you to preview
+    your Dynamic CTA in Upgraded Smart+ Ads. This pre-launch visibility helps validate creative variants and reduces
+    costly post-launch adjustments.
+  date_iso: '2026-06-26'
+- date: June 26th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: TikTok One
+  change: We haveintroduced the parameter `tiktok_account_url` to /tto/tcm/brand/profile/create/ and /tto/tcm/brand/profile/get/.
+    By linking TikTok accounts to your TikTok One Brand Profiles, brands in sensitive industries can tap into creator
+    collaboration on TikTok One, with delivery automatically routed to age-appropriate audiences.
+  date_iso: '2026-06-26'
+- date: June 18th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: TikTok One
+  change: We have added the response parameters `engagement_rate_organic`, `engagement_rate_paid`, `likes_organic`,
+    `likes_paid`, `comments_organic`, `comments_paid`, `shares_organic`, and `shares_paid` to the `daily_stats`
+    object array in /tto/tcm/report/. This enhancement provides a detailed breakdown of daily organic versus paid
+    metrics for engagement rate, likes, comments, and shares across your TikTok One Creator Marketplace campaign
+    videos.
+  date_iso: '2026-06-18'
+- date: June 18th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Accounts
+  change: We have introduced the parameter `text` to the comment.update webhook event schema. By including comment
+    content directly in webhook notifications, this update simplifies how you track and respond to comment activity
+    on your TikTok account.
+  date_iso: '2026-06-18'
+- date: June 18th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Others
+  change: We have added the request parameter `exclude_adsonly` to /identity/video/get/, allowing you to exclude
+    ads-only posts from the results. This gives you more precise control over the content returned when retrieving
+    posts under an identity.
+  date_iso: '2026-06-18'
+- date: June 12th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced two new endpoints, /smart_plus/campaign/copy/task/create/ and /smart_plus/campaign/copy/task/check/,
+    for copying Upgraded Smart+ Campaigns asynchronously. This feature accelerates your ad creation workflow by
+    letting you duplicate existing campaign configurations with ease. To learn about the steps, see Copy an Upgraded
+    Smart+ Campaign.
+  date_iso: '2026-06-12'
+- date: June 12th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have supported creating and previewing Upgraded Smart+ Streaming Ads with the Multi-Show format by
+    adding the enum value `MULTI_SHOW` to the `catalog_media_settings` parameter in the Upgraded Smart+ Ad endpoints
+    /smart_plus/ad/create/, /smart_plus/ad/update/, /smart_plus/ad/get/, and /smart_plus/ad/preview/. This dynamic
+    carousel experience features an auto-playing set of video tiles populated from your catalog, maximizing product
+    visibility and engagement. To learn about how to create such ads, see Create Upgraded Smart+ Streaming Ads.
+  date_iso: '2026-06-12'
+- date: June 12th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have introduced the dimension `minis_id` and the attribute metrics `minis_name` and `optimization_event`
+    to synchronous basic reports. These additions allow you to monitor Mini Games and Mini Drama ad performance
+    by each TikTok Minis, as well as track Value-Based Optimization for in-app purchases (VBO IAP) and Value-Based
+    Optimization for in-app advertising (VBO IAA) ads separately for more granular performance insights.
+  date_iso: '2026-06-12'
+- date: June 5th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced the parameters `viewability_postbid_partner`, `viewability_vast_url`, `brand_safety_postbid_partner`,
+    and `brand_safety_vast_url` to the Upgraded Smart+ Ad endpoints (/smart_plus/ad/create/, /smart_plus/ad/update/,
+    and /smart_plus/ad/get/). These additions allow you to configure post-bid third-party viewability and brand
+    safety measurement settings for your regular Upgraded Smart+ Web Campaigns and Upgraded Smart+ E-commerce Catalog
+    Ads, allowing you to independently measure the visibility and brand safety of your ads.
+  date_iso: '2026-06-05'
+- date: June 5th, 2026
+  month: June, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have added TikTok Native Growth metrics to synchronous basic reports, enabling you to monitor both
+    the paid and organic performance of your Upgraded Smart+ Minis Campaigns. This enhancement provides a holistic
+    view of campaign impact, giving you deeper insights to refine your campaign strategies.
+  date_iso: '2026-06-05'
+- date: May 29th, 2026
+  month: May, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced four new endpoints, /gmv_max/creation/custom_anchor_video_list/create/, /gmv_max/creation/custom_anchor_video_list/get/,
+    /gmv_max/creation/custom_anchor_video_list/delete/, and /gmv_max/creation/shop_video/video_anchors/, enabling
+    you to create, retrieve, and delete shop-level customized TikTok posts and retrieve product linkage details
+    for videos at both the shop and campaign levels. These enhancements streamline product-video pairing at the
+    Shop level and ensure videos are automatically added to related campaigns when the linked product is part of
+    an active campaign.
+  date_iso: '2026-05-29'
+- date: May 22nd, 2026
+  month: May, 2026
+  type: Product enhancement
+  category: Others
+  change: We have introduced two new response parameters, `template_name` and `supported_objectives`, to /page/get/.
+    With this enhancement, you can quickly identify the campaign objectives supported by a given page template and
+    integrate instant pages into your ads with greater confidence and speed.
+  date_iso: '2026-05-22'
+- date: May 15th, 2026
+  month: May, 2026
+  type: Product enhancement
+  category: Accounts
+  change: We have enhanced the /business/video/list/ endpoint by adding `is_ad` as a response parameter and as a
+    supported field in the `fields` request parameter. This update allows you to determine if a post is currently
+    being promoted as an ad. The added visibility streamlines the process of monitoring Spark Ads performance and
+    selecting posts that can be authorized for advertising.
+  date_iso: '2026-05-15'
+- date: May 8th, 2026
+  month: May, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have enhanced our Pulse ad groups by introducing support for the 6s view-through rate (View+) optimization
+    goal. This is available in TikTok Pulse ad groups when `optimization_goal` is set to `REACH` and `cpv_video_duration`
+    is set to `SIX_SECONDS` in the /adgroup/rf/create/ endpoint. Additionally, a new view-optimized delivery strategy
+    is available through the enum value `VIEW_OPTIMIZE` for the `delivery_mode` parameter in the /adgroup/rf/create/,
+    /adgroup/rf/update/, and /adgroup/get/ endpoints, empowering you to maximize view-through rates and capture
+    greater audience attention.
+  date_iso: '2026-05-08'
+- date: April 24th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded support for interaction add-ons to regular Upgraded Smart+ Web Campaigns and Upgraded
+    Smart+ E-commerce Catalog Ads. You can now manage these add-ons using the `interactive_add_on_list` parameter
+    in the /smart_plus/ad/create/ and /smart_plus/ad/update/ endpoints, helping you drive more engagement. Learn
+    how to create a regular Upgraded Smart+ Web Campaign and Upgraded Smart+ E-commerce Catalog Ads with this feature.
+  date_iso: '2026-04-24'
+- date: April 24th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Reporting
+  change: 'We have enhanced our reporting capabilities by adding three new social metrics: `cost_per_consideration`,
+    `new_consideration_rate`, and `new_consideration_size`. These metrics are now available in both basic reports
+    and Upgraded Smart+ Creative Overview Reports, providing you with deeper insights into your consideration audience.'
+  date_iso: '2026-04-24'
+- date: April 24th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Tools
+  change: We have expanded our keyword discovery capabilities by extending regional support for the /tool/search_keyword/keyword_idea/
+    endpoint in 11 additional regions. You can now research keyword ideas in more markets, such as the United Kingdom,
+    France, and Canada, gaining greater insight into local search trends.
+  date_iso: '2026-04-24'
+- date: April 17th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded age targeting options for Upgraded Smart+ App Install and App Retargeting campaigns.
+    You can now target users aged 13-17 by using the new enum value `AGE_13_17` for the `age_groups` parameter and
+    `ALL` for `spc_audience_age` across the /smart_plus/adgroup/create/, /smart_plus/adgroup/update/, and /smart_plus/adgroup/get/
+    endpoints.
+  date_iso: '2026-04-17'
+- date: April 17th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have broadened support for retargeting custom audiences in Upgraded Smart+ campaigns, specifically
+    for Catalog Ads for App and E-commerce Catalog Ads. You can now leverage the parameters `shopping_ads_retargeting_type`,
+    `shopping_ads_retargeting_actions_days`, `included_custom_actions`, `excluded_custom_actions`, and `shopping_ads_retargeting_custom_audience_relation`
+    in the /smart_plus/adgroup/create/, /smart_plus/adgroup/update/, and /smart_plus/adgroup/get/ endpoints to re-engage
+    audiences based on specific behavior in these ads.
+  date_iso: '2026-04-17'
+- date: April 10th, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded tracking functionalities for Upgraded Smart+ App Install and App Retargeting campaigns
+    by incorporating `tracking_pixel_id` and `tracking_offline_event_set_ids` to the /smart_plus/ad/create/, /smart_plus/ad/update/,
+    and /smart_plus/ad/get/ endpoints. This enhancement helps you measure a full spectrum of user engagement, covering
+    both online website activities like add-to-cart and offline events like in-store purchases.
+  date_iso: '2026-04-10'
+- date: April 3rd, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have enhanced Upgraded Smart+ Catalog Ads for Website and App Optimization by introducing custom audience
+    retargeting. You can now leverage the new parameters `shopping_ads_retargeting_type`, `shopping_ads_retargeting_actions_days`,
+    `included_custom_actions`, `excluded_custom_actions`, and `shopping_ads_retargeting_custom_audience_relation`
+    in the /smart_plus/adgroup/create/, /smart_plus/adgroup/update/, and /smart_plus/adgroup/get/ endpoints to re-engage
+    audiences based on specific behavior.
+  date_iso: '2026-04-03'
+- date: April 3rd, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced the /campaign/gmv_max/creative/update/ endpoint to streamline creative management for
+    GMV Max Campaigns. You can now easily remove or add back creatives in your Product or Live GMV Max Campaigns,
+    ensuring your advertising efforts remain agile and effective.
+  date_iso: '2026-04-03'
+- date: April 3rd, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Reporting
+  change: 'We have expanded reporting capabilities for Product GMV Max Campaigns by adding two new dimension groups
+    for creative-level metrics: `&#91;"campaign_id","item_group_id","item_id","stat_time_day"&#93;` and `&#91;"item_id","stat_time_day"&#93;`.
+    These additions allow for more granular performance tracking and optimization. Learn more about metrics in GMV
+    Max Campaign reports.'
+  date_iso: '2026-04-03'
+- date: April 3rd, 2026
+  month: April, 2026
+  type: Product enhancement
+  category: Developer Experience
+  change: We have updated our developer documentation links to be more semantic and descriptive. These new links
+    are based on the document's title and content, making it easier for you to identify the information you will
+    see at a glance.
+  date_iso: '2026-04-03'
+- date: March 27th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have introduced new parameters `product_titles`, `product_image_list`, `catalog_tag_list`, `promo_info_list`,
+    and `product_info_enabled` to the /smart_plus/ad/create/, /smart_plus/ad/update/, and /smart_plus/ad/get/ endpoints.
+    By incorporating product details and promo code or offer details into your Upgraded Smart+ Ads, you can leverage
+    our system to generate tailored ad variations, ultimately improving ad performance and highlighting offers to
+    drive user engagement.
+  date_iso: '2026-03-27'
+- date: March 27th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have enhanced synchronous audience reports by adding the dimensions `bucket_id` and `stat_time_hour`,
+    along with the `cost` metric. This allows you to group reporting data by Real-Time API bucket ID, empowering
+    you to fine-tune your real-time bidding strategies based on the user characteristics of different buckets and
+    assess various approaches across traffic segments.
+  date_iso: '2026-03-27'
+- date: March 20th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have enhanced our Basic reports with new TikTok metrics for deeper insights into user actions like
+    purchases, ad revenue, and subscriptions. This update empowers you to track key performance indicators more
+    effectively. For a detailed comparison, please see the " Comparing v1.2 and v1.3 " section in Basic reports
+    > Supported metrics.
+  date_iso: '2026-03-20'
+- date: March 20th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Reporting
+  change: We have launched the Reporting Subscription API, which allows you to monitor changes to reporting metrics
+    like `spend`, `impressions`, `clicks`, and `video_play_actions`. This new tool provides minute-level notifications
+    for your ad accounts, empowering faster, data-driven decisions.
+  date_iso: '2026-03-20'
+- date: March 20th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Business Center
+  change: We have rolled out several enhancements to streamline your management of Payment Portfolios. Key updates
+    include adding the `payment_portfolio_id` parameter to /bc/balance/get/ for balance retrieval and to /bc/transfer/
+    for transfers, which now also details participant accounts through the response parameters `payee_account` and
+    `remitter_account`. Furthermore, we added the `payment_portfolio_type` response field to key endpoints, including
+    /advertiser/balance/get/, /payment_portfolio/create/, and /payment_portfolio/get/, enabling clearer identification
+    of Advanced and Standard Payment Portfol
+  date_iso: '2026-03-20'
+- date: March 13th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have rolled out updates to give you better control over your Spark Ads Push content. You can now retrieve
+    `ads_only_mode` and `username` from /identity/get/ and the `username` from /identity/info/. Furthermore, /advertiser/info/
+    now supports `ads_only_mode` to help you verify the ad account’s mandatory "Show through ads only" mode status
+    and prevent accidental profile posts from Spark Ads Push.
+  date_iso: '2026-03-13'
+- date: March 13th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have enhanced our Upgraded Smart+ E-commerce Catalog Ads capabilities. The Upgraded Smart+ Ads endpoints
+    (/smart_plus/ad/create/, /smart_plus/ad/update/, and /smart_plus/ad/get/) now support `catalog_creative_info`,
+    `identity_authorized_bc_id`, and new identity types `TT_USER` and `BC_AUTH_TT` for the parameter `identity_type`
+    within `ad_configuration`. This allows you to leverage Spark Ads for catalog creatives with more flexible media
+    settings.
+  date_iso: '2026-03-13'
+- date: March 13th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have enhanced the ad preview functionality for Upgraded Smart+ E-commerce Catalog Ads. The /smart_plus/ad/preview/
+    endpoint now accepts `identity_authorized_bc_id` and `catalog_creative_info` parameters, along with the `TT_USER`
+    and `BC_AUTH_TT` identity types. This enhancement allows you to accurately preview your E-commerce Catalog Ads
+    using Spark Ads with more flexible media settings before launch.
+  date_iso: '2026-03-13'
+- date: March 6th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have expanded the maximum size of the `item_group_ids` request parameter from 50 to 400 for the /campaign/gmv_max/create/
+    and /campaign/gmv_max/update/ endpoints. This enhancement allows you to include significantly more products
+    in a single Product GMV Max Campaign, streamlining your campaign management.
+  date_iso: '2026-03-06'
+- date: March 6th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the `quantity` parameter to the response of the /store/product/get/ endpoint. This new field
+    provides the product count from your TikTok Shop, a useful metric for planning and executing Product GMV Max
+    Campaigns.
+  date_iso: '2026-03-06'
+- date: March 6th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the `accelerate_testing_for_new_videos` parameter across our GMV Max Campaign API endpoints,
+    including /campaign/gmv_max/create/, /campaign/gmv_max/update/, and /campaign/gmv_max/info/. This feature allows
+    you to prioritize performance testing for new, recently authorized, and updated videos within your GMV Max Campaigns.
+  date_iso: '2026-03-06'
+- date: March 6th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have enhanced the ad account creation process via the /bc/advertiser/create/ endpoint. It now accepts
+    a `payment_info` request parameter and returns `payment_portfolio_binding_result` and `budget_setup_result`,
+    allowing for simultaneous Payment Portfolio linking and budget configuration.
+  date_iso: '2026-03-06'
+- date: March 6th, 2026
+  month: March, 2026
+  type: Product enhancement
+  category: Campaign Management
+  change: We have added the `amount_info` request parameter to the /bc/transfer/ endpoint. This allows you to specify
+    the exact cash, voucher, or credit amount to be processed at the ad account level, offering more precise fund
+    transfers.
+  date_iso: '2026-03-06'

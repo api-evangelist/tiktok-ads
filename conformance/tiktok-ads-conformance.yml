@@ -1,0 +1,102 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/tiktok-ads-marketing-api-openapi.yml , well-known/tiktok-ads-well-known.yml ,
+  authentication/tiktok-ads-authentication.yml , errors/tiktok-ads-error-codes.yml ,
+  conventions/tiktok-ads-conventions.yml
+note: >-
+  The interesting result is the split down the middle of this provider. The MCP server is built on current
+  standards and actually serves the discovery documents to prove it. The REST Marketing API next to it
+  conforms to almost nothing beyond OpenAPI 3.0 itself — proprietary token header, proprietary error
+  envelope, HTTP status not used to signal errors, no problem+json, no idempotency, no standard rate-limit
+  headers. Both surfaces belong to the same product.
+standards:
+  - id: openapi-3.0
+    conforms: true
+    evidence: >-
+      TikTok publishes 202 per-operation OpenAPI 3.0.1 documents in yml_files/ of its own SDK repo,
+      github.com/tiktok/tiktok-business-api-sdk — the swagger-codegen inputs for its Java/Python/JS SDKs.
+  - id: openapi-3.1
+    conforms: false
+    evidence: documents declare openapi 3.0.1
+  - id: mcp
+    conforms: true
+    evidence: >-
+      Two live remote MCP endpoints under business-api.tiktok.com/open_mcp/, both answering a JSON-RPC
+      tools/list POST with HTTP 401 + WWW-Authenticate carrying an RFC 9728 resource_metadata pointer.
+  - id: rfc9728-oauth-protected-resource-metadata
+    conforms: true
+    evidence: >-
+      GET /.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-flat returns 200 with
+      authorization_servers, bearer_methods_supported, resource and scopes_supported.
+  - id: rfc8414-oauth-authorization-server-metadata
+    conforms: true
+    evidence: >-
+      GET /open_mcp/tt-ads-mcp-flat/oauth/.well-known/oauth-authorization-server returns 200 with issuer,
+      authorization_endpoint, token_endpoint, jwks_uri, registration_endpoint, revocation_endpoint.
+  - id: rfc7591-dynamic-client-registration
+    conforms: true
+    evidence: registration_endpoint published in the authorization server metadata
+  - id: rfc7636-pkce
+    conforms: true
+    evidence: code_challenge_methods_supported ["S256"]
+  - id: oidc-discovery
+    conforms: partial
+    evidence: >-
+      /open_mcp/tt-ads-mcp-flat/oauth/.well-known/openid-configuration returns 200, but with a body
+      byte-identical to the OAuth authorization server metadata (it advertises id_token signing algs while
+      exposing no userinfo endpoint and no openid scope). This is OAuth metadata served at the OIDC path,
+      not an OIDC provider.
+  - id: oauth2
+    conforms: partial
+    evidence: >-
+      Full OAuth 2.1 on the MCP surface. The REST Marketing API borrows OAuth vocabulary (an /oauth2/
+      path prefix, auth_code, access_token) but is not an OAuth deployment: the credential is presented in
+      a custom Access-Token header rather than Authorization: Bearer, scopes are numeric IDs rather than
+      strings, and no authorization-server metadata is served for it.
+  - id: rfc9457-problem-details
+    conforms: false
+    evidence: >-
+      Errors are a proprietary {code, message, request_id, data} envelope returned with HTTP 200. No
+      application/problem+json anywhere in the spec or the docs.
+  - id: http-semantics-status-codes
+    conforms: false
+    evidence: >-
+      TikTok documents explicitly that the return code takes precedence over the HTTP status; a failed call
+      returns HTTP 200 with a 4xxxx code. Verified live on 2026-08-13 (HTTP 200, "code": 40104).
+  - id: rfc9116-security-txt
+    conforms: false
+    evidence: >-
+      /.well-known/security.txt is 404 on business-api.tiktok.com and ads.tiktok.com, and a soft 200 SPA
+      shell on www.tiktok.com. TikTok does run a real disclosure programme, just not at the well-known path.
+  - id: rfc8594-sunset-header
+    conforms: false
+    evidence: no Sunset or Deprecation response headers; deprecation is announced in prose only
+  - id: rfc9331-ratelimit-headers
+    conforms: false
+    evidence: no RateLimit-* or X-RateLimit-* headers; throttling appears only as code 40100 in the body
+  - id: idempotency-key
+    conforms: false
+    evidence: no idempotency key header or parameter documented or present in the spec
+  - id: asyncapi
+    conforms: false
+    evidence: real webhook surface documented in prose, no AsyncAPI document published
+  - id: a2a
+    conforms: false
+    evidence: no agent card at /.well-known/agent-card.json or /.well-known/agent.json on any TikTok host
+  - id: json-api
+    conforms: false
+    evidence: proprietary envelope, not JSON:API
+  - id: pagination-page-number
+    conforms: true
+    evidence: page / page_size request params and a data.page_info response object across read endpoints
+  - id: llms-txt
+    conforms: false
+    evidence: /llms.txt is 404 on business-api.tiktok.com, ads.tiktok.com and developers.tiktok.com
+compliance_programs:
+  published: false
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, HIPAA, FedRAMP or CSA STAR certification is published on any TikTok
+    property reachable from this product. usds.tiktok.com/trust-and-safety and
+    www.tiktok.com/transparency name no certifications. No Compliance pointer is emitted, because there is
+    no published compliance programme to point at.

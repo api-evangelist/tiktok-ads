@@ -1,0 +1,69 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the TikTok Marketing API
+  version: 1.0.0
+extends: openapi/tiktok-ads-marketing-api-openapi.yml
+x-generated: '2026-08-13'
+x-method: generated
+x-source: >-
+  Captures the enhancements API Evangelist applied when assembling the merged OpenAPI from the 202
+  per-operation fragments TikTok publishes in github.com/tiktok/tiktok-business-api-sdk/yml_files, plus the
+  runtime semantics the fragments omit. The harvested document is never mutated in place; this overlay is
+  the record of what we added and why.
+actions:
+  - target: $.info
+    description: Record provenance and the rating context on the document itself.
+    update:
+      x-apievangelist-source: https://github.com/tiktok/tiktok-business-api-sdk/tree/main/yml_files
+      x-apievangelist-assembly: mechanical union of 202 per-operation OpenAPI 3.0.1 documents; 0 path collisions, 0 duplicate operationIds
+      x-apievangelist-coverage-note: >-
+        202 operations of the ~400 TikTok exposes. The MCP tool table names 377 endpoints, of which 191
+        resolve to an operation here; the remaining 186 exist only in the HTML API reference.
+  - target: $.servers
+    description: >-
+      The per-operation fragments carry no servers block at all. Added the production and sandbox base URLs
+      TikTok documents at portal/docs?id=1738855331457026.
+    update:
+      - url: https://business-api.tiktok.com/open_api/v1.3
+        description: Production
+      - url: https://sandbox-ads.tiktok.com/open_api/v1.3
+        description: Sandbox
+  - target: $.components.securitySchemes
+    description: >-
+      The fragments declare the credential as a per-operation QUERY parameter named Access-Token. The docs,
+      every published curl example, and the live 40104 error body all say it is a HEADER. Added a header
+      apiKey scheme as the authoritative declaration.
+    update:
+      AccessToken:
+        type: apiKey
+        in: header
+        name: Access-Token
+  - target: $.info
+    description: Runtime semantics an agent needs that the harvested contract does not express.
+    update:
+      x-apievangelist-error-model:
+        rfc9457: false
+        http_status_on_error: 200
+        success_field: code
+        success_values: [0, 20001]
+        note: HTTP status is not the error channel; `code` is. All 202 operations declare only a 200 response.
+      x-apievangelist-idempotency:
+        supported: false
+        note: no idempotency key; no write is safe to blind-retry
+      x-apievangelist-rate-limit:
+        headers: []
+        error_code: 40100
+        note: no RateLimit-*/Retry-After headers; throttling is visible only in the body
+      x-apievangelist-path-convention:
+        trailing_slash: required
+        note: omitting the trailing slash returns "404 page not found"
+      x-apievangelist-id-convention:
+        type: string
+        note: v1.3 moved ids from number to string; several exceed the JS safe integer range
+  - target: $.paths[*][*]
+    description: >-
+      Flag every operation as belonging to a contract whose only declared response is 200, so tooling does
+      not infer that non-2xx cases are impossible.
+    update:
+      x-apievangelist-responses-declared: ['200']
+      x-apievangelist-error-channel: body.code

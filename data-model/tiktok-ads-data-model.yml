@@ -1,0 +1,875 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/tiktok-ads-marketing-api-openapi.yml
+note: 'Derived from the first-party OpenAPI set. A caveat that shapes everything below: the specs carry NO components.schemas
+  — every request and response schema is inlined per operation, and the response schema is always the same generic
+  envelope with data typed as an empty object. There is therefore no $ref graph to walk. The entity graph here is
+  reconstructed from the URL namespace (first path segment) and from the id-shaped fields each operation accepts,
+  which is the only entity signal the contract actually contains. Field-level object definitions live only in TikTok''s
+  HTML API reference.'
+schema_reuse:
+  components_schemas: 0
+  inline_schemas: true
+  implication: no reusable object model is published in machine-readable form
+id_convention:
+  type: string
+  note: v1.3 moved ids from numbers to strings. Ids are numeric-looking but must be handled as opaque strings —
+    several exceed the JavaScript safe integer range.
+  prefixes: []
+root_scoping:
+  field: advertiser_id
+  note: 'advertiser_id is the tenancy key for the whole Marketing API: it appears on more operations than any other
+    field and scopes nearly every read and write. Business Center operations scope on bc_id instead.'
+entity_count: 24
+entities:
+- entity: adgroup
+  operation_count: 1
+  operations:
+  - Adgroup Quota
+  id_fields:
+  - advertiser_id
+- entity: advertiser
+  operation_count: 2
+  operations:
+  - Advertiser Info
+  - Advertiser Update
+  id_fields:
+  - advertiser_id
+  - advertiser_ids
+  - bc_id
+  - child_bc_id
+  - image_id
+  - license_image_id
+- entity: app
+  operation_count: 6
+  operations:
+  - App Create
+  - App Info
+  - App List
+  - App Optimization_event
+  - App Optimization_event Retargeting
+  - App Update
+  id_fields:
+  - advertiser_id
+  - app_id
+  - app_platform_ids
+- entity: audience
+  operation_count: 1
+  operations:
+  - Audience Insight Overlap
+  id_fields:
+  - advertiser_id
+  - benchmark_custom_audience_id
+  - comparison_custom_audience_ids
+- entity: bc
+  operation_count: 36
+  operations:
+  - Bc Account Transaction Get
+  - Bc Asset Admin Delete
+  - Bc Asset Admin Get
+  - Bc Asset Assign
+  - Bc Asset Get
+  - Bc Asset Member Get
+  - Bc Asset Partner Get
+  - Bc Asset Unassign
+  - Bc Asset_group Create
+  - Bc Asset_group Delete
+  - Bc Asset_group Get
+  - Bc Asset_group List
+  - Bc Asset_group Update
+  - Bc Balance Get
+  - Bc Billing_group Create
+  - Bc Billing_group Get
+  - Bc Billing_group Update
+  - Bc Create
+  - Bc Get
+  - Bc Image Upload
+  - Bc Invoice Unpaid Get
+  - Bc Member Assign
+  - Bc Member Delete
+  - Bc Member Get
+  - Bc Member Invite
+  - Bc Member Update
+  - Bc Partner Add
+  - Bc Partner Asset Delete
+  - Bc Partner Asset Get
+  - Bc Partner Delete
+  - Bc Partner Get
+  - Bc Pixel Link Get
+  - Bc Pixel Link Update
+  - Bc Pixel Transfer
+  - Bc Transaction Get
+  - Bc Transfer
+  id_fields:
+  - add_advertiser_ids
+  - advertiser_id
+  - advertiser_ids
+  - asset_group_id
+  - asset_group_ids
+  - asset_id
+  - asset_ids
+  - bc_id
+  - billing_group_id
+  - child_bc_id
+  - delete_advertiser_ids
+  - member_id
+  - partner_id
+  - request_id
+  - source_child_bc_id
+  - target_child_bc_id
+  - user_id
+- entity: blockedword
+  operation_count: 7
+  operations:
+  - Blockedword Check
+  - Blockedword Create
+  - Blockedword Delete
+  - Blockedword List
+  - Blockedword Task Check
+  - Blockedword Task Create
+  - Blockedword Update
+  id_fields:
+  - advertiser_id
+  - task_id
+- entity: campaign
+  operation_count: 8
+  operations:
+  - Campaign Gmv_max Create
+  - Campaign Gmv_max Info
+  - Campaign Gmv_max Session Create
+  - Campaign Gmv_max Session Delete
+  - Campaign Gmv_max Session Get
+  - Campaign Gmv_max Session List
+  - Campaign Gmv_max Session Update
+  - Campaign Gmv_max Update
+  id_fields:
+  - advertiser_id
+  - campaign_id
+  - identity_authorized_bc_id
+  - identity_authorized_shop_id
+  - identity_id
+  - item_group_ids
+  - item_id
+  - request_id
+  - session_id
+  - session_ids
+  - spu_id
+  - store_authorized_bc_id
+  - store_id
+  - video_id
+- entity: catalog
+  operation_count: 27
+  operations:
+  - Catalog Available_country Get
+  - Catalog Capitalize
+  - Catalog Create
+  - Catalog Delete
+  - Catalog Eventsource Bind
+  - Catalog Eventsource Unbind
+  - Catalog Eventsource_bind Get
+  - Catalog Feed Create
+  - Catalog Feed Delete
+  - Catalog Feed Get
+  - Catalog Feed Log
+  - Catalog Feed Update
+  - Catalog Get
+  - Catalog Lexicon Get
+  - Catalog Location_currency Get
+  - Catalog Overview
+  - Catalog Product Delete
+  - Catalog Product File
+  - Catalog Product Log
+  - Catalog Set Delete
+  - Catalog Set Get
+  - Catalog Set Product Get
+  - Catalog Set Update
+  - Catalog Update
+  - Catalog Video Delete
+  - Catalog Video File
+  - Catalog Video Get
+  id_fields:
+  - advertiser_id
+  - advertiser_ids
+  - app_id
+  - bc_id
+  - catalog_id
+  - catalog_video_ids
+  - destination_ids
+  - feed_id
+  - feed_log_id
+  - flight_ids
+  - hotel_ids
+  - media_title_ids
+  - product_set_id
+  - product_set_ids
+  - sku_ids
+  - vehicle_ids
+- entity: comment
+  operation_count: 7
+  operations:
+  - Comment Delete
+  - Comment List
+  - Comment Post
+  - Comment Reference
+  - Comment Status Update
+  - Comment Task Check
+  - Comment Task Create
+  id_fields:
+  - ad_id
+  - advertiser_id
+  - comment_id
+  - comment_ids
+  - identity_id
+  - original_comment_id
+  - task_id
+  - tiktok_item_id
+- entity: creative
+  operation_count: 8
+  operations:
+  - Creative Asset Delete
+  - Creative Asset Share
+  - Creative Image Edit
+  - Creative Portfolio Create
+  - Creative Portfolio Get
+  - Creative Portfolio List
+  - Creative Shareable_link Create
+  - Creative Smart_text Generate
+  id_fields:
+  - adgroup_id
+  - advertiser_id
+  - app_id
+  - asset_id
+  - asset_ids
+  - catalog_authorized_bc_id
+  - catalog_id
+  - creative_portfolio_id
+  - identity_authorized_bc_id
+  - identity_id
+  - image_id
+  - image_ids
+  - industry_id
+  - interactive_music_id
+  - item_group_id
+  - item_group_ids
+  - live_tiktok_user_id
+  - material_ids
+  - mobile_app_id
+  - pop_up_window_image_id
+  - product_set_id
+  - shared_advertiser_ids
+  - sku_ids
+  - store_authorized_bc_id
+  - store_id
+  - video_id
+  - video_ids
+- entity: discovery
+  operation_count: 2
+  operations:
+  - Discovery Detail
+  - Discovery Trending_list
+  id_fields:
+  - advertiser_id
+  - hashtag_id
+- entity: dmp
+  operation_count: 17
+  operations:
+  - Dmp Custom_audience Apply
+  - Dmp Custom_audience Apply Log
+  - Dmp Custom_audience Create
+  - Dmp Custom_audience Delete
+  - Dmp Custom_audience File Upload
+  - Dmp Custom_audience Get
+  - Dmp Custom_audience List
+  - Dmp Custom_audience Lookalike Create
+  - Dmp Custom_audience Lookalike Update
+  - Dmp Custom_audience Rule Create
+  - Dmp Custom_audience Share
+  - Dmp Custom_audience Share Cancel
+  - Dmp Custom_audience Share Log
+  - Dmp Custom_audience Update
+  - Dmp Saved_audience Create
+  - Dmp Saved_audience Delete
+  - Dmp Saved_audience List
+  id_fields:
+  - action_category_ids
+  - adgroup_ids
+  - advertiser_id
+  - app_id
+  - audience_ids
+  - carrier_ids
+  - core_user_id
+  - custom_audience_id
+  - custom_audience_ids
+  - developer_id
+  - device_model_ids
+  - event_source_ids
+  - excluded_audience_ids
+  - identity_authorized_bc_id
+  - identity_id
+  - interest_category_ids
+  - interest_keyword_ids
+  - location_ids
+  - saved_audience_ids
+  - shared_advertiser_id
+  - shared_advertiser_ids
+  - source_audience_id
+- entity: gmv_max
+  operation_count: 10
+  operations:
+  - Gmv_max Bid Recommend
+  - Gmv_max Custom_anchor_video_list Get
+  - Gmv_max Exclusive_authorization Create
+  - Gmv_max Exclusive_authorization Get
+  - Gmv_max Identity Get
+  - Gmv_max Occupied_custom_shop_ads List
+  - Gmv_max Report Get
+  - Gmv_max Store List
+  - Gmv_max Store Shop_ad_usage_check
+  - Gmv_max Video Get
+  id_fields:
+  - advertiser_id
+  - asset_ids
+  - campaign_custom_anchor_video_id
+  - identity_id
+  - item_group_ids
+  - store_authorized_bc_id
+  - store_id
+  - store_ids
+- entity: offline
+  operation_count: 4
+  operations:
+  - Offline Create
+  - Offline Delete
+  - Offline Get
+  - Offline Update
+  id_fields:
+  - advertiser_id
+  - event_set_id
+  - event_set_ids
+- entity: optimizer
+  operation_count: 7
+  operations:
+  - Optimizer Rule Batch_bind
+  - Optimizer Rule Create
+  - Optimizer Rule Get
+  - Optimizer Rule List
+  - Optimizer Rule Result Get
+  - Optimizer Rule Result List
+  - Optimizer Rule Update
+  id_fields:
+  - advertiser_id
+  - dimension_ids
+  - rule_id
+  - rule_ids
+- entity: pangle_audience_package
+  operation_count: 1
+  operations:
+  - Pangle_audience_package Get
+  id_fields:
+  - advertiser_id
+- entity: pangle_block_list
+  operation_count: 2
+  operations:
+  - Pangle_block_list Get
+  - Pangle_block_list Update
+  id_fields:
+  - advertiser_id
+- entity: pixel
+  operation_count: 7
+  operations:
+  - Pixel Create
+  - Pixel Event Create
+  - Pixel Event Delete
+  - Pixel Event Stats
+  - Pixel Event Update
+  - Pixel List
+  - Pixel Update
+  id_fields:
+  - advertiser_id
+  - event_id
+  - pixel_id
+  - pixel_ids
+- entity: playable
+  operation_count: 5
+  operations:
+  - Playable Delete
+  - Playable Get
+  - Playable Save
+  - Playable Upload
+  - Playable Validate
+  id_fields:
+  - advertiser_id
+  - file_id
+  - playable_id
+- entity: report
+  operation_count: 4
+  operations:
+  - Report Integrated Get
+  - Report Task Cancel
+  - Report Task Check
+  - Report Task Create
+  id_fields:
+  - advertiser_id
+  - advertiser_ids
+  - bc_id
+  - task_id
+- entity: search
+  operation_count: 1
+  operations:
+  - Search Region
+  id_fields:
+  - advertiser_id
+- entity: smart_plus
+  operation_count: 18
+  operations:
+  - Smart_plus Ad Appeal
+  - Smart_plus Ad Create
+  - Smart_plus Ad Get
+  - Smart_plus Ad Material_status Update
+  - Smart_plus Ad Review_info
+  - Smart_plus Ad Status Update
+  - Smart_plus Ad Update
+  - Smart_plus Adgroup Create
+  - Smart_plus Adgroup Get
+  - Smart_plus Adgroup Status Update
+  - Smart_plus Adgroup Update
+  - Smart_plus Campaign Create
+  - Smart_plus Campaign Get
+  - Smart_plus Campaign Status Update
+  - Smart_plus Campaign Update
+  - Smart_plus Material Review_info
+  - Smart_plus Material_report Breakdown
+  - Smart_plus Material_report Overview
+  id_fields:
+  - action_category_ids
+  - ad_material_ids
+  - adgroup_id
+  - adgroup_ids
+  - advertiser_id
+  - app_id
+  - audience_ids
+  - auto_message_id
+  - blocked_pangle_app_ids
+  - call_to_action_id
+  - campaign_id
+  - campaign_ids
+  - card_id
+  - carrier_ids
+  - catalog_authorized_bc_id
+  - catalog_id
+  - custom_conversion_id
+  - deep_funnel_event_source_id
+  - device_model_ids
+  - excluded_audience_ids
+  - excluded_pangle_audience_package_ids
+  - identity_authorized_bc_id
+  - identity_id
+  - included_pangle_audience_package_ids
+  - interest_category_ids
+  - interest_keyword_ids
+  - isp_ids
+  - location_ids
+  - message_event_set_id
+  - messaging_app_account_id
+  - music_id
+  - page_id
+  - pixel_id
+  - product_ids
+  - product_set_id
+  - purchase_intention_keyword_ids
+  - request_id
+  - saved_audience_id
+  - smart_plus_ad_id
+  - smart_plus_ad_ids
+  - tiktok_item_id
+  - tracking_app_id
+  - tracking_message_event_set_id
+  - video_id
+  - zipcode_ids
+- entity: term
+  operation_count: 3
+  operations:
+  - Term Check
+  - Term Confirm
+  - Term Get
+  id_fields:
+  - advertiser_id
+- entity: tool
+  operation_count: 18
+  operations:
+  - Tool Action_category
+  - Tool Bid Recommend
+  - Tool Brand_safety Partner Authorize Status
+  - Tool Carrier
+  - Tool Contextual_tag Get
+  - Tool Contextual_tag Info
+  - Tool Hashtag Get
+  - Tool Hashtag Recommend
+  - Tool Interest_keyword Get
+  - Tool Open_url
+  - Tool Os_version
+  - Tool Phone_region_code
+  - Tool Targeting Info
+  - Tool Targeting List
+  - Tool Targeting Search
+  - Tool Timezone
+  - Tool Url_validate
+  - Tool Vbo_status
+  id_fields:
+  - advertiser_id
+  - app_id
+  - campaign_id
+  - contextual_tag_ids
+  - keyword_ids
+  - location_ids
+  - pixel_id
+  - store_id
+  - targeting_ids
+relationship_count: 59
+relationships:
+- from: adgroup
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 1
+- from: advertiser
+  to: bc
+  kind: belongs_to
+  via: bc_id
+  occurrences: 1
+- from: app
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 6
+- from: audience
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 1
+- from: bc
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 1
+- from: blockedword
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 7
+- from: campaign
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 8
+- from: campaign
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 2
+- from: campaign
+  to: store
+  kind: belongs_to
+  via: store_id
+  occurrences: 4
+- from: catalog
+  to: bc
+  kind: belongs_to
+  via: bc_id
+  occurrences: 26
+- from: catalog
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 4
+- from: catalog
+  to: app
+  kind: belongs_to
+  via: app_id
+  occurrences: 2
+- from: comment
+  to: ad
+  kind: belongs_to
+  via: ad_id
+  occurrences: 2
+- from: comment
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 7
+- from: comment
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 2
+- from: creative
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 7
+- from: creative
+  to: file
+  kind: belongs_to
+  via: image_ids
+  occurrences: 1
+- from: creative
+  to: file
+  kind: belongs_to
+  via: video_ids
+  occurrences: 1
+- from: creative
+  to: app
+  kind: belongs_to
+  via: app_id
+  occurrences: 1
+- from: creative
+  to: catalog
+  kind: belongs_to
+  via: catalog_id
+  occurrences: 1
+- from: creative
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 1
+- from: creative
+  to: catalog
+  kind: belongs_to
+  via: product_set_id
+  occurrences: 1
+- from: creative
+  to: store
+  kind: belongs_to
+  via: store_id
+  occurrences: 1
+- from: creative
+  to: bc
+  kind: belongs_to
+  via: asset_id
+  occurrences: 1
+- from: creative
+  to: adgroup
+  kind: belongs_to
+  via: adgroup_id
+  occurrences: 1
+- from: discovery
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 2
+- from: dmp
+  to: adgroup
+  kind: belongs_to
+  via: adgroup_ids
+  occurrences: 1
+- from: dmp
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 17
+- from: dmp
+  to: audience
+  kind: belongs_to
+  via: custom_audience_ids
+  occurrences: 6
+- from: dmp
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 1
+- from: dmp
+  to: app
+  kind: belongs_to
+  via: app_id
+  occurrences: 1
+- from: gmv_max
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 10
+- from: gmv_max
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 1
+- from: gmv_max
+  to: store
+  kind: belongs_to
+  via: store_id
+  occurrences: 7
+- from: offline
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 4
+- from: optimizer
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 7
+- from: pangle_audience_package
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 1
+- from: pangle_block_list
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 2
+- from: pixel
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 7
+- from: playable
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 5
+- from: report
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 4
+- from: report
+  to: bc
+  kind: belongs_to
+  via: bc_id
+  occurrences: 1
+- from: search
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 1
+- from: smart_plus
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 18
+- from: smart_plus
+  to: adgroup
+  kind: belongs_to
+  via: adgroup_id
+  occurrences: 2
+- from: smart_plus
+  to: identity
+  kind: belongs_to
+  via: identity_id
+  occurrences: 3
+- from: smart_plus
+  to: catalog
+  kind: belongs_to
+  via: product_set_id
+  occurrences: 2
+- from: smart_plus
+  to: app
+  kind: belongs_to
+  via: app_id
+  occurrences: 2
+- from: smart_plus
+  to: campaign
+  kind: belongs_to
+  via: campaign_id
+  occurrences: 2
+- from: smart_plus
+  to: catalog
+  kind: belongs_to
+  via: catalog_id
+  occurrences: 1
+- from: smart_plus
+  to: pixel
+  kind: belongs_to
+  via: pixel_id
+  occurrences: 1
+- from: smart_plus
+  to: adgroup
+  kind: belongs_to
+  via: adgroup_ids
+  occurrences: 1
+- from: smart_plus
+  to: campaign
+  kind: belongs_to
+  via: campaign_ids
+  occurrences: 1
+- from: term
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 3
+- from: tool
+  to: advertiser
+  kind: belongs_to
+  via: advertiser_id
+  occurrences: 18
+- from: tool
+  to: campaign
+  kind: belongs_to
+  via: campaign_id
+  occurrences: 1
+- from: tool
+  to: app
+  kind: belongs_to
+  via: app_id
+  occurrences: 1
+- from: tool
+  to: pixel
+  kind: belongs_to
+  via: pixel_id
+  occurrences: 1
+- from: tool
+  to: store
+  kind: belongs_to
+  via: store_id
+  occurrences: 1
+top_id_fields:
+- field: advertiser_id
+  operations: 142
+- field: bc_id
+  operations: 63
+- field: catalog_id
+  operations: 26
+- field: store_id
+  operations: 13
+- field: app_id
+  operations: 11
+- field: child_bc_id
+  operations: 10
+- field: identity_id
+  operations: 10
+- field: campaign_id
+  operations: 8
+- field: asset_id
+  operations: 7
+- field: identity_authorized_bc_id
+  operations: 7
+- field: advertiser_ids
+  operations: 6
+- field: asset_ids
+  operations: 6
+- field: store_authorized_bc_id
+  operations: 6
+- field: feed_id
+  operations: 6
+- field: product_set_id
+  operations: 6
+- field: custom_audience_ids
+  operations: 6
+- field: location_ids
+  operations: 6
+- field: user_id
+  operations: 5
+- field: video_id
+  operations: 5
+- field: pixel_id
+  operations: 5
+- field: partner_id
+  operations: 4
+- field: request_id
+  operations: 4
+- field: task_id
+  operations: 4
+- field: item_group_ids
+  operations: 4
+- field: tiktok_item_id
+  operations: 4

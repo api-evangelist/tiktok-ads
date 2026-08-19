@@ -1,0 +1,35 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.tiktok.com/business/en/pricing
+also_checked:
+  - https://business-api.tiktok.com/portal/docs/rate-limits/v1.3
+  - https://business-api.tiktok.com/portal/docs/how-to-connect-to-tiktok-for-business-mcp-server/v1.3
+  - https://business-api.tiktok.com/portal/docs?id=1738855280338946
+plan_count: 0
+pricing_model: no-api-fee
+note: >-
+  TikTok publishes no priced plan or tier for the Marketing API itself. There is no per-call price, no
+  subscription, no free-tier-then-paid ladder, and no "contact sales" API package. Access is granted by
+  registering a developer app and getting advertiser authorization; the MCP server does not even require a
+  developer app. The money in this product is ad spend, billed through TikTok Ads Manager, not API access.
+  The only tiering that exists is capacity, not price: the four rate-limit levels (Basic / Advanced /
+  Premium / Ultimate) are granted on written application, one level at a time, and TikTok attaches no
+  price to any of them — they are recorded in rate-limits/tiktok-ads-rate-limits.yml rather than here,
+  because calling them plans would misstate them as commercial tiers.
+  https://www.tiktok.com/business/en/pricing renders its content client-side and returned no server-side
+  pricing text on 2026-08-13; the substantive budget guidance lives in the Ads Manager help centre, which
+  is about campaign budgets, not API pricing.
+plans: []
+capacity_tiers_unpriced:
+  - name: Basic
+    note: default for every developer app; no price
+  - name: Advanced
+    note: granted on application; no price
+  - name: Premium
+    note: granted on application; no price
+  - name: Ultimate
+    note: granted on application; no price
+links:
+  pricing: https://www.tiktok.com/business/en/pricing
+  ads_manager: https://ads.tiktok.com/
+  help_center: https://ads.tiktok.com/help/

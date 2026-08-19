@@ -1,0 +1,18 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/tiktok-ads-marketing-api-openapi.yml
+format: none
+rfc9457: false
+note: 'Derived from the first-party OpenAPI set, and the finding is an absence. Across all 202 operations there
+  is exactly ONE declared response — 200 — and no 4xx or 5xx response object anywhere. Nothing in the machine-readable
+  contract tells a client what can go wrong, because in TikTok''s design nothing does go wrong at the HTTP layer:
+  errors ride inside the 200 envelope as a numeric `code`. The real, human-published error taxonomy is captured
+  separately in errors/tiktok-ads-error-codes.yml, which is the artifact to use. This file exists to record that
+  the spec itself carries no error semantics — a gap worth filing with TikTok, not a gap to paper over with invented
+  problem types.'
+declared_response_statuses:
+  '200': 202
+operations_total: 202
+operations_with_4xx_or_5xx: 0
+problems: []
+see_also: errors/tiktok-ads-error-codes.yml
