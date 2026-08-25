@@ -6,10 +6,16 @@
       "feed_url": "https://ads.tiktok.com/business/en/blog",
       "title": "",
       "saved": 0,
-      "method": "none",
-      "error": "parse_failed"
+      "method": "none"
+    },
+    {
+      "source": "https://github.com/tiktok/tiktok-business-api-sdk",
+      "feed_url": "https://github.com/tiktok/tiktok-business-api-sdk",
+      "title": "",
+      "saved": 0,
+      "method": "none"
     }
   ],
-  "fetched": "2026-08-15T12:11:08Z",
+  "fetched": "2026-08-22T20:20:02Z",
   "post_count": 5
 }
