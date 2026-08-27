@@ -52,28 +52,359 @@ created: '2026-05-11'
 modified: '2026-08-13'
 specificationVersion: '0.23'
 apis:
-- aid: tiktok-ads:marketing-api
-  name: TikTok Marketing API
-  description: RESTful Marketing API for managing TikTok ad accounts, campaigns, ad
-    groups, ads, Upgraded Smart+ and GMV Max campaigns, creatives, files, catalogs,
-    audiences, Business Centers, conversions, pixels and reporting. Authorization is
-    three-legged advertiser consent; the resulting long-lived token is sent in the
-    Access-Token request header. 202 operations across 19 tags are published as
-    machine-readable OpenAPI by TikTok itself.
+- aid: tiktok-ads:tiktok-ads-account-management-api
+  name: TikTok Marketing API Account Management API
+  description: >-
+    The Account Management API from TikTok Marketing API — 8 operation(s) for account management.
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
-  - Advertising
-  - Marketing
-  - Campaign Management
-  - Audience Management
-  - Reporting
-  - Conversions API
+  - Account Management
   properties:
   - type: OpenAPI
-    url: openapi/tiktok-ads-marketing-api-openapi.yml
-  - type: Overlay
-    url: overlays/tiktok-ads-marketing-api-overlay.yaml
+    url: openapi/tiktok-ads-account-management-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-ad-api
+  name: TikTok Marketing API Ad API
+  description: The Ad API from TikTok Marketing API — 8 operation(s) for ad.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Ad
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-ad-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-adgroup-api
+  name: TikTok Marketing API Adgroup API
+  description: The Adgroup API from TikTok Marketing API — 4 operation(s) for adgroup.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Adgroup
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-adgroup-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-ads-management-api
+  name: TikTok Marketing API Ads Management API
+  description: The Ads Management API from TikTok Marketing API — 1 operation(s) for ads management.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Ads Management
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-ads-management-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-app-management-api
+  name: TikTok Marketing API APP Management API
+  description: The APP Management API from TikTok Marketing API — 6 operation(s) for app management.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - APP Management
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-app-management-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-audience-api
+  name: TikTok Marketing API Audience API
+  description: The Audience API from TikTok Marketing API — 18 operation(s) for audience.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Audience
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-audience-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-automated-rules-api
+  name: TikTok Marketing API Automated Rules API
+  description: The Automated_Rules API from TikTok Marketing API — 7 operation(s) for automated_rules.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Automated_Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-automated-rules-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-bc-api
+  name: TikTok Marketing API BC API
+  description: The BC API from TikTok Marketing API — 36 operation(s) for bc.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - BC
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-bc-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-campaign-creation-api
+  name: TikTok Marketing API Campaign Creation API
+  description: >-
+    The Campaign Creation API from TikTok Marketing API — 15 operation(s) for campaign creation.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Campaign Creation
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-campaign-creation-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-catalog-api
+  name: TikTok Marketing API Catalog API
+  description: The Catalog API from TikTok Marketing API — 27 operation(s) for catalog.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Catalog
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-catalog-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-comments-api
+  name: TikTok Marketing API Comments API
+  description: The Comments API from TikTok Marketing API — 14 operation(s) for comments.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Comments
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-comments-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-creative-management-api
+  name: TikTok Marketing API Creative Management API
+  description: >-
+    The Creative Management API from TikTok Marketing API — 15 operation(s) for creative management.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Creative Management
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-creative-management-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-identity-api
+  name: TikTok Marketing API Identity API
+  description: The Identity API from TikTok Marketing API — 1 operation(s) for identity.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Identity
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-identity-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-measurement-api
+  name: TikTok Marketing API Measurement API
+  description: The Measurement API from TikTok Marketing API — 11 operation(s) for measurement.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Measurement
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-measurement-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-reporting-api
+  name: TikTok Marketing API Reporting API
+  description: The Reporting API from TikTok Marketing API — 7 operation(s) for reporting.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Reporting
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-reporting-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-store-api
+  name: TikTok Marketing API Store API
+  description: The Store API from TikTok Marketing API — 4 operation(s) for store.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Store
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-store-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-tool-api
+  name: TikTok Marketing API Tool API
+  description: The Tool API from TikTok Marketing API — 19 operation(s) for tool.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Tool
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-tool-api-openapi.yml
+  - type: ToolCrosswalk
+    url: mcp/tiktok-ads-tool-crosswalk.yml
+  - type: Documentation
+    url: https://business-api.tiktok.com/portal/docs
+  - type: APIReference
+    url: https://business-api.tiktok.com/portal/docs?id=1735713875563521
+  - type: Authentication
+    url: https://business-api.tiktok.com/portal/docs?id=1738373164380162
+  - type: SDKs
+    url: https://github.com/tiktok/tiktok-business-api-sdk
+- aid: tiktok-ads:tiktok-ads-video-api
+  name: TikTok Marketing API Video API
+  description: The Video API from TikTok Marketing API — 1 operation(s) for video.
+  humanURL: https://business-api.tiktok.com/portal/docs
+  baseURL: https://business-api.tiktok.com/open_api
+  tags:
+  - Video
+  properties:
+  - type: OpenAPI
+    url: openapi/tiktok-ads-video-api-openapi.yml
   - type: ToolCrosswalk
     url: mcp/tiktok-ads-tool-crosswalk.yml
   - type: Documentation
