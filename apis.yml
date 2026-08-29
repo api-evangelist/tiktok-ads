@@ -429,6 +429,9 @@ apis:
   - type: SDKs
     url: https://github.com/tiktok/tiktok-business-api-sdk
 common:
+- type: CapabilityMap
+  url: capabilities/tiktok-ads-capability-edges.yml
+  name: TikTok Marketing API Business Capability Map
 - type: OpenAPI
   url: openapi/tiktok-ads-marketing-api-openapi.yml
 - type: Overlay

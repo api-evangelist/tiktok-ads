@@ -1,0 +1,43 @@
+slug: tiktok-ads
+provider: TikTok Marketing API
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Media, Entertainment & Telecom Content
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Ad
+  spec_file: tiktok-ads-ad-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.8
+  evidence: POST /smart_plus/ad/create/  Smart_plus Ad Create  Create a new ad
+  reason: Operations create, update, status-manage and appeal review of individual ads on a paid social
+    platform — buy-side paid media execution, i.e. Digital Marketing Management. Not sell-side ad ops
+    since the caller is the advertiser.
+- tag: Adgroup
+  spec_file: tiktok-ads-adgroup-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.8
+  evidence: POST /smart_plus/adgroup/create/  Smart_plus Adgroup Create  Create a new ad group
+  reason: Ad group creation/update/status control is paid-media campaign structure management on a digital
+    channel, mapping to Digital Marketing Management.
+- tag: Campaign Creation
+  spec_file: tiktok-ads-campaign-creation-api-openapi.yml
+  capability_id: BC-400.60
+  capability_id_l1: BC-400
+  capability_name: Digital Marketing Management
+  confidence: 0.8
+  evidence: POST /smart_plus/campaign/create/  Smart_plus Campaign Create  Create a new campaign
+  reason: Creation and update of GMV Max and Smart+ advertising campaigns with bid recommendations — buy-side
+    paid digital media campaign management.
