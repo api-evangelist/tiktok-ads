@@ -1,0 +1,120 @@
+openapi: 3.2.0
+info:
+  title: TikTok API for Business — Marketing Ads Management API
+  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  version: v1.3
+  contact:
+    name: TikTok API for Business support
+    url: https://business-api.tiktok.com/portal/docs?id=1795190020378625
+  termsOfService: https://business-api.tiktok.com/portal/docs?id=1737191804348417
+  x-source: https://github.com/tiktok/tiktok-business-api-sdk/tree/main/yml_files
+  x-harvested-by: API Evangelist enrichment pipeline
+  x-harvested: '2026-08-13'
+servers:
+- url: https://business-api.tiktok.com/open_api/v1.3
+  description: Production
+- url: https://sandbox-ads.tiktok.com/open_api/v1.3
+  description: Sandbox
+security:
+- AccessToken: []
+tags:
+- name: Ads Management
+paths:
+  /adgroup/quota/:
+    get:
+      operationId: Adgroup Quota
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the dynamic quota [Adgroup Quota](https://ads.tiktok.com/marketing_api/docs?id=1768463039162369)
+      tags:
+      - Ads Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          total_adgroup_quota: $.rpc.output.total_adgroup_quota
+          used_adgroup_quota: $.rpc.output.used_adgroup_quota
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+components:
+  securitySchemes:
+    AccessToken:
+      type: apiKey
+      in: header
+      name: Access-Token
+      description: Long-term access token issued by POST /oauth2/access_token/ after advertiser authorization. See https://business-api.tiktok.com/portal/docs?id=1738373164380162

@@ -1,0 +1,2093 @@
+openapi: 3.2.0
+info:
+  title: TikTok API for Business — Marketing APP Management API
+  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  version: v1.3
+  contact:
+    name: TikTok API for Business support
+    url: https://business-api.tiktok.com/portal/docs?id=1795190020378625
+  termsOfService: https://business-api.tiktok.com/portal/docs?id=1737191804348417
+  x-source: https://github.com/tiktok/tiktok-business-api-sdk/tree/main/yml_files
+  x-harvested-by: API Evangelist enrichment pipeline
+  x-harvested: '2026-08-13'
+servers:
+- url: https://business-api.tiktok.com/open_api/v1.3
+  description: Production
+- url: https://sandbox-ads.tiktok.com/open_api/v1.3
+  description: Sandbox
+security:
+- AccessToken: []
+tags:
+- name: APP Management
+paths:
+  /app/create/:
+    post:
+      operationId: App Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvertiserId
+                download_url:
+                  description: ''
+                  format: url
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.DownloadUrl
+                enable_retargeting:
+                  default: NON_RETARGETING
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: RETARGETING
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: NON_RETARGETING
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.RetargetingState
+                partner:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1816188710840322
+                    enum_package_name: partnerForAppCreate
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AdBrix
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: Adform
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: Adjust
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: Adzcore
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: AppAdforce
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: AppLink
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: AppMetrica
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: AppsFlyer
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: BASE
+                      value: '48'
+                    - description: ''
+                      is_valid: true
+                      key: BigCommerce
+                      value: '36'
+                    - description: ''
+                      is_valid: true
+                      key: Cafe24
+                      value: '47'
+                    - description: ''
+                      is_valid: true
+                      key: Cinarra
+                      value: '31'
+                    - description: ''
+                      is_valid: true
+                      key: Dentsu
+                      value: '21'
+                    - description: ''
+                      is_valid: true
+                      key: DoubleClick
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID
+                      value: '37'
+                    - description: ''
+                      is_valid: true
+                      key: FlashTalking
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: Huangbaoche
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: Kantar
+                      value: '30'
+                    - description: ''
+                      is_valid: true
+                      key: Kochava
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: Lazada
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: LeadBolt
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: Macromil
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: Magento
+                      value: '40'
+                    - description: ''
+                      is_valid: true
+                      key: Metaps
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: Nielsen
+                      value: '25'
+                    - description: ''
+                      is_valid: true
+                      key: OpenCart
+                      value: '45'
+                    - description: ''
+                      is_valid: true
+                      key: Other
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: Placed_powered_by_Foursquare
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: PrestaShop
+                      value: '38'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPLINE
+                      value: '46'
+                    - description: ''
+                      is_valid: true
+                      key: Salesforce
+                      value: '44'
+                    - description: ''
+                      is_valid: true
+                      key: ServingsSys
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: Shopify
+                      value: '34'
+                    - description: ''
+                      is_valid: true
+                      key: Singular
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: Square
+                      value: '35'
+                    - description: ''
+                      is_valid: true
+                      key: Tenjin
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: Testee
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokCustomInstantPage
+                      value: '41'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC1PSeller
+                      value: '42'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC3PStore
+                      value: '43'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokLeadAd
+                      value: '33'
+                    - description: ''
+                      is_valid: true
+                      key: TlnkIo
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: Vidoadsplus
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: Weborama
+                      value: '29'
+                    - description: ''
+                      is_valid: true
+                      key: WooCommerce
+                      value: '39'
+                    - description: ''
+                      is_valid: true
+                      key: doubleverify
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: myTracker
+                      value: '22'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.PartnerId
+                tracking_url:
+                  description: ''
+                  properties:
+                    click_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.Tracking.ClickUrl
+                    impression_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.Tracking.ImpressionUrl
+                    retargeting_click_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.Tracking.RetargetingClickUrl
+                    retargeting_impression_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.Tracking.RetargetingImpressionUrl
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Tracking
+              required:
+              - advertiser_id
+              - download_url
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create an app. [APP Create](https://business-api.tiktok.com/portal/docs?id=1740859280958466)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserId
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: DownloadUrl
+            required: true
+            source: $.http.body.download_url
+            type: string
+          - children:
+            - name: ClickUrl
+              required: false
+              source: $.http.body.tracking_url.click_url
+              type: string
+            - name: ImpressionUrl
+              required: false
+              source: $.http.body.tracking_url.impression_url
+              type: string
+            - name: RetargetingClickUrl
+              required: false
+              source: $.http.body.tracking_url.retargeting_click_url
+              type: string
+            - name: RetargetingImpressionUrl
+              required: false
+              source: $.http.body.tracking_url.retargeting_impression_url
+              type: string
+            is_expand: true
+            name: Tracking
+            required: false
+            type: object
+          - name: PartnerId
+            required: false
+            source: $.http.body.partner
+            type: number
+          - name: RetargetingState
+            required: false
+            source: $.http.body.enable_retargeting
+            type: number
+          - name: CoreUserId
+            required: false
+            source: $.context.core_user_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserId: $.http.body.advertiser_id
+          CoreUserId: $.context.core_user_id
+          DownloadUrl: $.http.body.download_url
+          PartnerId: $.http.body.partner
+          RetargetingState: $.http.body.enable_retargeting
+          Tracking:
+            ClickUrl: $.http.body.tracking_url.click_url
+            ImpressionUrl: $.http.body.tracking_url.impression_url
+            RetargetingClickUrl: $.http.body.tracking_url.retargeting_click_url
+            RetargetingImpressionUrl: $.http.body.tracking_url.retargeting_impression_url
+        response_cookie: []
+        response_header: []
+        response_rule:
+          app_id: $.rpc.output.id
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /app/info/:
+    get:
+      operationId: App Info
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: app_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.app_id
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get info of an app. [APP Info](https://business-api.tiktok.com/portal/docs?id=1740859272887297)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: app_id
+            required: true
+            source: $.http.query.app_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          app_id: $.http.query.app_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          app: $.rpc.output.app
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /app/list/:
+    get:
+      operationId: App List
+      parameters:
+      - description: Advertiser ID.
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.app_platform_ids
+        description: List of app platform ID for filter purpose.
+        in: query
+        name: app_platform_ids
+        required: false
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get the app list. [APP List](https://business-api.tiktok.com/portal/docs?id=1740859313270786)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: string
+            is_expand: true
+            name: app_platform_ids
+            required: true
+            source: $.http.query.app_platform_ids[]
+            sub_type: string
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          app_platform_ids: $.http.query.app_platform_ids[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          apps: $.rpc.output.apps
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /app/optimization_event/:
+    get:
+      operationId: App Optimization_event
+      parameters:
+      - description: Your App ID, obtained after successfully creating your app.
+        in: query
+        name: app_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.app_id
+        x-open-field-id: 1
+      - description: Advertiser ID
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              items:
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-enum:
+                  enum_package_expired: false
+                  enum_package_id: null
+                  enum_package_name: InventoryFlow
+                  enums:
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_TOPBUZZ
+                    value: '1000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_VIGO
+                    value: '2000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_TIKTOK
+                    value: '3000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_HELO
+                    value: '4000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_PANGLE
+                    value: '9000'
+                  - description: ''
+                    is_valid: true
+                    key: PLACEMENT_GLOBAL_APP_BUNDLE
+                    value: '1000'
+                  key_format: string
+                  strict: true
+                  use_part: false
+                  validate_only: false
+                  value_format: int32
+              minItems: 1
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.placement
+        description: 'The apps where you want to deliver your ads. Required when placement_type is PLACEMENT_TYPE_NORMAL, and ignored when placement_type is PLACEMENT_TYPE_AUTOMATIC. Note: Currently, we support PLACEMENT_TIKTOK, PLACEMENT_PANGLE and PLACEMENT_GLOBAL_APP_BUNDLE. Please don''t select PLACEMENT_TOPBUZZ or PLACEMENT_HELO as your placements since they''ve been deprecated. For a full list of enum values, see Enumeration - Placement. For Product Sales campaigns (objective_type = PRODUCT_SALES), only TikTok placement (PLACEMENT_TIKTOK) is supported.'
+        in: query
+        name: placement
+        required: false
+        x-open-field-id: 3
+      - description: '版位类型。 枚举值：PLACEMENT_TYPE_AUTOMATIC（自动版位）,PLACEMENT_TYPE_NORMAL （编辑版位）。 默认值: PLACEMENT_TYPE_NORMAL。'
+        in: query
+        name: placement_type
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: PLACEMENT_TYPE_NORMAL
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: PLACEMENT_TYPE_AUTOMATIC
+              value: '0'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.placement_type
+        x-open-field-id: 4
+      - description: Optimization goal. For enum values, see Enumeration-Optimization Goal for more
+        in: query
+        name: optimization_goal
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int32(%s)
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1804193306612737
+            enum_package_name: OptimizeGoal
+            enums:
+            - description: ''
+              is_valid: true
+              key: ANCHOR_CLICK
+              value: '112'
+            - description: ''
+              is_valid: true
+              key: ANCHOR_CLICK_PURCHASE
+              value: '117'
+            - description: ''
+              is_valid: true
+              key: AUTOMATED_VALUE
+              value: '125'
+            - description: ''
+              is_valid: true
+              key: CLICK
+              value: '101'
+            - description: ''
+              is_valid: true
+              key: CONVERSATION
+              value: '124'
+            - description: ''
+              is_valid: true
+              key: CONVERSION_LEADS
+              value: '121'
+            - description: ''
+              is_valid: true
+              key: CONVERT
+              value: '100'
+            - description: ''
+              is_valid: true
+              key: DESTINATION_VISIT
+              value: '123'
+            - description: ''
+              is_valid: true
+              key: ENGAGED_VIEW
+              value: '118'
+            - description: ''
+              is_valid: true
+              key: ENGAGED_VIEW_FIFTEEM
+              value: '120'
+            - description: ''
+              is_valid: true
+              key: FOLLOWERS
+              value: '108'
+            - description: ''
+              is_valid: true
+              key: INSTALL
+              value: '105'
+            - description: ''
+              is_valid: true
+              key: IN_APP_EVENT
+              value: '106'
+            - description: ''
+              is_valid: true
+              key: LEAD_GENERATION
+              value: '107'
+            - description: ''
+              is_valid: true
+              key: MESSAGE
+              value: '119'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_FOLLOW
+              value: '126'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_ROOM
+              value: '113'
+            - description: ''
+              is_valid: true
+              key: MT_LIVE_SHOPPING
+              value: '116'
+            - description: ''
+              is_valid: true
+              key: PAGE_VISIT
+              value: '122'
+            - description: ''
+              is_valid: true
+              key: POST_ENGAGEMNT
+              value: '110'
+            - description: ''
+              is_valid: true
+              key: PREFERRED_LEAD
+              value: '127'
+            - description: ''
+              is_valid: true
+              key: PRODUCT_CLICK_IN_LIVE
+              value: '114'
+            - description: ''
+              is_valid: true
+              key: PROFILE_VIEWS
+              value: '109'
+            - description: ''
+              is_valid: true
+              key: REACH
+              value: '103'
+            - description: ''
+              is_valid: true
+              key: SHOW
+              value: '102'
+            - description: ''
+              is_valid: true
+              key: TRAFFIC_LANDING_PAGE_VIEW
+              value: '115'
+            - description: ''
+              is_valid: true
+              key: VALUE
+              value: '111'
+            - description: ''
+              is_valid: true
+              key: VIDEO_VIEW
+              value: '104'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int64
+          x-open-source: $.http.query.optimization_goal
+        x-open-field-id: 5
+      - description: Advertising Objective. For enum values, see Enumeration-Advertising Objective
+        in: query
+        name: objective
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: CampaignObjectiveType
+            enums:
+            - description: ''
+              is_valid: true
+              key: NONE_TYPE
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: TRAFFIC
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: APP_INSTALL
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: CONVERSIONS
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: VIDEO_VIEW
+              value: '4'
+            - description: ''
+              is_valid: true
+              key: REACH
+              value: '5'
+            - description: ''
+              is_valid: true
+              key: CATALOG_SALES
+              value: '6'
+            - description: ''
+              is_valid: true
+              key: LEAD_GENERATION
+              value: '8'
+            - description: ''
+              is_valid: true
+              key: ENGAGEMENT
+              value: '9'
+            - description: ''
+              is_valid: true
+              key: RF_REACH
+              value: '7'
+            - description: ''
+              is_valid: true
+              key: RF_VIDEO_VIEW
+              value: '10'
+            - description: ''
+              is_valid: true
+              key: RF_TRAFFIC
+              value: '11'
+            - description: ''
+              is_valid: true
+              key: RF_ENGAGEMENT
+              value: '12'
+            - description: ''
+              is_valid: true
+              key: RF_APP_INSTALL
+              value: '13'
+            - description: ''
+              is_valid: true
+              key: PRODUCT_SALES
+              value: '15'
+            - description: ''
+              is_valid: true
+              key: APP_PROMOTION
+              value: '16'
+            - description: ''
+              is_valid: true
+              key: WEB_CONVERSIONS
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: TOPVIEW_REACH
+              value: '50'
+            - description: ''
+              is_valid: true
+              key: EST_AD
+              value: '51'
+            - description: ''
+              is_valid: true
+              key: SS_HTC_AD
+              value: '52'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.objective
+        x-open-field-id: 6
+      - description: 'Whether to return only available conversion events. The default value: True (only return available conversion events)'
+        in: query
+        name: available_only
+        required: false
+        schema:
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.available_only
+        x-open-field-id: 7
+      - description: Whether the app is using Skan features.
+        in: query
+        name: is_skan
+        required: false
+        schema:
+          type: boolean
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.is_skan
+        x-open-field-id: 8
+      - description: 'App promotion type. Required when objective_type is APP_PROMOTION. Enum values: APP_INSTALL, APP_RETARGETING. Note: APP_INSTALL can be used in an iOS14 Dedicated Campaign, while APP_RETARGETING cannot be used.'
+        in: query
+        name: app_promotion_type
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: 1799795397435394
+            enum_package_name: AppCampaignType
+            enums:
+            - description: ''
+              is_valid: true
+              key: APP_INSTALL
+              value: '1'
+            - description: ''
+              is_valid: true
+              key: APP_PREREGISTRATION
+              value: '3'
+            - description: ''
+              is_valid: true
+              key: APP_RETARGETING
+              value: '2'
+            - description: ''
+              is_valid: true
+              key: UNSET
+              value: '0'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.app_promotion_type
+        x-open-field-id: 9
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get App Conversion Events. [App Optimization Event](https://business-api.tiktok.com/portal/docs?id=1740859338750977)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: app_id
+            required: true
+            source: $.http.query.app_id
+            type: number
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: placement
+            required: false
+            source: $.http.query.placement[]
+            sub_type: number
+            type: array
+          - name: placement_type
+            required: false
+            source: $.http.query.placement_type
+            type: number
+          - name: optimization_goal
+            required: true
+            source: $.http.query.optimization_goal
+            type: number
+          - name: objective
+            required: false
+            source: $.http.query.objective
+            type: number
+          - name: available_only
+            required: false
+            source: $.http.query.available_only
+            type: boolean
+          - name: is_skan
+            required: false
+            source: $.http.query.is_skan
+            type: boolean
+          - name: app_promotion_type
+            required: false
+            source: $.http.query.app_promotion_type
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          app_id: $.http.query.app_id
+          app_promotion_type: $.http.query.app_promotion_type
+          available_only: $.http.query.available_only
+          is_skan: $.http.query.is_skan
+          objective: $.http.query.objective
+          optimization_goal: $.http.query.optimization_goal
+          placement: $.http.query.placement[]
+          placement_type: $.http.query.placement_type
+        response_cookie: []
+        response_header: []
+        response_rule:
+          optimization_events: $.rpc.output.optimization_events
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /app/optimization_event/retargeting/:
+    get:
+      operationId: App Optimization_event Retargeting
+      parameters:
+      - description: ''
+        in: query
+        name: app_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.AdvertiserId
+        x-open-field-id: 2
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get App Retargeting Events. [App Optimization Event Retargeting](https://business-api.tiktok.com/portal/docs?id=1740859371033601)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: id
+            required: true
+            source: $.http.query.app_id
+            type: number
+          - name: AdvertiserId
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+        plugins:
+          after_response:
+          - Plugin_GetEnumValueFromObj_4615312:
+            - description: test
+            - request_params:
+              - $.rpc.output
+            - result_params:
+              - $.resp
+            - version: 6304383dbb125fa7bc457bef7ec2d259
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserId: $.http.query.advertiser_id
+          id: $.http.query.app_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          optimization_events: $.resp
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /app/update/:
+    post:
+      operationId: App Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.advertiser_id
+                app_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.app_id
+                download_url:
+                  description: ''
+                  format: url
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.download_url
+                enable_retargeting:
+                  default: NON_RETARGETING
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: RETARGETING
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: NON_RETARGETING
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.enable_retargeting
+                partner:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1805946629089281
+                    enum_package_name: MeteorConstPartner
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: AdBrix
+                      value: '14'
+                    - description: ''
+                      is_valid: true
+                      key: Adform
+                      value: '23'
+                    - description: ''
+                      is_valid: true
+                      key: Adjust
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: Adobe
+                      value: '85'
+                    - description: ''
+                      is_valid: true
+                      key: AdobeRTCDP
+                      value: '132'
+                    - description: ''
+                      is_valid: true
+                      key: Adzcore
+                      value: '7'
+                    - description: ''
+                      is_valid: true
+                      key: Amperity
+                      value: '80'
+                    - description: ''
+                      is_valid: true
+                      key: AnyTrack
+                      value: '79'
+                    - description: ''
+                      is_valid: true
+                      key: AppAdforce
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: AppLink
+                      value: '13'
+                    - description: ''
+                      is_valid: true
+                      key: AppMetrica
+                      value: '20'
+                    - description: ''
+                      is_valid: true
+                      key: AppsFlyer
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: Apptrian
+                      value: '110'
+                    - description: TTOP
+                      is_valid: true
+                      key: Ayomakan
+                      value: '113'
+                    - description: ''
+                      is_valid: true
+                      key: BASE
+                      value: '48'
+                    - description: ''
+                      is_valid: true
+                      key: BigCommerce
+                      value: '36'
+                    - description: ctm
+                      is_valid: true
+                      key: Bird
+                      value: '126'
+                    - description: ctm
+                      is_valid: true
+                      key: Blip
+                      value: '116'
+                    - description: ''
+                      is_valid: true
+                      key: Blotout
+                      value: '76'
+                    - description: ''
+                      is_valid: true
+                      key: CTMDefault
+                      value: '100'
+                    - description: ''
+                      is_valid: true
+                      key: Cafe24
+                      value: '47'
+                    - description: ''
+                      is_valid: true
+                      key: Capico
+                      value: '129'
+                    - description: ''
+                      is_valid: true
+                      key: Chatcone
+                      value: '108'
+                    - description: ''
+                      is_valid: true
+                      key: Cheq
+                      value: '98'
+                    - description: ''
+                      is_valid: true
+                      key: Cinarra
+                      value: '31'
+                    - description: ''
+                      is_valid: true
+                      key: CommandersAct
+                      value: '106'
+                    - description: ''
+                      is_valid: true
+                      key: ConversionLiftStudy
+                      value: '96'
+                    - description: ''
+                      is_valid: true
+                      key: DataHash
+                      value: '88'
+                    - description: ''
+                      is_valid: true
+                      key: Dentsu
+                      value: '21'
+                    - description: ''
+                      is_valid: true
+                      key: Desty
+                      value: '97'
+                    - description: ''
+                      is_valid: true
+                      key: DoubleClick
+                      value: '10'
+                    - description: ''
+                      is_valid: true
+                      key: Driftrock
+                      value: '109'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID
+                      value: '37'
+                    - description: ''
+                      is_valid: true
+                      key: ECWID_RESELLER
+                      value: '57'
+                    - description: ''
+                      is_valid: true
+                      key: Elevar
+                      value: '78'
+                    - description: TTOP
+                      is_valid: true
+                      key: Eventbrite
+                      value: '114'
+                    - description: ''
+                      is_valid: true
+                      key: EventsAPIGateway
+                      value: '131'
+                    - description: ''
+                      is_valid: true
+                      key: Fandango
+                      value: '81'
+                    - description: ''
+                      is_valid: true
+                      key: FlashTalking
+                      value: '12'
+                    - description: ''
+                      is_valid: true
+                      key: FutureShop
+                      value: '73'
+                    - description: ''
+                      is_valid: true
+                      key: Gamesight
+                      value: '72'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleSheet
+                      value: '94'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleTagManagerClient
+                      value: '105'
+                    - description: ''
+                      is_valid: true
+                      key: GoogleTagManagerServer
+                      value: '75'
+                    - description: ''
+                      is_valid: true
+                      key: Grivy
+                      value: '67'
+                    - description: ''
+                      is_valid: true
+                      key: Habu
+                      value: '70'
+                    - description: ctm
+                      is_valid: true
+                      key: Halosis
+                      value: '118'
+                    - description: ''
+                      is_valid: true
+                      key: Haravan
+                      value: '64'
+                    - description: ctm
+                      is_valid: true
+                      key: HiPlatform
+                      value: '124'
+                    - description: ''
+                      is_valid: true
+                      key: Hightouch
+                      value: '66'
+                    - description: ''
+                      is_valid: true
+                      key: Huangbaoche
+                      value: '15'
+                    - description: ''
+                      is_valid: true
+                      key: HubSpot
+                      value: '92'
+                    - description: ''
+                      is_valid: true
+                      key: Journify
+                      value: '122'
+                    - description: ''
+                      is_valid: true
+                      key: Kantar
+                      value: '30'
+                    - description: ''
+                      is_valid: true
+                      key: Kargo
+                      value: '71'
+                    - description: ''
+                      is_valid: true
+                      key: Kochava
+                      value: '4'
+                    - description: TTOP
+                      is_valid: true
+                      key: KopiKenangan
+                      value: '111'
+                    - description: ''
+                      is_valid: true
+                      key: Kyte
+                      value: '58'
+                    - description: ''
+                      is_valid: true
+                      key: LadiPage
+                      value: '102'
+                    - description: ''
+                      is_valid: true
+                      key: Lazada
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: LeadBolt
+                      value: '17'
+                    - description: ''
+                      is_valid: true
+                      key: LeadCenterCSV
+                      value: '87'
+                    - description: ''
+                      is_valid: true
+                      key: Lifesight
+                      value: '89'
+                    - description: ''
+                      is_valid: true
+                      key: LiveRamp
+                      value: '61'
+                    - description: ''
+                      is_valid: true
+                      key: MParticle
+                      value: '65'
+                    - description: ''
+                      is_valid: true
+                      key: Macromil
+                      value: '27'
+                    - description: ''
+                      is_valid: true
+                      key: Magento
+                      value: '40'
+                    - description: ctm
+                      is_valid: true
+                      key: ManyChat
+                      value: '121'
+                    - description: ''
+                      is_valid: true
+                      key: Marketo
+                      value: '93'
+                    - description: ''
+                      is_valid: true
+                      key: MercadoShops
+                      value: '82'
+                    - description: ''
+                      is_valid: true
+                      key: Merkle
+                      value: '83'
+                    - description: ''
+                      is_valid: true
+                      key: MetaRouter
+                      value: '77'
+                    - description: ''
+                      is_valid: true
+                      key: Metaps
+                      value: '18'
+                    - description: ''
+                      is_valid: true
+                      key: Nielsen
+                      value: '25'
+                    - description: 'Notice: ECWID_RESELLER is different from ECWID'
+                      is_valid: true
+                      key: Nuvemshop
+                      value: '56'
+                    - description: ctm
+                      is_valid: true
+                      key: OhoChat
+                      value: '115'
+                    - description: ctm
+                      is_valid: true
+                      key: OneChatAi
+                      value: '123'
+                    - description: ''
+                      is_valid: true
+                      key: OpenCart
+                      value: '45'
+                    - description: ''
+                      is_valid: true
+                      key: Other
+                      value: '9'
+                    - description: ''
+                      is_valid: true
+                      key: PMG
+                      value: '128'
+                    - description: ''
+                      is_valid: true
+                      key: Pancake
+                      value: '101'
+                    - description: ''
+                      is_valid: true
+                      key: Placed_powered_by_Foursquare
+                      value: '26'
+                    - description: ''
+                      is_valid: true
+                      key: PrestaShop
+                      value: '38'
+                    - description: ''
+                      is_valid: true
+                      key: Qiscus
+                      value: '103'
+                    - description: ''
+                      is_valid: true
+                      key: Qontak
+                      value: '104'
+                    - description: ctm
+                      is_valid: true
+                      key: RespondIo
+                      value: '117'
+                    - description: ''
+                      is_valid: true
+                      key: RudderStack
+                      value: '69'
+                    - description: ''
+                      is_valid: true
+                      key: SHOPLINE
+                      value: '46'
+                    - description: ''
+                      is_valid: true
+                      key: Salesforce
+                      value: '50'
+                    - description: ''
+                      is_valid: true
+                      key: SalesforceMarketingCloud
+                      value: '95'
+                    - description: ctm
+                      is_valid: true
+                      key: Sapo
+                      value: '120'
+                    - description: ''
+                      is_valid: true
+                      key: Segment
+                      value: '59'
+                    - description: ''
+                      is_valid: true
+                      key: ServingsSys
+                      value: '11'
+                    - description: ''
+                      is_valid: true
+                      key: Shift4Shop
+                      value: '62'
+                    - description: ''
+                      is_valid: true
+                      key: Shopify
+                      value: '34'
+                    - description: ''
+                      is_valid: true
+                      key: Shoplazza
+                      value: '90'
+                    - description: ''
+                      is_valid: true
+                      key: Shopware
+                      value: '54'
+                    - description: ''
+                      is_valid: true
+                      key: SignalSight
+                      value: '84'
+                    - description: ''
+                      is_valid: true
+                      key: Singoo
+                      value: '99'
+                    - description: ctm
+                      is_valid: true
+                      key: SingooCloud
+                      value: '127'
+                    - description: ''
+                      is_valid: true
+                      key: Singular
+                      value: '6'
+                    - description: ''
+                      is_valid: true
+                      key: Square
+                      value: '35'
+                    - description: ''
+                      is_valid: true
+                      key: Tealium
+                      value: '60'
+                    - description: ''
+                      is_valid: true
+                      key: Tenjin
+                      value: '8'
+                    - description: ''
+                      is_valid: true
+                      key: Testee
+                      value: '28'
+                    - description: ''
+                      is_valid: true
+                      key: Ticketmaster
+                      value: '68'
+                    - description: ''
+                      is_valid: true
+                      key: Tiendanube
+                      value: '74'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokAppAPI
+                      value: '49'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokBusinessSDK
+                      value: '44'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokCustomInstantPage
+                      value: '41'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC1PSeller
+                      value: '42'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokEC3PStore
+                      value: '43'
+                    - description: ''
+                      is_valid: true
+                      key: TikTokLeadAd
+                      value: '33'
+                    - description: ''
+                      is_valid: true
+                      key: TlnkIo
+                      value: '3'
+                    - description: TTOP
+                      is_valid: true
+                      key: TomoroCoffee
+                      value: '112'
+                    - description: ''
+                      is_valid: true
+                      key: Tray
+                      value: '53'
+                    - description: ''
+                      is_valid: true
+                      key: TripleWhale
+                      value: '130'
+                    - description: ''
+                      is_valid: true
+                      key: VTEX
+                      value: '55'
+                    - description: ''
+                      is_valid: true
+                      key: Vidoadsplus
+                      value: '19'
+                    - description: ''
+                      is_valid: true
+                      key: Weborama
+                      value: '29'
+                    - description: ''
+                      is_valid: true
+                      key: Wix
+                      value: '51'
+                    - description: ''
+                      is_valid: true
+                      key: WooCommerce
+                      value: '39'
+                    - description: ''
+                      is_valid: true
+                      key: WordPress
+                      value: '125'
+                    - description: ''
+                      is_valid: true
+                      key: ZZG
+                      value: '63'
+                    - description: ''
+                      is_valid: true
+                      key: Zapier
+                      value: '91'
+                    - description: for lead crm
+                      is_valid: true
+                      key: Zoho
+                      value: '86'
+                    - description: ''
+                      is_valid: true
+                      key: Zwiz
+                      value: '107'
+                    - description: ''
+                      is_valid: true
+                      key: doubleverify
+                      value: '24'
+                    - description: ''
+                      is_valid: true
+                      key: lojaintegrada
+                      value: '52'
+                    - description: ''
+                      is_valid: true
+                      key: myTracker
+                      value: '22'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 7
+                  x-open-source: $.http.body.partner
+                platform:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1804229743233025
+                    enum_package_name: 'AudiencePlatformType '
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: ANDROID
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: IOS
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: PC
+                      value: '16'
+                    - description: ''
+                      is_valid: true
+                      key: UNKNOWN
+                      value: '0'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.platform
+                tracking_url:
+                  description: ''
+                  properties:
+                    click_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                      x-open-source: $.http.body.tracking_url.click_url
+                    impression_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                      x-open-source: $.http.body.tracking_url.impression_url
+                    retargeting_click_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 3
+                      x-open-source: $.http.body.tracking_url.retargeting_click_url
+                    retargeting_impression_url:
+                      description: ''
+                      type: string
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 4
+                      x-open-source: $.http.body.tracking_url.retargeting_impression_url
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 6
+                  x-open-source: $.http.body.tracking_url
+              required:
+              - app_id
+              - advertiser_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an app. [APP Update](https://business-api.tiktok.com/portal/docs?id=1740859300069378)
+      tags:
+      - APP Management
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: app_id
+            required: true
+            source: $.http.body.app_id
+            type: number
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: platform
+            required: false
+            source: $.http.body.platform
+            type: number
+          - name: download_url
+            required: false
+            source: $.http.body.download_url
+            type: string
+          - name: enable_retargeting
+            required: false
+            source: $.http.body.enable_retargeting
+            type: number
+          - children:
+            - name: click_url
+              required: false
+              source: $.http.body.tracking_url.click_url
+              type: string
+            - name: impression_url
+              required: false
+              source: $.http.body.tracking_url.impression_url
+              type: string
+            - name: retargeting_click_url
+              required: false
+              source: $.http.body.tracking_url.retargeting_click_url
+              type: string
+            - name: retargeting_impression_url
+              required: false
+              source: $.http.body.tracking_url.retargeting_impression_url
+              type: string
+            is_expand: true
+            name: tracking_url
+            required: false
+            source: $.http.body.tracking_url
+            type: object
+          - name: partner
+            required: false
+            source: $.http.body.partner
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          app_id: $.http.body.app_id
+          download_url: $.http.body.download_url
+          enable_retargeting: $.http.body.enable_retargeting
+          partner: $.http.body.partner
+          platform: $.http.body.platform
+          tracking_url: $.http.body.tracking_url
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+components:
+  securitySchemes:
+    AccessToken:
+      type: apiKey
+      in: header
+      name: Access-Token
+      description: Long-term access token issued by POST /oauth2/access_token/ after advertiser authorization. See https://business-api.tiktok.com/portal/docs?id=1738373164380162

@@ -1,0 +1,2096 @@
+openapi: 3.2.0
+info:
+  title: TikTok API for Business — Marketing Measurement API
+  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  version: v1.3
+  contact:
+    name: TikTok API for Business support
+    url: https://business-api.tiktok.com/portal/docs?id=1795190020378625
+  termsOfService: https://business-api.tiktok.com/portal/docs?id=1737191804348417
+  x-source: https://github.com/tiktok/tiktok-business-api-sdk/tree/main/yml_files
+  x-harvested-by: API Evangelist enrichment pipeline
+  x-harvested: '2026-08-13'
+servers:
+- url: https://business-api.tiktok.com/open_api/v1.3
+  description: Production
+- url: https://sandbox-ads.tiktok.com/open_api/v1.3
+  description: Sandbox
+security:
+- AccessToken: []
+tags:
+- name: Measurement
+paths:
+  /offline/create/:
+    post:
+      operationId: Offline Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvertiserID
+                auto_tracking:
+                  default: false
+                  description: ''
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.AutoTracking
+                description:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Description
+                name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.Name
+              required:
+              - advertiser_id
+              - name
+              - description
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id=1758427576470529)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: CoreUserID
+            required: true
+            source: $.context.core_user_id
+            type: number
+          - name: Name
+            required: true
+            source: $.http.body.name
+            type: string
+          - name: Description
+            required: true
+            source: $.http.body.description
+            type: string
+          - name: AutoTracking
+            required: true
+            source: $.http.body.auto_tracking
+            type: boolean
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserID: $.http.body.advertiser_id
+          AutoTracking: $.http.body.auto_tracking
+          CoreUserID: $.context.core_user_id
+          Description: $.http.body.description
+          Name: $.http.body.name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          event_set_id: $.rpc.output.OfflineEventSet.ID
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /offline/delete/:
+    post:
+      operationId: Offline Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvertiserID
+                event_set_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.EventSetID
+              required:
+              - advertiser_id
+              - event_set_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id=1765596790860802)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: CoreUserID
+            required: true
+            source: $.context.core_user_id
+            type: number
+          - name: EventSetID
+            required: true
+            source: $.http.body.event_set_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserID: $.http.body.advertiser_id
+          CoreUserID: $.context.core_user_id
+          EventSetID: $.http.body.event_set_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          test: $.resp
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /offline/get/:
+    get:
+      operationId: Offline Get
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.AdvertiserID
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.EventSetIDs
+        description: ''
+        in: query
+        name: event_set_ids
+        required: false
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.Name
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id=1765596808589313)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserID
+            required: false
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: EventSetIDs
+            required: false
+            source: $.http.query.event_set_ids[]
+            sub_type: number
+            type: array
+          - name: Name
+            required: false
+            source: $.http.query.name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserID: $.http.query.advertiser_id
+          EventSetIDs: $.http.query.event_set_ids[]
+          Name: $.http.query.name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          event_set_list[][]:
+          - advertiser_id: $.rpc.output.OfflineEventSets[].AdvertiserID
+            auto_tracking: $.rpc.output.OfflineEventSets[].AutoTracking
+            create_time: $.rpc.output.OfflineEventSets[].CreatedAt
+            description: $.rpc.output.OfflineEventSets[].Description
+            event_set_id: $.rpc.output.OfflineEventSets[].ID
+            name: $.rpc.output.OfflineEventSets[].Name
+            update_time: $.rpc.output.OfflineEventSets[].UpdatedAt
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /offline/update/:
+    post:
+      operationId: Offline Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvertiserID
+                auto_tracking:
+                  description: ''
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.AutoTracking
+                event_set_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.EventSetID
+                name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.EventSetName
+              required:
+              - advertiser_id
+              - event_set_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id=1765596741157889)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvertiserID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: CoreUserID
+            required: true
+            source: $.context.core_user_id
+            type: number
+          - name: EventSetID
+            required: true
+            source: $.http.body.event_set_id
+            type: number
+          - name: EventSetName
+            required: false
+            source: $.http.body.name
+            type: string
+          - name: AutoTracking
+            required: false
+            source: $.http.body.auto_tracking
+            type: boolean
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvertiserID: $.http.body.advertiser_id
+          AutoTracking: $.http.body.auto_tracking
+          CoreUserID: $.context.core_user_id
+          EventSetID: $.http.body.event_set_id
+          EventSetName: $.http.body.name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advertiser_id: $.rpc.output.OfflineEventSet.AdvertiserID
+          auto_tracking: $.rpc.output.OfflineEventSet.AutoTracking
+          create_time: $.rpc.output.OfflineEventSet.CreatedAt
+          description: $.rpc.output.OfflineEventSet.Description
+          event_set_id: $.rpc.output.OfflineEventSet.ID
+          name: $.rpc.output.OfflineEventSet.Name
+          update_time: $.rpc.output.OfflineEventSet.UpdatedAt
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/create/:
+    post:
+      operationId: Pixel Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.advertiser_id
+                partner_name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.partner_name
+                pixel_category:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: 1802417609811970
+                    enum_package_name: PixelCategory
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: CONTACTS
+                      value: '3'
+                    - description: ''
+                      is_valid: true
+                      key: CUSTOMIZE_EVENTS
+                      value: '5'
+                    - description: ''
+                      is_valid: true
+                      key: FILLING_FORM
+                      value: '2'
+                    - description: ''
+                      is_valid: true
+                      key: LANDING_PAGE
+                      value: '4'
+                    - description: ''
+                      is_valid: true
+                      key: ONLINE_STORE
+                      value: '1'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.pixel_category
+                pixel_name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.pixel_name
+                  x-open-validate:
+                  - error_msg: pixel_name cannot be empty.
+                    expr: len(%s) > 0
+              required:
+              - advertiser_id
+              - pixel_name
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id=1740858779758593)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: pixel_name
+            required: true
+            source: $.http.body.pixel_name
+            type: string
+          - name: pixel_category
+            required: false
+            source: $.http.body.pixel_category
+            type: number
+          - name: partner_name
+            required: false
+            source: $.http.body.partner_name
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.body.advertiser_id
+          partner_name: $.http.body.partner_name
+          pixel_category: $.http.body.pixel_category
+          pixel_name: $.http.body.pixel_name
+        response_cookie: []
+        response_header: []
+        response_rule:
+          advanced_matching_fields: $.rpc.output.advanced_matching_fields
+          partner_name: $.rpc.output.partner_name
+          pixel_category: $.rpc.output.pixel_category
+          pixel_code: $.rpc.output.pixel_code
+          pixel_id: $.rpc.output.pixel_id
+          pixel_name: $.rpc.output.pixel_name
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/event/create/:
+    post:
+      operationId: Pixel Event Create
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                pixel_events:
+                  description: ''
+                  items:
+                    properties:
+                      currency:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: null
+                          enum_package_name: null
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: USD
+                            value: '0'
+                          - description: ''
+                            is_valid: true
+                            key: JPY
+                            value: '1'
+                          - description: ''
+                            is_valid: true
+                            key: INR
+                            value: '2'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 6
+                        x-open-source: $.http.body.Events[].Currency
+                      currency_value:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 7
+                        x-open-source: $.http.body.Events[].CurrencyValue
+                      event_code:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 2
+                        x-open-source: $.http.body.Events[].PixelEventCode
+                      event_id:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-convert:
+                        - int64(%s)
+                        x-open-field-id: 1
+                        x-open-source: $.http.body.Events[].PixelEventID
+                      event_name:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 8
+                        x-open-source: $.http.body.Events[].EventName
+                      event_type:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: 1803595545929730
+                          enum_package_name: PixelEventType
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ADD_BILLING
+                            value: '266'
+                          - description: ''
+                            is_valid: true
+                            key: BUTTON
+                            value: '5'
+                          - description: ''
+                            is_valid: true
+                            key: CONSULT
+                            value: '97'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: DOWNLOAD_BUTTON
+                            value: '155'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: DOWNLOAD_DETAIL
+                            value: '154'
+                          - description: ''
+                            is_valid: true
+                            key: DOWNLOAD_START
+                            value: '9'
+                          - description: ''
+                            is_valid: true
+                            key: FORM
+                            value: '2'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: FORM_BUTTON
+                            value: '151'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: FORM_DETAIL
+                            value: '150'
+                          - description: ''
+                            is_valid: true
+                            key: INITIATE_ORDER
+                            value: '267'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_ADD_TO_WISHLIST
+                            value: '269'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_CART
+                            value: '147'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_DETAIL
+                            value: '146'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_ORDER
+                            value: '148'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_REGISTER
+                            value: '145'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_SEARCH
+                            value: '268'
+                          - description: ''
+                            is_valid: true
+                            key: ON_WEB_SUBSCRIBE
+                            value: '270'
+                          - description: ''
+                            is_valid: true
+                            key: PAGE_VIEW
+                            value: '93'
+                          - description: '[DEPRECATED] use consult insteam'
+                            is_valid: true
+                            key: PHONE
+                            value: '1'
+                          - description: '[DEPRECATED] use button instead'
+                            is_valid: true
+                            key: PHONE_BUTTON
+                            value: '153'
+                          - description: '[DEPRECATED] use on_web_detail instead'
+                            is_valid: true
+                            key: PHONE_DETAIL
+                            value: '152'
+                          - description: ''
+                            is_valid: true
+                            key: SHOPPING
+                            value: '96'
+                          - description: ''
+                            is_valid: true
+                            key: VIEW
+                            value: '7'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 3
+                        x-open-source: $.http.body.Events[].EventType
+                      rules:
+                        description: ''
+                        items:
+                          properties:
+                            operator:
+                              description: ''
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_CONTAINS
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_EQUALS
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: OPERATORTYPE_DOES_NOT_EQUAL
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 1
+                              x-open-source: $.http.body.Events[].PixelRules[].Operator
+                            trigger:
+                              description: ''
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_CLICK
+                                  value: '0'
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_PAGEVIEW
+                                  value: '1'
+                                - description: ''
+                                  is_valid: true
+                                  key: TRIGGERTYPE_ELEMENT_SHOW
+                                  value: '2'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 2
+                              x-open-source: $.http.body.Events[].PixelRules[].Trigger
+                            value:
+                              description: ''
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-field-id: 3
+                              x-open-source: $.http.body.Events[].PixelRules[].Value
+                            variable:
+                              description: ''
+                              type: string
+                              x-open-allow-strlist: false
+                              x-open-allow-strnum: false
+                              x-open-enum:
+                                enum_package_expired: false
+                                enum_package_id: null
+                                enum_package_name: null
+                                enums:
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_URL
+                                  value: '9'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_HOSTNAME
+                                  value: '10'
+                                - description: ''
+                                  is_valid: true
+                                  key: PAGE_PATH
+                                  value: '11'
+                                - description: ''
+                                  is_valid: true
+                                  key: ELEMENT
+                                  value: '13'
+                                key_format: string
+                                strict: true
+                                use_part: false
+                                validate_only: false
+                                value_format: int32
+                              x-open-field-id: 4
+                              x-open-source: $.http.body.Events[].PixelRules[].Variable
+                          required:
+                          - operator
+                          - trigger
+                          - value
+                          - variable
+                          type: object
+                          x-open-allow-strlist: false
+                          x-open-allow-strnum: false
+                        type: array
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-field-id: 5
+                        x-open-source: $.http.body.Events[].PixelRules
+                      statistic_type:
+                        description: ''
+                        type: string
+                        x-open-allow-strlist: false
+                        x-open-allow-strnum: false
+                        x-open-enum:
+                          enum_package_expired: false
+                          enum_package_id: null
+                          enum_package_name: null
+                          enums:
+                          - description: ''
+                            is_valid: true
+                            key: ONCE
+                            value: '2'
+                          - description: ''
+                            is_valid: true
+                            key: EVERY_TIME
+                            value: '4'
+                          key_format: string
+                          strict: true
+                          use_part: false
+                          validate_only: false
+                          value_format: int32
+                        x-open-field-id: 4
+                        x-open-source: $.http.body.Events[].PixelEventStatisticType
+                    type: object
+                    x-open-allow-strlist: false
+                    x-open-allow-strnum: false
+                  type: array
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Events
+                pixel_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelID
+              required:
+              - advertiser_id
+              - pixel_id
+              - pixel_events
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id=1740858807646209)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelID
+            required: true
+            source: $.http.body.pixel_id
+            type: number
+          - children:
+            - children:
+              - name: PixelEventID
+                required: false
+                source: $.http.body.pixel_events[].event_id
+                type: number
+              - name: PixelEventCode
+                required: false
+                source: $.http.body.pixel_events[].event_code
+                type: string
+              - name: EventType
+                required: false
+                source: $.http.body.pixel_events[].event_type
+                type: number
+              - name: PixelEventStatisticType
+                required: false
+                source: $.http.body.pixel_events[].statistic_type
+                type: number
+              - children:
+                - children:
+                  - name: Operator
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].operator
+                    type: number
+                  - name: Trigger
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].trigger
+                    type: number
+                  - name: Value
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].value
+                    type: string
+                  - name: Variable
+                    required: true
+                    source: $.http.body.pixel_events[].rules[].variable
+                    type: number
+                  is_expand: true
+                  type: object
+                is_expand: true
+                name: PixelRules
+                required: false
+                source: ''
+                sub_type: object
+                type: array
+              - name: Currency
+                required: false
+                source: $.http.body.pixel_events[].currency
+                type: number
+              - name: CurrencyValue
+                required: false
+                source: $.http.body.pixel_events[].currency_value
+                type: string
+              - name: EventName
+                required: false
+                source: $.http.body.pixel_events[].event_name
+                type: string
+              is_expand: true
+              type: object
+            is_expand: true
+            name: Events
+            required: true
+            source: ''
+            sub_type: object
+            type: array
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvID: $.http.body.advertiser_id
+          Events[][]:
+          - Currency: $.http.body.pixel_events[].currency
+            CurrencyValue: $.http.body.pixel_events[].currency_value
+            EventName: $.http.body.pixel_events[].event_name
+            EventType: $.http.body.pixel_events[].event_type
+            PixelEventCode: $.http.body.pixel_events[].event_code
+            PixelEventID: $.http.body.pixel_events[].event_id
+            PixelEventStatisticType: $.http.body.pixel_events[].statistic_type
+            PixelRules[][]:
+            - Operator: $.http.body.pixel_events[].rules[].operator
+              Trigger: $.http.body.pixel_events[].rules[].trigger
+              Value: $.http.body.pixel_events[].rules[].value
+              Variable: $.http.body.pixel_events[].rules[].variable
+          PixelID: $.http.body.pixel_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/event/delete/:
+    post:
+      operationId: Pixel Event Delete
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                event_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelEventID
+              required:
+              - advertiser_id
+              - event_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id=1740858862104578)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelEventID
+            required: true
+            source: $.http.body.event_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvID: $.http.body.advertiser_id
+          PixelEventID: $.http.body.event_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/event/stats/:
+    get:
+      operationId: Pixel Event Stats
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - content:
+          application/json:
+            schema:
+              items:
+                type: string
+                x-open-allow-strlist: false
+                x-open-allow-strnum: false
+                x-open-convert:
+                - int64(%s)
+              type: array
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.pixel_ids
+        description: ''
+        in: query
+        name: pixel_ids
+        required: true
+        x-open-field-id: 2
+      - content:
+          application/json:
+            schema:
+              properties:
+                end_date:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 2
+                  x-open-source: $.http.query.date_range.end_date
+                start_date:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.date_range.start_date
+              required:
+              - start_date
+              - end_date
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.date_range
+        description: ''
+        in: query
+        name: date_range
+        required: true
+        x-open-field-id: 3
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id=1740858904557570)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - children:
+            - type: number
+            is_expand: true
+            name: pixel_ids
+            required: true
+            source: $.http.query.pixel_ids[]
+            sub_type: number
+            type: array
+          - children:
+            - name: start_date
+              required: true
+              source: $.http.query.date_range.start_date
+              type: string
+            - name: end_date
+              required: true
+              source: $.http.query.date_range.end_date
+              type: string
+            is_expand: true
+            name: date_range
+            required: true
+            source: $.http.query.date_range
+            type: object
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          date_range: $.http.query.date_range
+          pixel_ids: $.http.query.pixel_ids[]
+        response_cookie: []
+        response_header: []
+        response_rule:
+          list: $.rpc.output.data
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/event/update/:
+    post:
+      operationId: Pixel Event Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                currency:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-enum:
+                    enum_package_expired: false
+                    enum_package_id: null
+                    enum_package_name: null
+                    enums:
+                    - description: ''
+                      is_valid: true
+                      key: USD
+                      value: '0'
+                    - description: ''
+                      is_valid: true
+                      key: JPY
+                      value: '1'
+                    - description: ''
+                      is_valid: true
+                      key: INR
+                      value: '2'
+                    key_format: string
+                    strict: true
+                    use_part: false
+                    validate_only: false
+                    value_format: int32
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.Currency
+                currency_value:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 5
+                  x-open-source: $.http.body.CurrencyValue
+                event_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelEventID
+                event_name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.PixelEventName
+              required:
+              - advertiser_id
+              - event_id
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id=1740858823774210)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelEventID
+            required: true
+            source: $.http.body.event_id
+            type: number
+          - name: PixelEventName
+            required: false
+            source: $.http.body.event_name
+            type: string
+          - name: Currency
+            required: false
+            source: $.http.body.currency
+            type: number
+          - name: CurrencyValue
+            required: false
+            source: $.http.body.currency_value
+            type: string
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AdvID: $.http.body.advertiser_id
+          Currency: $.http.body.currency
+          CurrencyValue: $.http.body.currency_value
+          PixelEventID: $.http.body.event_id
+          PixelEventName: $.http.body.event_name
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/list/:
+    get:
+      operationId: Pixel List
+      parameters:
+      - description: ''
+        in: query
+        name: advertiser_id
+        required: true
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.advertiser_id
+        x-open-field-id: 1
+      - description: ''
+        in: query
+        name: pixel_id
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-convert:
+          - int64(%s)
+          x-open-source: $.http.query.pixel_id
+        x-open-field-id: 2
+      - description: ''
+        in: query
+        name: code
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.code
+        x-open-field-id: 3
+      - description: ''
+        in: query
+        name: name
+        required: false
+        schema:
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.name
+        x-open-field-id: 4
+      - description: ''
+        in: query
+        name: order_by
+        required: false
+        schema:
+          default: EARLIEST_CREATE
+          type: string
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-enum:
+            enum_package_expired: false
+            enum_package_id: null
+            enum_package_name: null
+            enums:
+            - description: ''
+              is_valid: true
+              key: LATEST_CREATE
+              value: '0'
+            - description: ''
+              is_valid: true
+              key: EARLIEST_CREATE
+              value: '1'
+            key_format: string
+            strict: true
+            use_part: false
+            validate_only: false
+            value_format: int32
+          x-open-source: $.http.query.order_by
+        x-open-field-id: 5
+      - content:
+          application/json:
+            schema:
+              properties:
+                available_for_catalog_only:
+                  default: false
+                  description: ''
+                  type: boolean
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 1
+                  x-open-source: $.http.query.filtering.available_for_catalog_only
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+              x-open-source: $.http.query.filtering
+        description: ''
+        in: query
+        name: filtering
+        required: false
+        x-open-field-id: 6
+      - description: ''
+        in: query
+        name: page
+        required: false
+        schema:
+          format: int64
+          minimum: 1
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page
+        x-open-field-id: 7
+      - description: ''
+        in: query
+        name: page_size
+        required: false
+        schema:
+          format: int64
+          maximum: 20
+          minimum: 1
+          type: integer
+          x-open-allow-strlist: false
+          x-open-allow-strnum: false
+          x-open-source: $.http.query.page_size
+        x-open-field-id: 8
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id=1740858697598978)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: advertiser_id
+            required: true
+            source: $.http.query.advertiser_id
+            type: number
+          - name: pixel_id
+            required: false
+            source: $.http.query.pixel_id
+            type: number
+          - name: code
+            required: false
+            source: $.http.query.code
+            type: string
+          - name: name
+            required: false
+            source: $.http.query.name
+            type: string
+          - name: order_by
+            required: false
+            source: $.http.query.order_by
+            type: number
+          - children:
+            - name: available_for_catalog_only
+              required: false
+              source: $.http.query.filtering.available_for_catalog_only
+              type: boolean
+            name: filtering
+            required: false
+            source: $.http.query.filtering
+            type: object
+          - name: page
+            required: false
+            source: $.http.query.page
+            type: number
+          - name: page_size
+            required: false
+            source: $.http.query.page_size
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          advertiser_id: $.http.query.advertiser_id
+          code: $.http.query.code
+          filtering: $.http.query.filtering
+          name: $.http.query.name
+          order_by: $.http.query.order_by
+          page: $.http.query.page
+          page_size: $.http.query.page_size
+          pixel_id: $.http.query.pixel_id
+        response_cookie: []
+        response_header: []
+        response_rule:
+          page_info: $.rpc.output.page_info
+          pixels: $.rpc.output.pixels
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+  /pixel/update/:
+    post:
+      operationId: Pixel Update
+      parameters:
+      - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
+        in: query
+        name: Access-Token
+        required: true
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                advanced_matching_fields:
+                  description: ''
+                  properties:
+                    email:
+                      default: true
+                      description: ''
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 2
+                    phone_number:
+                      default: true
+                      description: ''
+                      type: boolean
+                      x-open-allow-strlist: false
+                      x-open-allow-strnum: false
+                      x-open-field-id: 1
+                  type: object
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - '%s["phone_number"] ? %s["email"] ? {"2": true, "1": true} : {"2": true, "1": false} : %s["email"] ? {"2": false, "1": true} : {"2": false, "1": false}'
+                  x-open-field-id: 4
+                  x-open-source: $.http.body.AMStatus
+                advertiser_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 1
+                  x-open-source: $.http.body.AdvID
+                pixel_id:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-convert:
+                  - int64(%s)
+                  x-open-field-id: 2
+                  x-open-source: $.http.body.PixelID
+                pixel_name:
+                  description: ''
+                  type: string
+                  x-open-allow-strlist: false
+                  x-open-allow-strnum: false
+                  x-open-field-id: 3
+                  x-open-source: $.http.body.Name
+              required:
+              - advertiser_id
+              - pixel_id
+              - pixel_name
+              type: object
+              x-open-allow-strlist: false
+              x-open-allow-strnum: false
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                properties:
+                  code:
+                    description: Response code. For the complete list of response codes and descriptions, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097). Will be shown only if it is an error request.
+                    format: int64
+                    type:
+                    - integer
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 4
+                  data:
+                    description: Returned data. The response for the SDK can be checked in the document for the API given in the description.
+                    properties: {}
+                    type:
+                    - object
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 1
+                    x-open-source: $.rpc.output.data
+                  message:
+                    description: Response message. For details, see [Appendix - Return Codes](https://ads.tiktok.com/marketing_api/docs?id=1737172488964097).
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 3
+                  request_id:
+                    description: The log ID of a request, which uniquely identifies the request.
+                    type:
+                    - string
+                    - 'null'
+                    x-open-allow-strlist: false
+                    x-open-field-id: 2
+                type: object
+                x-open-allow-strlist: false
+          description: OK
+      summary: Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id=1740858799524865)
+      tags:
+      - Measurement
+      x-open-allowlist: {}
+      x-open-denylist: {}
+      x-open-rules:
+        base_rule: null
+        extra_rule:
+          base_source: []
+          http_query_source: []
+          http_source:
+          - name: AdvID
+            required: true
+            source: $.http.body.advertiser_id
+            type: number
+          - name: PixelID
+            required: true
+            source: $.http.body.pixel_id
+            type: number
+          - name: Name
+            required: true
+            source: $.http.body.pixel_name
+            type: string
+          - children:
+            - type: boolean
+            is_expand: true
+            name: AMStatus
+            required: false
+            source: $.http.body.advanced_matching_fields
+            sub_type: boolean
+            type: dict
+          - name: CoreUserID
+            required: false
+            source: $.context.core_user_id
+            type: number
+        plugins:
+          after_response: []
+          before_request: []
+        request_query_rule: null
+        request_rule:
+          AMStatus: $.http.body.advanced_matching_fields
+          AdvID: $.http.body.advertiser_id
+          CoreUserID: $.context.core_user_id
+          Name: $.http.body.pixel_name
+          PixelID: $.http.body.pixel_id
+        response_cookie: []
+        response_header: []
+        response_rule: null
+      x-open-scene-labels: []
+      x-open-settings:
+        pop_resp_nullvalue: false
+components:
+  securitySchemes:
+    AccessToken:
+      type: apiKey
+      in: header
+      name: Access-Token
+      description: Long-term access token issued by POST /oauth2/access_token/ after advertiser authorization. See https://business-api.tiktok.com/portal/docs?id=1738373164380162
