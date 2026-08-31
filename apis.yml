@@ -112,6 +112,8 @@ apis:
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
+  - AdGroup
+  tags_raw:
   - Adgroup
   properties:
   - type: OpenAPI
@@ -152,6 +154,8 @@ apis:
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
+  - App Management
+  tags_raw:
   - APP Management
   properties:
   - type: OpenAPI
@@ -334,6 +338,8 @@ apis:
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
+  - Measurements
+  tags_raw:
   - Measurement
   properties:
   - type: OpenAPI
