@@ -435,6 +435,9 @@ apis:
   - type: SDKs
     url: https://github.com/tiktok/tiktok-business-api-sdk
 common:
+- type: License
+  name: MIT
+  url: https://github.com/tiktok/tiktok-business-api-sdk/blob/main/LICENSE
 - type: CapabilityMap
   url: capabilities/tiktok-ads-capability-edges.yml
   name: TikTok Marketing API Business Capability Map
