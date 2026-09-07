@@ -537,3 +537,5 @@ x-enrichment:
   status: enriched
   artifacts_added: 33
   pass: local-v1
+x-parent: tiktok
+x-relationship: product

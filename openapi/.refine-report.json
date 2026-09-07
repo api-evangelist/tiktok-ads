@@ -1,0 +1,40 @@
+{
+  "provider": "tiktok-ads",
+  "sources": [
+    "tiktok-ads-marketing-api-openapi.yml"
+  ],
+  "outputs": [
+    "tiktok-ads-app-management-api-openapi.yml",
+    "tiktok-ads-account-management-api-openapi.yml",
+    "tiktok-ads-ad-api-openapi.yml",
+    "tiktok-ads-adgroup-api-openapi.yml",
+    "tiktok-ads-ads-management-api-openapi.yml",
+    "tiktok-ads-audience-api-openapi.yml",
+    "tiktok-ads-automated-rules-api-openapi.yml",
+    "tiktok-ads-bc-api-openapi.yml",
+    "tiktok-ads-campaign-creation-api-openapi.yml",
+    "tiktok-ads-catalog-api-openapi.yml",
+    "tiktok-ads-comments-api-openapi.yml",
+    "tiktok-ads-creative-management-api-openapi.yml",
+    "tiktok-ads-identity-api-openapi.yml",
+    "tiktok-ads-measurement-api-openapi.yml",
+    "tiktok-ads-reporting-api-openapi.yml",
+    "tiktok-ads-store-api-openapi.yml",
+    "tiktok-ads-tool-api-openapi.yml",
+    "tiktok-ads-video-api-openapi.yml"
+  ],
+  "archived": [
+    "archived openapi/tiktok-ads-marketing-api-openapi.yml"
+  ],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "tiktok-ads-marketing-api-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
+    "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/create/ -> Bc",
+    "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/image/upload/ -> Bc",
+    "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/member/assign/ -> Bc",
+    "tiktok-ads-marketing-api-openapi.yml: declared missing tag: Bc",
+    "apis.yml register: written (+18 apis, 18 total)"
+  ],
+  "skipped": []
+}
