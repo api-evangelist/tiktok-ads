@@ -1,17 +1,15 @@
 aid: tiktok-ads
 name: TikTok Marketing API
-description: TikTok for Business is TikTok's advertising platform, where brands, agencies
-  and advertisers create, manage and optimize ad campaigns across TikTok and its family
-  of apps. The TikTok API for Business — the Marketing API at
-  business-api.tiktok.com/open_api/v1.3 — is the REST interface behind it, covering
-  advertiser accounts, campaigns, ad groups, ads, Upgraded Smart+ and GMV Max automation,
-  creatives and files, product catalogs, custom and lookalike audiences, Business Center
-  asset and member administration, conversion measurement through the Events API, and
-  synchronous plus asynchronous reporting. Access is granted by a three-legged advertiser
-  authorization that issues a long-lived token presented in an Access-Token header, with
-  permissions expressed as a three-level hierarchy of numeric scope IDs. TikTok also
-  operates a hosted Model Context Protocol server that packages roughly 400 of these
-  endpoints as OAuth-protected MCP tools for AI agents.
+description: TikTok for Business is TikTok's advertising platform, where brands, agencies and advertisers
+  create, manage and optimize ad campaigns across TikTok and its family of apps. The TikTok API for Business
+  — the Marketing API at business-api.tiktok.com/open_api/v1.3 — is the REST interface behind it, covering
+  advertiser accounts, campaigns, ad groups, ads, Upgraded Smart+ and GMV Max automation, creatives and
+  files, product catalogs, custom and lookalike audiences, Business Center asset and member administration,
+  conversion measurement through the Events API, and synchronous plus asynchronous reporting. Access is
+  granted by a three-legged advertiser authorization that issues a long-lived token presented in an Access-Token
+  header, with permissions expressed as a three-level hierarchy of numeric scope IDs. TikTok also operates
+  a hosted Model Context Protocol server that packages roughly 400 of these endpoints as OAuth-protected
+  MCP tools for AI agents.
 type: Index
 deliveryModel:
   model: unknown
@@ -62,13 +60,12 @@ tags_raw:
 - Agent Ready
 url: https://raw.githubusercontent.com/api-evangelist/tiktok-ads/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-08-13'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: tiktok-ads:tiktok-ads-account-management-api
   name: TikTok Marketing API Account Management API
-  description: >-
-    The Account Management API from TikTok Marketing API — 8 operation(s) for account management.
+  description: The Account Management API from TikTok Marketing API — 8 operation(s) for account management.
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
@@ -232,8 +229,7 @@ apis:
     url: https://github.com/tiktok/tiktok-business-api-sdk
 - aid: tiktok-ads:tiktok-ads-campaign-creation-api
   name: TikTok Marketing API Campaign Creation API
-  description: >-
-    The Campaign Creation API from TikTok Marketing API — 15 operation(s) for campaign creation.
+  description: The Campaign Creation API from TikTok Marketing API — 15 operation(s) for campaign creation.
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
@@ -293,8 +289,7 @@ apis:
     url: https://github.com/tiktok/tiktok-business-api-sdk
 - aid: tiktok-ads:tiktok-ads-creative-management-api
   name: TikTok Marketing API Creative Management API
-  description: >-
-    The Creative Management API from TikTok Marketing API — 15 operation(s) for creative management.
+  description: The Creative Management API from TikTok Marketing API — 15 operation(s) for creative management.
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
@@ -442,7 +437,7 @@ common:
   url: capabilities/tiktok-ads-capability-edges.yml
   name: TikTok Marketing API Business Capability Map
 - type: OpenAPI
-  url: openapi/tiktok-ads-marketing-api-openapi.yml
+  url: openapi/_original/tiktok-ads-marketing-api-openapi.yml
 - type: Overlay
   url: overlays/tiktok-ads-marketing-api-overlay.yaml
 - type: MCPServer
