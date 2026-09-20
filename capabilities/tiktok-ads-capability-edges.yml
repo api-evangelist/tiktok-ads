@@ -24,7 +24,8 @@ edges:
     platform — buy-side paid media execution, i.e. Digital Marketing Management. Not sell-side ad ops
     since the caller is the advertiser.
 - tag: Adgroup
-  spec_file: tiktok-ads-adgroup-api-openapi.yml
+  spec_file: tiktok-ads-ad-group-api-openapi.yml
+  reanchored_from: tiktok-ads-adgroup-api-openapi.yml
   capability_id: BC-400.60
   capability_id_l1: BC-400
   capability_name: Digital Marketing Management
