@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Audience API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -111,7 +111,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get details of audience overlap. [Audience Insight Overlap](https://business-api.tiktok.com/portal/docs?id=1797023590780930)
+      summary: Get details of audience overlap. Audience Insight Overlap
       tags:
       - Audience
       x-open-allowlist: {}
@@ -309,7 +309,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Apply a shared custom audience [Dmp Custom_audience Apply](https://ads.tiktok.com/marketing_api/docs?id=1740245827044354)
+      summary: Apply a shared custom audience Dmp Custom_audience Apply
       tags:
       - Audience
       x-open-allowlist: {}
@@ -489,7 +489,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the latest application log of custom audiences [Dmp Custom_audience Apply Log](https://ads.tiktok.com/marketing_api/docs?id=1758615737388033)
+      summary: Get the latest application log of custom audiences Dmp Custom_audience Apply Log
       tags:
       - Audience
       x-open-allowlist: {}
@@ -776,7 +776,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create an audience by file [Dmp Custom_audience Create](https://ads.tiktok.com/marketing_api/docs?id=1739940570793985)
+      summary: Create an audience by file Dmp Custom_audience Create
       tags:
       - Audience
       x-open-allowlist: {}
@@ -923,7 +923,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete audiences [Dmp Custom_audience Delete](https://business-api.tiktok.com/portal/docs?id=1739940539757569)
+      summary: Delete audiences Dmp Custom_audience Delete
       tags:
       - Audience
       x-open-allowlist: {}
@@ -1113,7 +1113,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Upload a data file [Dmp Custom_audience File Upload](https://business-api.tiktok.com/portal/docs?id=1739940567842818)
+      summary: Upload a data file Dmp Custom_audience File Upload
       tags:
       - Audience
       x-open-allowlist: {}
@@ -1280,7 +1280,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Obtain the details of specified audiences [Dmp Custom_audience Get](https://business-api.tiktok.com/portal/docs?id=1739940507792385)
+      summary: Obtain the details of specified audiences Dmp Custom_audience Get
       tags:
       - Audience
       x-open-allowlist: {}
@@ -1468,7 +1468,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get all audiences [Dmp Custom_audience List](https://business-api.tiktok.com/portal/docs?id=1739940506015746)
+      summary: Get all audiences Dmp Custom_audience List
       tags:
       - Audience
       x-open-allowlist: {}
@@ -1706,7 +1706,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a lookalike audience [Dmp Custom_audience Lookalike Create](https://business-api.tiktok.com/portal/docs?id=1739940511844353)
+      summary: Create a lookalike audience Dmp Custom_audience Lookalike Create
       tags:
       - Audience
       x-open-allowlist: {}
@@ -1887,7 +1887,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Manually refresh a Lookalike Audience [Dmp Custom_audience Lookalike Update](https://ads.tiktok.com/marketing_api/docs?id=1758616888158209)
+      summary: Manually refresh a Lookalike Audience Dmp Custom_audience Lookalike Update
       tags:
       - Audience
       x-open-allowlist: {}
@@ -2664,7 +2664,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create an audience by rules [Dmp Custom_audience Rule Create](https://business-api.tiktok.com/portal/docs?id=1739940509849601)
+      summary: Create an audience by rules Dmp Custom_audience Rule Create
       tags:
       - Audience
       x-open-allowlist: {}
@@ -3097,7 +3097,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Share custom audiences with other advertisers [Dmp Custom_audience Share](https://business-api.tiktok.com/portal/docs?id=1740245803888706)
+      summary: Share custom audiences with other advertisers Dmp Custom_audience Share
       tags:
       - Audience
       x-open-allowlist: {}
@@ -3253,7 +3253,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Stop sharing custom audiences with other advertisers [Dmp Custom_audience Share Cancel](https://business-api.tiktok.com/portal/docs?id=1740245829978113)
+      summary: Stop sharing custom audiences with other advertisers Dmp Custom_audience Share…
       tags:
       - Audience
       x-open-allowlist: {}
@@ -3375,7 +3375,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the sharing log of a custom audience [Dmp Custom_audience Share Log](https://ads.tiktok.com/marketing_api/docs?id=1740245827044354)
+      summary: Get the sharing log of a custom audience Dmp Custom_audience Share Log
       tags:
       - Audience
       x-open-allowlist: {}
@@ -3581,7 +3581,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update the details of an audience [Dmp Custom_audience Update](https://business-api.tiktok.com/portal/docs?id=1739940572667906)
+      summary: Update the details of an audience Dmp Custom_audience Update
       tags:
       - Audience
       x-open-allowlist: {}
@@ -4097,7 +4097,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a Saved Audience [Dmp Saved_audience Create](https://business-api.tiktok.com/portal/docs?id=1780154541898754)
+      summary: Create a Saved Audience Dmp Saved_audience Create
       tags:
       - Audience
       x-open-allowlist: {}
@@ -4387,7 +4387,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete Saved Audiences [Dmp Saved_audience Delete](https://business-api.tiktok.com/portal/docs?id=1780154666312706)
+      summary: Delete Saved Audiences Dmp Saved_audience Delete
       tags:
       - Audience
       x-open-allowlist: {}
@@ -4541,7 +4541,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the details of Saved Audiences [Dmp Saved_audience List](https://business-api.tiktok.com/portal/docs?id=1780154619404290)
+      summary: Get the details of Saved Audiences Dmp Saved_audience List
       tags:
       - Audience
       x-open-allowlist: {}

@@ -1,7 +1,7 @@
 {
   "provider": "tiktok-ads",
   "sources": [
-    "tiktok-ads-marketing-api-openapi.yml"
+    "_original/tiktok-ads-marketing-api-openapi.yml"
   ],
   "outputs": [
     "tiktok-ads-app-management-api-openapi.yml",
@@ -24,17 +24,38 @@
     "tiktok-ads-video-api-openapi.yml"
   ],
   "archived": [
-    "archived openapi/tiktok-ads-marketing-api-openapi.yml"
+    "deleted 1 superseded output(s) from the previous generation"
   ],
   "errors": [],
   "warnings": [],
   "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
     "tiktok-ads-marketing-api-openapi.yml: upgraded openapi 3.0.1 -> OpenAPI 3.2.0",
     "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/create/ -> Bc",
     "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/image/upload/ -> Bc",
     "tiktok-ads-marketing-api-openapi.yml: tagged paths POST /bc/member/assign/ -> Bc",
     "tiktok-ads-marketing-api-openapi.yml: declared missing tag: Bc",
-    "apis.yml register: written (+18 apis, 18 total)"
+    "superseded outputs removed: tiktok-ads-ad-group-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 18 total)"
   ],
-  "skipped": []
+  "skipped": [
+    "tiktok-ads-account-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-ad-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-ad-group-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-ads-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-app-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-audience-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-automated-rules-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-bc-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-campaign-creation-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-catalog-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-comments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-creative-management-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-identity-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-measurement-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-reporting-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-store-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-tool-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "tiktok-ads-video-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

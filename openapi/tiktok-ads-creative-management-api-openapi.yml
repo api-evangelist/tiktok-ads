@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Creative Management API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -111,7 +111,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete creative assets. [Asset Delete](https://business-api.tiktok.com/portal/docs?id=1797202997456897)
+      summary: Delete creative assets. Asset Delete
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -287,7 +287,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: SShare creative assets with other advertiser accounts. [Asset Share](https://business-api.tiktok.com/portal/docs?id=1773192725768193)
+      summary: SShare creative assets with other advertiser accounts. Asset Share
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -472,7 +472,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Edit an image according to the size you want as well as apply creative trimmings. [Image Edit](https://business-api.tiktok.com/portal/docs?id=1739067107903489)
+      summary: Edit an image according to the size you want as well as apply creative…
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -1873,7 +1873,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a portfolio. [Creative Portfolie Create](https://business-api.tiktok.com/portal/docs?id=1739091950439426)
+      summary: Create a portfolio. Creative Portfolie Create
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -2461,7 +2461,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get a portfolio by ID. [Portfolio Get](https://business-api.tiktok.com/portal/docs?id=1739092113671170)
+      summary: Get a portfolio by ID. Portfolio Get
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -2736,7 +2736,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get portfolios within an ad account. [Portfolio List](https://business-api.tiktok.com/portal/docs?id=1766324010279938)
+      summary: Get portfolios within an ad account. Portfolio List
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -2949,7 +2949,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: ''
+      summary: Creative shareable link create
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -2994,6 +2994,7 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-summary-source: derived
   /creative/smart_text/generate/:
     post:
       operationId: Creative Smart_text Generate
@@ -3165,7 +3166,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use smart text. [Smart Text Generate](https://business-api.tiktok.com/portal/docs?id=1739084248002626)
+      summary: Use smart text. Smart Text Generate
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -3372,7 +3373,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get details of a popular hashtag. [Discovery Detail](https://business-api.tiktok.com/portal/docs?id=1825119047070721)
+      summary: Get details of a popular hashtag. Discovery Detail
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -3906,7 +3907,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get popular hashtags. [Trending List](https://business-api.tiktok.com/portal/docs?id=1825119032526849)
+      summary: Get popular hashtags. Trending List
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -4050,7 +4051,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete a playable ad. [Playable Delete](https://business-api.tiktok.com/portal/docs?id=1737733368940546)
+      summary: Delete a playable ad. Playable Delete
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -4277,7 +4278,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to get a list of playables. [Playable Get](https://business-api.tiktok.com/portal/docs?id=1737732758495234)
+      summary: Use this endpoint to get a list of playables. Playable Get
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -4430,7 +4431,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to save a playable. [Playable Save](https://business-api.tiktok.com/portal/docs?id=1737732203851777)
+      summary: Use this endpoint to save a playable. Playable Save
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -4593,7 +4594,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: You can use this endpoint to upload Playable Ad contents. [Playable Upload](https://business-api.tiktok.com/portal/docs?id=1737730926765057)
+      summary: You can use this endpoint to upload Playable Ad contents. Playable Upload
       tags:
       - Creative Management
       x-open-allowlist: {}
@@ -4710,7 +4711,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check the status of the playable. [Playable Validate](https://business-api.tiktok.com/portal/docs?id=1737732054892545)
+      summary: Check the status of the playable. Playable Validate
       tags:
       - Creative Management
       x-open-allowlist: {}

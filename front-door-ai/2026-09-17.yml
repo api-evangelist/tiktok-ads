@@ -1,0 +1,23 @@
+# Front Door AI Index — tiktok-ads — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: tiktok-ads
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: www.tiktok.com
+  final_host: www.tiktok.com
+  ownership: shared
+  owner: tiktok
+  shares_host_with:
+  - tiktok
+  - tiktok-for-developers
+  inherited_from: null
+  verdict: thin
+  score: null
+  host_score: null
+  density: null
+  words: 5
+  tiers: null
+  ambiguous: null
+  top_terms: null

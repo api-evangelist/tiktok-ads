@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Adgroup API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -18,7 +18,7 @@ servers:
 security:
 - AccessToken: []
 tags:
-- name: Adgroup
+- name: Ad Group
 paths:
   /smart_plus/adgroup/create/:
     post:
@@ -3456,7 +3456,7 @@ paths:
           description: OK
       summary: Create a new ad group [Smart Plus AdGroup Create]
       tags:
-      - Adgroup
+      - Ad Group
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -4943,7 +4943,7 @@ paths:
           description: OK
       summary: Retrieve ad group details [Smart Plus AdGroup Get]
       tags:
-      - Adgroup
+      - Ad Group
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -5267,7 +5267,7 @@ paths:
           description: OK
       summary: Update ad group status [Smart Plus AdGroup Status Update]
       tags:
-      - Adgroup
+      - Ad Group
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -6122,7 +6122,7 @@ paths:
           description: OK
       summary: Update an ad group [Smart Plus AdGroup Update]
       tags:
-      - Adgroup
+      - Ad Group
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:

@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Account Management API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -102,7 +102,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get ad account details. [Advertiser Info](https://business-api.tiktok.com/portal/docs?id=1739593083610113)
+      summary: Get ad account details. Advertiser Info
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -426,7 +426,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update an ad account. [Advertiser Update](https://business-api.tiktok.com/portal/docs?id=1739939050770434)
+      summary: Update an ad account. Advertiser Update
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -648,7 +648,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the Pangle audience packages. [Pangle Audience Package Get](https://business-api.tiktok.com/portal/docs?id=1740040177229826)
+      summary: Get the Pangle audience packages. Pangle Audience Package Get
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -741,7 +741,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the Pangle block list. [Pangle Block List Get](https://business-api.tiktok.com/portal/docs?id=1740039957181441)
+      summary: Get the Pangle block list. Pangle Block List Get
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -866,7 +866,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update the Pangle block list. [Pangle Block List Update](https://business-api.tiktok.com/portal/docs?id=1740040139110466)
+      summary: Update the Pangle block list. Pangle Block List Update
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -1013,7 +1013,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check the status of Terms. [Term Check](https://business-api.tiktok.com/portal/docs?id=1737192304571394)
+      summary: Check the status of Terms. Term Check
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -1168,7 +1168,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Sign Terms. [Term Confirm](https://business-api.tiktok.com/portal/docs?id=1737192284435457)
+      summary: Sign Terms. Term Confirm
       tags:
       - Account Management
       x-open-allowlist: {}
@@ -1350,7 +1350,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get Terms. [Term Get](https://business-api.tiktok.com/portal/docs?id=1737191909315585)
+      summary: Get Terms. Term Get
       tags:
       - Account Management
       x-open-allowlist: {}

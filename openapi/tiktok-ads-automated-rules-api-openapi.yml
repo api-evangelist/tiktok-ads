@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Automated Rules API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -191,7 +191,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Bind objects to rules. [Optimizer Rule Batch Bind](https://business-api.tiktok.com/portal/docs?id=1738769164954626)
+      summary: Bind objects to rules. Optimizer Rule Batch Bind
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -1281,7 +1281,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create an automated rule. [Optimizer Rule Create](https://business-api.tiktok.com/portal/docs?id=1738767670852610)
+      summary: Create an automated rule. Optimizer Rule Create
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -1578,7 +1578,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get rules by rule IDs. [Optimizer Rule Get](https://business-api.tiktok.com/portal/docs?id=1738768750822466)
+      summary: Get rules by rule IDs. Optimizer Rule Get
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -1720,7 +1720,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get rules based on the values of certain filters. [Optimizer Rule List](https://business-api.tiktok.com/portal/docs?id=1738768861976578)
+      summary: Get rules based on the values of certain filters. Optimizer Rule List
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -1925,7 +1925,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get result details. [Optimizer Rule Result Get](https://business-api.tiktok.com/portal/docs?id=1738769098314754)
+      summary: Get result details. Optimizer Rule Result Get
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -2101,7 +2101,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get rule results. [Optimizer Rule Result List](https://business-api.tiktok.com/portal/docs?id=1738769076676609)
+      summary: Get rule results. Optimizer Rule Result List
       tags:
       - Automated_Rules
       x-open-allowlist: {}
@@ -3214,7 +3214,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update an automated rule. [Optimizer Rule Update](https://business-api.tiktok.com/portal/docs?id=1738769123170306)
+      summary: Update an automated rule. Optimizer Rule Update
       tags:
       - Automated_Rules
       x-open-allowlist: {}

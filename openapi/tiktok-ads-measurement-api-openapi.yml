@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Measurement API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -113,7 +113,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a new Offline Event set. [Offline Create](https://business-api.tiktok.com/portal/docs?id=1758427576470529)
+      summary: Create a new Offline Event set. Offline Create
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -240,7 +240,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete an Offline Event set. [Offline Delete](https://business-api.tiktok.com/portal/docs?id=1765596790860802)
+      summary: Delete an Offline Event set. Offline Delete
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -368,7 +368,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get Offline Event sets. [Offline Get](https://business-api.tiktok.com/portal/docs?id=1765596808589313)
+      summary: Get Offline Event sets. Offline Get
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -510,7 +510,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update an Offline Event set. [Offline Update](https://business-api.tiktok.com/portal/docs?id=1765596741157889)
+      summary: Update an Offline Event set. Offline Update
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -688,7 +688,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a Pixel. [Pixel Create](https://business-api.tiktok.com/portal/docs?id=1740858779758593)
+      summary: Create a Pixel. Pixel Create
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -1136,7 +1136,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Choose either an industry or custom template to define your events. [Pixel Event Create](https://business-api.tiktok.com/portal/docs?id=1740858807646209)
+      summary: Choose either an industry or custom template to define your events.
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -1324,7 +1324,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete Pixel events. [Pixel Event Delete](https://business-api.tiktok.com/portal/docs?id=1740858862104578)
+      summary: Delete Pixel events. Pixel Event Delete
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -1466,7 +1466,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: View statistics of an event data over a period of time. [Pixel Event Stats](https://business-api.tiktok.com/portal/docs?id=1740858904557570)
+      summary: View statistics of an event data over a period of time. Pixel Event Stats
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -1640,7 +1640,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update the name of a Pixel event and the conversion value. [Pixel Event Update](https://business-api.tiktok.com/portal/docs?id=1740858823774210)
+      summary: Update the name of a Pixel event and the conversion value. Pixel Event Update
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -1856,7 +1856,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Obtain a list of Pixel information. [Pixel List](https://business-api.tiktok.com/portal/docs?id=1740858697598978)
+      summary: Obtain a list of Pixel information. Pixel List
       tags:
       - Measurement
       x-open-allowlist: {}
@@ -2036,7 +2036,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update a Pixel. [Pixel Update](https://business-api.tiktok.com/portal/docs?id=1740858799524865)
+      summary: Update a Pixel. Pixel Update
       tags:
       - Measurement
       x-open-allowlist: {}

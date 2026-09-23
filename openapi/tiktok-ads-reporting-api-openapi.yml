@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Reporting API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -531,7 +531,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max report [Smart Plus GMV Max Report Get](https://business-api.tiktok.com/portal/docs?id=1824721673497601)
+      summary: Get GMV Max report Smart Plus GMV Max Report Get
       tags:
       - Reporting
       x-open-allowlist: {}
@@ -1214,7 +1214,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Run a synchronous report. [Report Integrated Get](https://business-api.tiktok.com/portal/docs?id=1740302848100353)
+      summary: Run a synchronous report. Report Integrated Get
       tags:
       - Reporting
       x-open-allowlist: {}
@@ -1449,7 +1449,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Cancel an asynchronous report task. [Report Task Cancel](https://business-api.tiktok.com/portal/docs?id=1803615367145537)
+      summary: Cancel an asynchronous report task. Report Task Cancel
       tags:
       - Reporting
       x-open-allowlist: {}
@@ -1557,7 +1557,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the status of an async report task. [Report Task Check](https://business-api.tiktok.com/portal/docs?id=1740302781443073)
+      summary: Get the status of an async report task. Report Task Check
       tags:
       - Reporting
       x-open-allowlist: {}
@@ -1967,7 +1967,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: null
+      summary: Report task create
       tags:
       - Reporting
       x-open-allowlist: {}
@@ -2108,6 +2108,7 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-summary-source: derived
   /smart_plus/material_report/breakdown/:
     get:
       operationId: Smart_plus Material_report Breakdown

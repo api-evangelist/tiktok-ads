@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Comments API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -96,7 +96,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check if a list of words is blocked. [Blockedword Check](https://business-api.tiktok.com/portal/docs?id=1739029247961089)
+      summary: Check if a list of words is blocked. Blockedword Check
       tags:
       - Comments
       x-open-allowlist: {}
@@ -214,7 +214,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Add words to the block list. [Blockedword Create](https://business-api.tiktok.com/portal/docs?id=1739029218470913)
+      summary: Add words to the block list. Blockedword Create
       tags:
       - Comments
       x-open-allowlist: {}
@@ -329,7 +329,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete one or more blocked words. [Blockedword Delete](https://business-api.tiktok.com/portal/docs?id=1739029277346817)
+      summary: Delete one or more blocked words. Blockedword Delete
       tags:
       - Comments
       x-open-allowlist: {}
@@ -465,7 +465,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the list of blocked words for an ad account. [Blockedword List](https://business-api.tiktok.com/portal/docs?id=1739029260837889)
+      summary: Get the list of blocked words for an ad account. Blockedword List
       tags:
       - Comments
       x-open-allowlist: {}
@@ -585,7 +585,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check the status of the export task. [Blockedword Task Check](https://business-api.tiktok.com/portal/docs?id=1739029311687681)
+      summary: Check the status of the export task. Blockedword Task Check
       tags:
       - Comments
       x-open-allowlist: {}
@@ -737,7 +737,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a task to export blocked words. [Blockedword Task Create](https://business-api.tiktok.com/portal/docs?id=1739029296119809)
+      summary: Create a task to export blocked words. Blockedword Task Create
       tags:
       - Comments
       x-open-allowlist: {}
@@ -872,7 +872,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Replace a blocked word with another word. [Blockedword Task Update](https://business-api.tiktok.com/portal/docs?id=1739029234526209)
+      summary: Replace a blocked word with another word. Blockedword Task Update
       tags:
       - Comments
       x-open-allowlist: {}
@@ -1063,7 +1063,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete comments. [Comment Delete](https://business-api.tiktok.com/portal/docs?id=1738957772267522)
+      summary: Delete comments. Comment Delete
       tags:
       - Comments
       x-open-allowlist: {}
@@ -1404,7 +1404,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get comments for your ads. [Comment List](https://business-api.tiktok.com/portal/docs?id=1738086301876225)
+      summary: Get comments for your ads. Comment List
       tags:
       - Comments
       x-open-allowlist: {}
@@ -1733,7 +1733,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Reply to comments. [Comment Post](https://business-api.tiktok.com/portal/docs?id=1738957702411265)
+      summary: Reply to comments. Comment Post
       tags:
       - Comments
       x-open-allowlist: {}
@@ -1976,7 +1976,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get related comments. [Comment Reference](https://business-api.tiktok.com/portal/docs?id=1738086824859650)
+      summary: Get related comments. Comment Reference
       tags:
       - Comments
       x-open-allowlist: {}
@@ -2210,7 +2210,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to change the status of a list of comments from public to hidden, or vice versa. [Comment Status Update](https://business-api.tiktok.com/portal/docs?id=1738086844585985)
+      summary: Use this endpoint to change the status of a list of comments from public to…
       tags:
       - Comments
       x-open-allowlist: {}
@@ -2361,7 +2361,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get comment export status. [Comment Task Check](https://business-api.tiktok.com/portal/docs?id=1738088242659330)
+      summary: Get comment export status. Comment Task Check
       tags:
       - Comments
       x-open-allowlist: {}
@@ -2693,7 +2693,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create comment export task. [Comment Task Create](https://business-api.tiktok.com/portal/docs?id=1738088144215041)
+      summary: Create comment export task. Comment Task Create
       tags:
       - Comments
       x-open-allowlist: {}

@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing APP Management API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -18,7 +18,7 @@ servers:
 security:
 - AccessToken: []
 tags:
-- name: APP Management
+- name: App Management
 paths:
   /app/create/:
     post:
@@ -365,9 +365,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create an app. [APP Create](https://business-api.tiktok.com/portal/docs?id=1740859280958466)
+      summary: Create an app. APP Create
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -513,9 +513,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get info of an app. [APP Info](https://business-api.tiktok.com/portal/docs?id=1740859272887297)
+      summary: Get info of an app. APP Info
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -624,9 +624,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the app list. [APP List](https://business-api.tiktok.com/portal/docs?id=1740859313270786)
+      summary: Get the app list. APP List
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -1104,9 +1104,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get App Conversion Events. [App Optimization Event](https://business-api.tiktok.com/portal/docs?id=1740859338750977)
+      summary: Get App Conversion Events. App Optimization Event
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -1250,9 +1250,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get App Retargeting Events. [App Optimization Event Retargeting](https://business-api.tiktok.com/portal/docs?id=1740859371033601)
+      summary: Get App Retargeting Events. App Optimization Event Retargeting
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:
@@ -2009,9 +2009,9 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update an app. [APP Update](https://business-api.tiktok.com/portal/docs?id=1740859300069378)
+      summary: Update an app. APP Update
       tags:
-      - APP Management
+      - App Management
       x-open-allowlist: {}
       x-open-denylist: {}
       x-open-rules:

@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Store API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -109,7 +109,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create GMV Max exclusive authorization [Smart Plus GMV Max Exclusive Authorization Create](https://business-api.tiktok.com/portal/docs?id=1822001200356354)
+      summary: Create GMV Max exclusive authorization Smart Plus GMV Max Exclusive…
       tags:
       - Store
       x-open-allowlist: {}
@@ -237,7 +237,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max exclusive authorization [Smart Plus GMV Max Exclusive Authorization Get](https://business-api.tiktok.com/portal/docs?id=1822001184635905)
+      summary: Get GMV Max exclusive authorization Smart Plus GMV Max Exclusive Authorization…
       tags:
       - Store
       x-open-allowlist: {}
@@ -377,7 +377,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max store list [Smart Plus GMV Max Store List](https://business-api.tiktok.com/portal/docs?id=1822001044479041)
+      summary: Get GMV Max store list Smart Plus GMV Max Store List
       tags:
       - Store
       x-open-allowlist: {}
@@ -526,7 +526,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check GMV Max shop ad usage [Smart Plus GMV Max Shop Ad Usage Check](https://business-api.tiktok.com/portal/docs?id=1822001084174338)
+      summary: Check GMV Max shop ad usage Smart Plus GMV Max Shop Ad Usage Check
       tags:
       - Store
       x-open-allowlist: {}

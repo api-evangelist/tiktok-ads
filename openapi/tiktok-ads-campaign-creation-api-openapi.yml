@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Campaign Creation API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -949,7 +949,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create GMV Max campaign [Smart Plus GMV Max Campaign Create](https://business-api.tiktok.com/portal/docs?id=1822000988713089)
+      summary: Create GMV Max campaign Smart Plus GMV Max Campaign Create
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -1468,7 +1468,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max campaign info [Smart Plus GMV Max Campaign Info](https://business-api.tiktok.com/portal/docs?id=1822000968821762)
+      summary: Get GMV Max campaign info Smart Plus GMV Max Campaign Info
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -1812,7 +1812,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create GMV Max session [Smart Plus GMV Max Session Create](https://business-api.tiktok.com/portal/docs?id=1835246967275522)
+      summary: Create GMV Max session Smart Plus GMV Max Session Create
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -1982,7 +1982,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete GMV Max session [Smart Plus GMV Max Session Delete](https://business-api.tiktok.com/portal/docs?id=1835246983475217)
+      summary: Delete GMV Max session Smart Plus GMV Max Session Delete
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -2096,7 +2096,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max session info [Smart Plus GMV Max Session Get](https://business-api.tiktok.com/portal/docs?id=1835247031331842)
+      summary: Get GMV Max session info Smart Plus GMV Max Session Get
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -2215,7 +2215,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max session list [Smart Plus GMV Max Session List](https://business-api.tiktok.com/portal/docs?id=1835246996436162)
+      summary: Get GMV Max session list Smart Plus GMV Max Session List
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -2415,7 +2415,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update GMV Max session [Smart Plus GMV Max Session Update](https://business-api.tiktok.com/portal/docs?id=1835247009119233)
+      summary: Update GMV Max session Smart Plus GMV Max Session Update
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -2971,7 +2971,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update GMV Max campaign [Smart Plus GMV Max Campaign Update](https://business-api.tiktok.com/portal/docs?id=1822001009002497)
+      summary: Update GMV Max campaign Smart Plus GMV Max Campaign Update
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -3604,7 +3604,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max bid recommendation [Smart Plus GMV Max Bid Recommend](https://business-api.tiktok.com/portal/docs?id=1822001024720897)
+      summary: Get GMV Max bid recommendation Smart Plus GMV Max Bid Recommend
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -3864,7 +3864,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max custom anchor video list [Smart Plus GMV Max Custom Anchor Video List Get](https://business-api.tiktok.com/portal/docs?id=1830215925061633)
+      summary: Get GMV Max custom anchor video list Smart Plus GMV Max Custom Anchor Video…
       tags:
       - Campaign Creation
       x-open-allowlist: {}
@@ -4101,7 +4101,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get GMV Max occupied custom shop ads [Smart Plus GMV Max Occupied Custom Shop Ads List](https://business-api.tiktok.com/portal/docs?id=1822001136924674)
+      summary: Get GMV Max occupied custom shop ads Smart Plus GMV Max Occupied Custom Shop…
       tags:
       - Campaign Creation
       x-open-allowlist: {}

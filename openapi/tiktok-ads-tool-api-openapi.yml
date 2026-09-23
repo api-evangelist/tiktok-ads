@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Tool API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -91,7 +91,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get available locations by advertiser ID [Search Region](https://ads.tiktok.com/marketing_api/docs?id=1773644763581441)
+      summary: Get available locations by advertiser ID Search Region
       tags:
       - Tool
       x-open-allowlist: {}
@@ -242,7 +242,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get action categories. [Tool Action Category](https://business-api.tiktok.com/portal/docs?id=1737166752522241)
+      summary: Get action categories. Tool Action Category
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1229,7 +1229,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get a suggested bid [Tool Bid Recommend](https://ads.tiktok.com/marketing_api/docs?id=1737107845597186)
+      summary: Get a suggested bid Tool Bid Recommend
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1388,7 +1388,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the authorization status of a Brand Safety partner [Tool Brand_safety Partner Authorize Status](https://ads.tiktok.com/marketing_api/docs?id=1738456743621634)
+      summary: Get the authorization status of a Brand Safety partner Tool Brand_safety…
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1483,7 +1483,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get carriers. [Tool Carrier](https://business-api.tiktok.com/portal/docs?id=1737168013095938)
+      summary: Get carriers. Tool Carrier
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1697,7 +1697,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get available contextual tags [Tool Contextual_tag Get](https://ads.tiktok.com/marketing_api/docs?id=1747747118654465)
+      summary: Get available contextual tags Tool Contextual_tag Get
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1837,7 +1837,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get details of contextual tags [Tool Contextual_tag Info](https://ads.tiktok.com/marketing_api/docs?id=1747747180830722)
+      summary: Get details of contextual tags Tool Contextual_tag Info
       tags:
       - Tool
       x-open-allowlist: {}
@@ -1960,7 +1960,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get targeting hashtags by ID [Tool Hashtag Get](https://ads.tiktok.com/marketing_api/docs?id=1736280889167874)
+      summary: Get targeting hashtags by ID Tool Hashtag Get
       tags:
       - Tool
       x-open-allowlist: {}
@@ -2094,7 +2094,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Search for targeting hashtags [Tool Hashtag Recommend](https://ads.tiktok.com/marketing_api/docs?id=1736271339521025)
+      summary: Search for targeting hashtags Tool Hashtag Recommend
       tags:
       - Tool
       x-open-allowlist: {}
@@ -2357,7 +2357,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get additional interest categories by ID [Tool Interest_keyword Get](https://ads.tiktok.com/marketing_api/docs?id=1763590894544897)
+      summary: Get additional interest categories by ID Tool Interest_keyword Get
       tags:
       - Tool
       x-open-allowlist: {}
@@ -2502,7 +2502,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get a TikTok in-app link [Tool Open_url](https://ads.tiktok.com/marketing_api/docs?id=1738457335681026)
+      summary: Get a TikTok in-app link Tool Open_url
       tags:
       - Tool
       x-open-allowlist: {}
@@ -2637,7 +2637,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get OS versions [Tool Os_version](https://ads.tiktok.com/marketing_api/docs?id=1738308662898689)
+      summary: Get OS versions Tool Os_version
       tags:
       - Tool
       x-open-allowlist: {}
@@ -2735,7 +2735,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get region calling codes and region codes for phone numbers [Tool Phone_region_code](https://ads.tiktok.com/marketing_api/docs?id=1774488637039618)
+      summary: Get region calling codes and region codes for phone numbers Tool…
       tags:
       - Tool
       x-open-allowlist: {}
@@ -3147,7 +3147,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Obtain details about location targeting tags by ID [Tool Targeting Info](https://ads.tiktok.com/marketing_api/docs?id=1761237001980929)
+      summary: Obtain details about location targeting tags by ID Tool Targeting Info
       tags:
       - Tool
       x-open-allowlist: {}
@@ -3361,7 +3361,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get internet service providers [Tool Targeting List](https://ads.tiktok.com/marketing_api/docs?id=1762962378261506)
+      summary: Get internet service providers Tool Targeting List
       tags:
       - Tool
       x-open-allowlist: {}
@@ -3910,7 +3910,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Search for location targeting tags [Tool Targeting Search](https://ads.tiktok.com/marketing_api/docs?id=1761236883355649)
+      summary: Search for location targeting tags Tool Targeting Search
       tags:
       - Tool
       x-open-allowlist: {}
@@ -4097,7 +4097,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get time zones [Tool Timezone](https://ads.tiktok.com/marketing_api/docs?id=1738455961470977)
+      summary: Get time zones Tool Timezone
       tags:
       - Tool
       x-open-allowlist: {}
@@ -4193,7 +4193,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the verification results of a URL [Tool Url_validate](https://ads.tiktok.com/marketing_api/docs?id=1774487686007810)
+      summary: Get the verification results of a URL Tool Url_validate
       tags:
       - Tool
       x-open-allowlist: {}
@@ -5506,7 +5506,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Check Value-Based Optimization eligibility [Tool Vbo_status](https://ads.tiktok.com/marketing_api/docs?id=1770016073586753)
+      summary: Check Value-Based Optimization eligibility Tool Vbo_status
       tags:
       - Tool
       x-open-allowlist: {}

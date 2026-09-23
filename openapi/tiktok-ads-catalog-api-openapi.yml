@@ -1,7 +1,7 @@
 openapi: 3.2.0
 info:
   title: TikTok API for Business — Marketing Catalog API
-  description: TikTok API for Business (Marketing API) v1.3. This document is a mechanical union of the 202 per-operation OpenAPI 3.0.1 documents TikTok publishes in yml_files/ of its own SDK repository (https://github.com/tiktok/tiktok-business-api-sdk), which are the swagger-codegen inputs for TikTok's first-party Java/Python/JavaScript SDKs. Operation content (paths, parameters, responses, tags and the x-open-* extensions) is preserved verbatim; only info, servers and components.securitySchemes were written by API Evangelist, because the per-operation fragments carry placeholder info blocks and no servers block. The servers values are the production and sandbox base URLs TikTok documents at https://business-api.tiktok.com/portal/docs?id=1738855331457026 .
+  description: TikTok API for Business (Marketing API) v1.3.
   version: v1.3
   contact:
     name: TikTok API for Business support
@@ -82,7 +82,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the countries and regions that ads for a catalog can be delivered to. [Catalog Available Country Get](https://business-api.tiktok.com/portal/docs?id=1740491257516034)
+      summary: Get the countries and regions that ads for a catalog can be delivered to.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -199,7 +199,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Migrate catalogs under your ad account to your Business Center. [Catalog Capitalize](https://business-api.tiktok.com/portal/docs?id=1740490222539778)
+      summary: Migrate catalogs under your ad account to your Business Center.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -862,7 +862,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a catalog by specifying information such as name, targeted locations, and currency. [Catalog Create](https://business-api.tiktok.com/portal/docs?id=1740306481704961)
+      summary: Create a catalog by specifying information such as name, targeted locations…
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1010,7 +1010,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete a catalog. [Catalog Delete](https://business-api.tiktok.com/portal/docs?id=1740310064588801)
+      summary: Delete a catalog. Catalog Delete
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1161,7 +1161,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Bind app or website event sources to a catalog in a Business Center. [Catalog Eventsource Bind](https://business-api.tiktok.com/portal/docs?id=1740492491200513)
+      summary: Bind app or website event sources to a catalog in a Business Center.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1321,7 +1321,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Unbind event sources from a catalog. [Catalog Eventsource Unbind](https://business-api.tiktok.com/portal/docs?id=1740492512449538)
+      summary: Unbind event sources from a catalog. Catalog Eventsource Unbind
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1452,7 +1452,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get event source binding information. [Catalog Eventsource Bind Get](https://business-api.tiktok.com/portal/docs?id=1740492531343362)
+      summary: Get event source binding information. Catalog Eventsource Bind Get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1724,7 +1724,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Create a feed. [Catalog Feed Create](https://business-api.tiktok.com/portal/docs?id=1740665161957377)
+      summary: Create a feed. Catalog Feed Create
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -1908,7 +1908,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete a feed. [Catalog Feed Delete](https://business-api.tiktok.com/portal/docs?id=1740665210863617)
+      summary: Delete a feed. Catalog Feed Delete
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2054,7 +2054,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get all feeds or a particular feed. [Catalog Feed Get](https://business-api.tiktok.com/portal/docs?id=1740665183073281)
+      summary: Get all feeds or a particular feed. Catalog Feed Get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2185,7 +2185,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the last 10 operations of a feed. [Catalog Feed Log](https://business-api.tiktok.com/portal/docs?id=1740665225631810)
+      summary: Get the last 10 operations of a feed. Catalog Feed Log
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2490,7 +2490,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Update a feed. [Catalog Feed Update](https://business-api.tiktok.com/portal/docs?id=1740665197662210)
+      summary: Update a feed. Catalog Feed Update
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2690,7 +2690,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get all catalogs or a particular catalog. [Catalog Get](https://business-api.tiktok.com/portal/docs?id=1740315452868610)
+      summary: Get all catalogs or a particular catalog. Catalog Get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2827,7 +2827,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the lexicon for your catalog for use in ad texts. [Catalog Lexicon Get](https://business-api.tiktok.com/portal/docs?id=1740488375815169)
+      summary: Get the lexicon for your catalog for use in ad texts. Catalog Lexicon Get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -2912,7 +2912,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get supported locations and corresponding currencies for Catalog API. [Catalog Location Currency Get](https://business-api.tiktok.com/portal/docs?id=1740491571747841)
+      summary: Get supported locations and corresponding currencies for Catalog API.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -3015,7 +3015,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get the number of products in different audit statuses in a catalog. [Catalog Overview](https://business-api.tiktok.com/portal/docs?id=1740492470201345)
+      summary: Get the number of products in different audit statuses in a catalog.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -3192,7 +3192,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete products in bulk. [Catalog Product Delete](https://business-api.tiktok.com/portal/docs?id=1740562489236481)
+      summary: Delete products in bulk. Catalog Product Delete
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -4589,7 +4589,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Upload products via file URL. [Catalog Product File](https://business-api.tiktok.com/portal/docs?id=1740496787164161)
+      summary: Upload products via file URL. Catalog Product File
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -4753,7 +4753,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to find out if a product was uploaded or deleted successfully, and what to do if it failed. [Catalog Product Get](https://business-api.tiktok.com/portal/docs?id=1740570027173889)
+      summary: Use this endpoint to find out if a product was uploaded or deleted…
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -4976,7 +4976,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete product sets. [Catalog Set Delete](https://business-api.tiktok.com/portal/docs?id=1740573143966722)
+      summary: Delete product sets. Catalog Set Delete
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5209,7 +5209,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get product sets. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740570556295169)
+      summary: Get product sets. Catalog Set Get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5395,7 +5395,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to update the filter conditions or name of a product set. [Catalog Set Get](https://business-api.tiktok.com/portal/docs?id=1740572974725122)
+      summary: Use this endpoint to update the filter conditions or name of a product set.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5553,7 +5553,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Use this endpoint to update the name of a catalog. The catalog must be under a Business Center. [Catalog Update](https://business-api.tiktok.com/portal/docs?id=1740306544966657)
+      summary: Use this endpoint to update the name of a catalog.
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5694,7 +5694,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Delete uploaded catalog videos. [Catalog Video Delete](https://business-api.tiktok.com/portal/docs?id=1803655103069185)
+      summary: Delete uploaded catalog videos. Catalog Video Delete
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5835,7 +5835,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: null
+      summary: Catalog video file
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -5881,6 +5881,7 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-summary-source: derived
   /catalog/video/get/:
     get:
       operationId: Catalog Video Get
@@ -5995,7 +5996,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: null
+      summary: Catalog video get
       tags:
       - Catalog
       x-open-allowlist: {}
@@ -6047,6 +6048,7 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-summary-source: derived
   /catalog/set/product/get/:
     get:
       operationId: Catalog Set Product Get
@@ -6158,7 +6160,7 @@ paths:
                 type: object
                 x-open-allow-strlist: false
           description: OK
-      summary: Get products in a product set. [Catalog Set Product Get](https://business-api.tiktok.com/portal/docs?id=1740571478441986)
+      summary: Get products in a product set. Catalog Set Product Get
       tags:
       - Catalog
       x-open-allowlist: {}
