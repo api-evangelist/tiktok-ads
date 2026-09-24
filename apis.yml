@@ -39,7 +39,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/tiktok-ads
 tags:
 - Advertising
 - Marketing
-- Social-Media
+- Social Media
 - Ad Campaigns
 - Performance Marketing
 - Conversion Tracking
@@ -58,6 +58,7 @@ tags_raw:
 - Reporting
 - Product Catalog
 - Agent Ready
+- Social-Media
 url: https://raw.githubusercontent.com/api-evangelist/tiktok-ads/refs/heads/main/apis.yml
 created: '2026-05-11'
 modified: '2026-09-16'
