@@ -22,7 +22,7 @@ tags:
 paths:
   /gmv_max/video/get/:
     get:
-      operationId: Gmv_max Video Get
+      operationId: Gmv_maxVideoGet
       parameters:
       - description: ''
         in: query
@@ -553,6 +553,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Video Get
 components:
   securitySchemes:
     AccessToken:

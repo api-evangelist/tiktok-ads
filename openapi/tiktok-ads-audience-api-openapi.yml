@@ -22,7 +22,7 @@ tags:
 paths:
   /audience/insight/overlap/:
     get:
-      operationId: Audience Insight Overlap
+      operationId: AudienceInsightOverlap
       parameters:
       - description: ''
         in: query
@@ -165,9 +165,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Audience Insight Overlap
   /dmp/custom_audience/apply/:
     post:
-      operationId: Dmp Custom_audience Apply
+      operationId: DmpCustom_audienceApply
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -371,9 +373,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Apply
   /dmp/custom_audience/apply/log/:
     get:
-      operationId: Dmp Custom_audience Apply Log
+      operationId: DmpCustom_audienceApplyLog
       parameters:
       - description: Advertiser ID.
         in: query
@@ -580,9 +584,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Apply Log
   /dmp/custom_audience/create/:
     post:
-      operationId: Dmp Custom_audience Create
+      operationId: DmpCustom_audienceCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -838,9 +844,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Create
   /dmp/custom_audience/delete/:
     post:
-      operationId: Dmp Custom_audience Delete
+      operationId: DmpCustom_audienceDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -959,9 +967,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Delete
   /dmp/custom_audience/file/upload/:
     post:
-      operationId: Dmp Custom_audience File Upload
+      operationId: DmpCustom_audienceFileUpload
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1182,9 +1192,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience File Upload
   /dmp/custom_audience/get/:
     get:
-      operationId: Dmp Custom_audience Get
+      operationId: DmpCustom_audienceGet
       parameters:
       - description: Advertiser ID.
         in: query
@@ -1355,9 +1367,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Get
   /dmp/custom_audience/list/:
     get:
-      operationId: Dmp Custom_audience List
+      operationId: DmpCustom_audienceList
       parameters:
       - description: Advertiser ID.
         in: query
@@ -1516,9 +1530,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience List
   /dmp/custom_audience/lookalike/create/:
     post:
-      operationId: Dmp Custom_audience Lookalike Create
+      operationId: DmpCustom_audienceLookalikeCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1804,9 +1820,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Lookalike Create
   /dmp/custom_audience/lookalike/update/:
     post:
-      operationId: Dmp Custom_audience Lookalike Update
+      operationId: DmpCustom_audienceLookalikeUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1934,9 +1952,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Lookalike Update
   /dmp/custom_audience/rule/create/:
     post:
-      operationId: Dmp Custom_audience Rule Create
+      operationId: DmpCustom_audienceRuleCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2954,9 +2974,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Rule Create
   /dmp/custom_audience/share/:
     post:
-      operationId: Dmp Custom_audience Share
+      operationId: DmpCustom_audienceShare
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3164,9 +3186,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Share
   /dmp/custom_audience/share/cancel/:
     post:
-      operationId: Dmp Custom_audience Share Cancel
+      operationId: DmpCustom_audienceShareCancel
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3301,9 +3325,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Share Cancel
   /dmp/custom_audience/share/log/:
     get:
-      operationId: Dmp Custom_audience Share Log
+      operationId: DmpCustom_audienceShareLog
       parameters:
       - description: Advertiser ID.
         in: query
@@ -3424,9 +3450,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Share Log
   /dmp/custom_audience/update/:
     post:
-      operationId: Dmp Custom_audience Update
+      operationId: DmpCustom_audienceUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3654,9 +3682,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Custom_audience Update
   /dmp/saved_audience/create/:
     post:
-      operationId: Dmp Saved_audience Create
+      operationId: DmpSaved_audienceCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4302,9 +4332,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Saved_audience Create
   /dmp/saved_audience/delete/:
     post:
-      operationId: Dmp Saved_audience Delete
+      operationId: DmpSaved_audienceDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4434,9 +4466,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Saved_audience Delete
   /dmp/saved_audience/list/:
     get:
-      operationId: Dmp Saved_audience List
+      operationId: DmpSaved_audienceList
       parameters:
       - description: Advertiser ID.
         in: query
@@ -4626,6 +4660,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Dmp Saved_audience List
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /blockedword/check/:
     get:
-      operationId: Blockedword Check
+      operationId: BlockedwordCheck
       parameters:
       - description: ''
         in: query
@@ -135,9 +135,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Check
   /blockedword/create/:
     post:
-      operationId: Blockedword Create
+      operationId: BlockedwordCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -250,9 +252,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Create
   /blockedword/delete/:
     post:
-      operationId: Blockedword Delete
+      operationId: BlockedwordDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -370,9 +374,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Delete
   /blockedword/list/:
     get:
-      operationId: Blockedword List
+      operationId: BlockedwordList
       parameters:
       - description: ''
         in: query
@@ -515,9 +521,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword List
   /blockedword/task/check/:
     get:
-      operationId: Blockedword Task Check
+      operationId: BlockedwordTaskCheck
       parameters:
       - description: ''
         in: query
@@ -630,9 +638,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Task Check
   /blockedword/task/create/:
     post:
-      operationId: Blockedword Task Create
+      operationId: BlockedwordTaskCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -790,9 +800,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Task Create
   /blockedword/update/:
     post:
-      operationId: Blockedword Update
+      operationId: BlockedwordUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -914,9 +926,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Blockedword Update
   /comment/delete/:
     post:
-      operationId: Comment Delete
+      operationId: CommentDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1120,9 +1134,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Delete
   /comment/list/:
     get:
-      operationId: Comment List
+      operationId: CommentList
       parameters:
       - description: ''
         in: query
@@ -1550,9 +1566,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment List
   /comment/post/:
     post:
-      operationId: Comment Post
+      operationId: CommentPost
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1806,9 +1824,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Post
   /comment/reference/:
     get:
-      operationId: Comment Reference
+      operationId: CommentReference
       parameters:
       - description: ''
         in: query
@@ -2075,9 +2095,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Reference
   /comment/status/update/:
     post:
-      operationId: Comment Status Update
+      operationId: CommentStatusUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2262,9 +2284,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Status Update
   /comment/task/check/:
     get:
-      operationId: Comment Task Check
+      operationId: CommentTaskCheck
       parameters:
       - description: ''
         in: query
@@ -2406,9 +2430,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Task Check
   /comment/task/create/:
     post:
-      operationId: Comment Task Create
+      operationId: CommentTaskCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2806,6 +2832,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Comment Task Create
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /advertiser/info/:
     get:
-      operationId: Advertiser Info
+      operationId: AdvertiserInfo
       parameters:
       - content:
           application/json:
@@ -175,9 +175,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Advertiser Info
   /advertiser/update/:
     post:
-      operationId: Advertiser Update
+      operationId: AdvertiserUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -587,9 +589,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Advertiser Update
   /pangle_audience_package/get/:
     get:
-      operationId: Pangle_audience_package Get
+      operationId: Pangle_audience_packageGet
       parameters:
       - description: ''
         in: query
@@ -679,9 +683,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pangle_audience_package Get
   /pangle_block_list/get/:
     get:
-      operationId: Pangle_block_list Get
+      operationId: Pangle_block_listGet
       parameters:
       - description: ''
         in: query
@@ -771,9 +777,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pangle_block_list Get
   /pangle_block_list/update/:
     post:
-      operationId: Pangle_block_list Update
+      operationId: Pangle_block_listUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -917,9 +925,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pangle_block_list Update
   /term/check/:
     get:
-      operationId: Term Check
+      operationId: TermCheck
       parameters:
       - description: ''
         in: query
@@ -1067,9 +1077,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Term Check
   /term/confirm/:
     post:
-      operationId: Term Confirm
+      operationId: TermConfirm
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1221,9 +1233,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Term Confirm
   /term/get/:
     get:
-      operationId: Term Get
+      operationId: TermGet
       parameters:
       - description: ''
         in: query
@@ -1409,6 +1423,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Term Get
 components:
   securitySchemes:
     AccessToken:

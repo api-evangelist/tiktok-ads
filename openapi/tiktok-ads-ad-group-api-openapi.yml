@@ -22,7 +22,7 @@ tags:
 paths:
   /smart_plus/adgroup/create/:
     post:
-      operationId: Smart_plus Adgroup Create
+      operationId: Smart_plusAdgroupCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4174,9 +4174,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Adgroup Create
   /smart_plus/adgroup/get/:
     get:
-      operationId: Smart_plus Adgroup Get
+      operationId: Smart_plusAdgroupGet
       parameters:
       - description: ''
         in: query
@@ -5150,9 +5152,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Adgroup Get
   /smart_plus/adgroup/status/update/:
     post:
-      operationId: Smart_plus Adgroup Status Update
+      operationId: Smart_plusAdgroupStatusUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5312,9 +5316,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Adgroup Status Update
   /smart_plus/adgroup/update/:
     post:
-      operationId: Smart_plus Adgroup Update
+      operationId: Smart_plusAdgroupUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -6630,6 +6636,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Adgroup Update
 components:
   securitySchemes:
     AccessToken:

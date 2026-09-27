@@ -22,7 +22,7 @@ tags:
 paths:
   /creative/asset/delete/:
     post:
-      operationId: Creative Asset Delete
+      operationId: CreativeAssetDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -156,9 +156,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Asset Delete
   /creative/asset/share/:
     post:
-      operationId: Creative Asset Share
+      operationId: CreativeAssetShare
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -336,9 +338,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Asset Share
   /creative/image/edit/:
     post:
-      operationId: Creative Image Edit
+      operationId: CreativeImageEdit
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -537,9 +541,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Image Edit
   /creative/portfolio/create/:
     post:
-      operationId: Creative Portfolio Create
+      operationId: CreativePortfolioCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2387,9 +2393,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Portfolio Create
   /creative/portfolio/get/:
     get:
-      operationId: Creative Portfolio Get
+      operationId: CreativePortfolioGet
       parameters:
       - description: ''
         in: query
@@ -2496,9 +2504,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Portfolio Get
   /creative/portfolio/list/:
     get:
-      operationId: Creative Portfolio List
+      operationId: CreativePortfolioList
       parameters:
       - description: ''
         in: query
@@ -2852,9 +2862,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Portfolio List
   /creative/shareable_link/create/:
     post:
-      operationId: Creative Shareable_link Create
+      operationId: CreativeShareable_linkCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2995,9 +3007,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Shareable_link Create
   /creative/smart_text/generate/:
     post:
-      operationId: Creative Smart_text Generate
+      operationId: CreativeSmart_textGenerate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3230,9 +3244,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Creative Smart_text Generate
   /discovery/detail/:
     get:
-      operationId: Discovery Detail
+      operationId: DiscoveryDetail
       parameters:
       - description: ''
         in: query
@@ -3433,9 +3449,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Discovery Detail
   /discovery/trending_list/:
     get:
-      operationId: Discovery Trending_list
+      operationId: DiscoveryTrending_list
       parameters:
       - description: ''
         in: query
@@ -3972,9 +3990,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Discovery Trending_list
   /playable/delete/:
     post:
-      operationId: Playable Delete
+      operationId: PlayableDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4084,9 +4104,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Playable Delete
   /playable/get/:
     get:
-      operationId: Playable Get
+      operationId: PlayableGet
       parameters:
       - description: ''
         in: query
@@ -4342,9 +4364,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Playable Get
   /playable/save/:
     post:
-      operationId: Playable Save
+      operationId: PlayableSave
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4473,9 +4497,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Playable Save
   /playable/upload/:
     post:
-      operationId: Playable Upload
+      operationId: PlayableUpload
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4637,9 +4663,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Playable Upload
   /playable/validate/:
     get:
-      operationId: Playable Validate
+      operationId: PlayableValidate
       parameters:
       - description: ''
         in: query
@@ -4748,6 +4776,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Playable Validate
 components:
   securitySchemes:
     AccessToken:

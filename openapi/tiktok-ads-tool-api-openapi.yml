@@ -22,7 +22,7 @@ tags:
 paths:
   /search/region/:
     get:
-      operationId: Search Region
+      operationId: SearchRegion
       parameters:
       - description: Advertiser ID.
         in: query
@@ -131,9 +131,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Search Region
   /tool/action_category/:
     get:
-      operationId: Tool Action_category
+      operationId: ToolAction_category
       parameters:
       - description: Advertiser ID.
         in: query
@@ -290,9 +292,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Action_category
   /tool/bid/recommend/:
     post:
-      operationId: Tool Bid Recommend
+      operationId: ToolBidRecommend
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1302,9 +1306,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Bid Recommend
   /tool/brand_safety/partner/authorize/status/:
     get:
-      operationId: Tool Brand_safety Partner Authorize Status
+      operationId: ToolBrand_safetyPartnerAuthorizeStatus
       parameters:
       - description: 'Brand Safety post bid measurement partner. Enum values: Zefr.'
         in: query
@@ -1421,9 +1427,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Brand_safety Partner Authorize Status
   /tool/carrier/:
     get:
-      operationId: Tool Carrier
+      operationId: ToolCarrier
       parameters:
       - description: Advertiser ID
         in: query
@@ -1519,9 +1527,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Carrier
   /tool/contextual_tag/get/:
     get:
-      operationId: Tool Contextual_tag Get
+      operationId: ToolContextual_tagGet
       parameters:
       - description: Advertiser ID.
         in: query
@@ -1757,9 +1767,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Contextual_tag Get
   /tool/contextual_tag/info/:
     get:
-      operationId: Tool Contextual_tag Info
+      operationId: ToolContextual_tagInfo
       parameters:
       - description: Advertiser ID.
         in: query
@@ -1882,9 +1894,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Contextual_tag Info
   /tool/hashtag/get/:
     get:
-      operationId: Tool Hashtag Get
+      operationId: ToolHashtagGet
       parameters:
       - description: Advertiser ID
         in: query
@@ -2000,9 +2014,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Hashtag Get
   /tool/hashtag/recommend/:
     get:
-      operationId: Tool Hashtag Recommend
+      operationId: ToolHashtagRecommend
       parameters:
       - description: Advertiser ID.
         in: query
@@ -2140,9 +2156,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Hashtag Recommend
   /tool/interest_keyword/get/:
     get:
-      operationId: Tool Interest_keyword Get
+      operationId: ToolInterest_keywordGet
       parameters:
       - description: Advertiser ID.
         in: query
@@ -2419,9 +2437,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Interest_keyword Get
   /tool/open_url/:
     get:
-      operationId: Tool Open_url
+      operationId: ToolOpen_url
       parameters:
       - description: Advertiser ID
         in: query
@@ -2541,9 +2561,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Open_url
   /tool/os_version/:
     get:
-      operationId: Tool Os_version
+      operationId: ToolOs_version
       parameters:
       - description: Advertiser ID.
         in: query
@@ -2674,9 +2696,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Os_version
   /tool/phone_region_code/:
     get:
-      operationId: Tool Phone_region_code
+      operationId: ToolPhone_region_code
       parameters:
       - description: Advertiser ID.
         in: query
@@ -2761,9 +2785,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Phone_region_code
   /tool/targeting/info/:
     post:
-      operationId: Tool Targeting Info
+      operationId: ToolTargetingInfo
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3254,9 +3280,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Targeting Info
   /tool/targeting/list/:
     get:
-      operationId: Tool Targeting List
+      operationId: ToolTargetingList
       parameters:
       - description: Advertiser ID.
         in: query
@@ -3434,9 +3462,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Targeting List
   /tool/targeting/search/:
     post:
-      operationId: Tool Targeting Search
+      operationId: ToolTargetingSearch
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4036,9 +4066,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Targeting Search
   /tool/timezone/:
     get:
-      operationId: Tool Timezone
+      operationId: ToolTimezone
       parameters:
       - description: Advertiser ID
         in: query
@@ -4122,9 +4154,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Timezone
   /tool/url_validate/:
     get:
-      operationId: Tool Url_validate
+      operationId: ToolUrl_validate
       parameters:
       - description: Advertiser ID.
         in: query
@@ -4225,9 +4259,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Url_validate
   /tool/vbo_status/:
     get:
-      operationId: Tool Vbo_status
+      operationId: ToolVbo_status
       parameters:
       - description: Advertiser ID.
         in: query
@@ -5650,6 +5686,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Tool Vbo_status
 components:
   securitySchemes:
     AccessToken:

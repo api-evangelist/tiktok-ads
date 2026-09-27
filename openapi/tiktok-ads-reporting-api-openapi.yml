@@ -22,7 +22,7 @@ tags:
 paths:
   /gmv_max/report/get/:
     get:
-      operationId: Gmv_max Report Get
+      operationId: Gmv_maxReportGet
       parameters:
       - description: ''
         in: query
@@ -754,9 +754,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Report Get
   /report/integrated/get/:
     get:
-      operationId: Report Integrated Get
+      operationId: ReportIntegratedGet
       parameters:
       - description: ''
         in: query
@@ -1370,9 +1372,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Report Integrated Get
   /report/task/cancel/:
     post:
-      operationId: Report Task Cancel
+      operationId: ReportTaskCancel
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1483,9 +1487,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Report Task Cancel
   /report/task/check/:
     get:
-      operationId: Report Task Check
+      operationId: ReportTaskCheck
       parameters:
       - description: ''
         in: query
@@ -1591,9 +1597,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Report Task Check
   /report/task/create/:
     post:
-      operationId: Report Task Create
+      operationId: ReportTaskCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2109,9 +2117,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Report Task Create
   /smart_plus/material_report/breakdown/:
     get:
-      operationId: Smart_plus Material_report Breakdown
+      operationId: Smart_plusMaterial_reportBreakdown
       parameters:
       - description: ''
         in: query
@@ -9489,9 +9499,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Material_report Breakdown
   /smart_plus/material_report/overview/:
     get:
-      operationId: Smart_plus Material_report Overview
+      operationId: Smart_plusMaterial_reportOverview
       parameters:
       - description: ''
         in: query
@@ -16882,6 +16894,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Material_report Overview
 components:
   securitySchemes:
     AccessToken:

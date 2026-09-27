@@ -22,7 +22,7 @@ tags:
 paths:
   /offline/create/:
     post:
-      operationId: Offline Create
+      operationId: OfflineCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -161,9 +161,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Offline Create
   /offline/delete/:
     post:
-      operationId: Offline Delete
+      operationId: OfflineDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -278,9 +280,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Offline Delete
   /offline/get/:
     get:
-      operationId: Offline Get
+      operationId: OfflineGet
       parameters:
       - description: ''
         in: query
@@ -417,9 +421,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Offline Get
   /offline/update/:
     post:
-      operationId: Offline Update
+      operationId: OfflineUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -564,9 +570,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Offline Update
   /pixel/create/:
     post:
-      operationId: Pixel Create
+      operationId: PixelCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -736,9 +744,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Create
   /pixel/event/create/:
     post:
-      operationId: Pixel Event Create
+      operationId: PixelEventCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1245,9 +1255,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Event Create
   /pixel/event/delete/:
     post:
-      operationId: Pixel Event Delete
+      operationId: PixelEventDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1356,9 +1368,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Event Delete
   /pixel/event/stats/:
     get:
-      operationId: Pixel Event Stats
+      operationId: PixelEventStats
       parameters:
       - description: ''
         in: query
@@ -1518,9 +1532,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Event Stats
   /pixel/event/update/:
     post:
-      operationId: Pixel Event Update
+      operationId: PixelEventUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1687,9 +1703,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Event Update
   /pixel/list/:
     get:
-      operationId: Pixel List
+      operationId: PixelList
       parameters:
       - description: ''
         in: query
@@ -1925,9 +1943,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel List
   /pixel/update/:
     post:
-      operationId: Pixel Update
+      operationId: PixelUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2087,6 +2107,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Pixel Update
 components:
   securitySchemes:
     AccessToken:

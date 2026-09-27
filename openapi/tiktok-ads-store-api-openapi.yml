@@ -22,7 +22,7 @@ tags:
 paths:
   /gmv_max/exclusive_authorization/create/:
     post:
-      operationId: Gmv_max Exclusive_authorization Create
+      operationId: Gmv_maxExclusive_authorizationCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -151,9 +151,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Exclusive_authorization Create
   /gmv_max/exclusive_authorization/get/:
     get:
-      operationId: Gmv_max Exclusive_authorization Get
+      operationId: Gmv_maxExclusive_authorizationGet
       parameters:
       - description: ''
         in: query
@@ -315,9 +317,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Exclusive_authorization Get
   /gmv_max/store/list/:
     get:
-      operationId: Gmv_max Store List
+      operationId: Gmv_maxStoreList
       parameters:
       - description: ''
         in: query
@@ -452,9 +456,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Store List
   /gmv_max/store/shop_ad_usage_check/:
     get:
-      operationId: Gmv_max Store Shop_ad_usage_check
+      operationId: Gmv_maxStoreShop_ad_usage_check
       parameters:
       - description: ''
         in: query
@@ -594,6 +600,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Store Shop_ad_usage_check
 components:
   securitySchemes:
     AccessToken:

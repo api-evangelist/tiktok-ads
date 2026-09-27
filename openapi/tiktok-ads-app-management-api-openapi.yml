@@ -22,7 +22,7 @@ tags:
 paths:
   /app/create/:
     post:
-      operationId: App Create
+      operationId: AppCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -439,9 +439,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App Create
   /app/info/:
     get:
-      operationId: App Info
+      operationId: AppInfo
       parameters:
       - description: ''
         in: query
@@ -546,9 +548,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App Info
   /app/list/:
     get:
-      operationId: App List
+      operationId: AppList
       parameters:
       - description: Advertiser ID.
         in: query
@@ -661,9 +665,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App List
   /app/optimization_event/:
     get:
-      operationId: App Optimization_event
+      operationId: AppOptimization_event
       parameters:
       - description: Your App ID, obtained after successfully creating your app.
         in: query
@@ -1176,9 +1182,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App Optimization_event
   /app/optimization_event/retargeting/:
     get:
-      operationId: App Optimization_event Retargeting
+      operationId: AppOptimization_eventRetargeting
       parameters:
       - description: ''
         in: query
@@ -1290,9 +1298,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App Optimization_event Retargeting
   /app/update/:
     post:
-      operationId: App Update
+      operationId: AppUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2084,6 +2094,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: App Update
 components:
   securitySchemes:
     AccessToken:

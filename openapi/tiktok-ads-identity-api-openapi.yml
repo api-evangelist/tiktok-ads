@@ -22,7 +22,7 @@ tags:
 paths:
   /gmv_max/identity/get/:
     get:
-      operationId: Gmv_max Identity Get
+      operationId: Gmv_maxIdentityGet
       parameters:
       - description: ''
         in: query
@@ -191,6 +191,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Identity Get
 components:
   securitySchemes:
     AccessToken:

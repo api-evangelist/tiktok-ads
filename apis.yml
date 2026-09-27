@@ -419,8 +419,6 @@ apis:
   humanURL: https://business-api.tiktok.com/portal/docs
   baseURL: https://business-api.tiktok.com/open_api
   tags:
-  - AdGroup
-  tags_raw:
   - Ad Group
   properties:
   - type: OpenAPI

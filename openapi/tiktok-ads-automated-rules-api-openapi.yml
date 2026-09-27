@@ -22,7 +22,7 @@ tags:
 paths:
   /optimizer/rule/batch_bind/:
     post:
-      operationId: Optimizer Rule Batch_bind
+      operationId: OptimizerRuleBatch_bind
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -250,9 +250,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Batch_bind
   /optimizer/rule/create/:
     post:
-      operationId: Optimizer Rule Create
+      operationId: OptimizerRuleCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1502,9 +1504,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Create
   /optimizer/rule/get/:
     get:
-      operationId: Optimizer Rule Get
+      operationId: OptimizerRuleGet
       parameters:
       - description: ''
         in: query
@@ -1616,9 +1620,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Get
   /optimizer/rule/list/:
     get:
-      operationId: Optimizer Rule List
+      operationId: OptimizerRuleList
       parameters:
       - description: ''
         in: query
@@ -1794,9 +1800,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule List
   /optimizer/rule/result/get/:
     get:
-      operationId: Optimizer Rule Result Get
+      operationId: OptimizerRuleResultGet
       parameters:
       - description: ''
         in: query
@@ -1975,9 +1983,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Result Get
   /optimizer/rule/result/list/:
     get:
-      operationId: Optimizer Rule Result List
+      operationId: OptimizerRuleResultList
       parameters:
       - description: ''
         in: query
@@ -2175,9 +2185,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Result List
   /optimizer/rule/update/:
     post:
-      operationId: Optimizer Rule Update
+      operationId: OptimizerRuleUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3431,6 +3443,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Optimizer Rule Update
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /catalog/available_country/get/:
     get:
-      operationId: Catalog Available_country Get
+      operationId: CatalogAvailable_countryGet
       parameters:
       - description: ''
         in: query
@@ -110,9 +110,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Available_country Get
   /catalog/capitalize/:
     post:
-      operationId: Catalog Capitalize
+      operationId: CatalogCapitalize
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -246,9 +248,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Capitalize
   /catalog/create/:
     post:
-      operationId: Catalog Create
+      operationId: CatalogCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -931,9 +935,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Create
   /catalog/delete/:
     post:
-      operationId: Catalog Delete
+      operationId: CatalogDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1058,9 +1064,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Delete
   /catalog/eventsource/bind/:
     post:
-      operationId: Catalog Eventsource Bind
+      operationId: CatalogEventsourceBind
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1218,9 +1226,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Eventsource Bind
   /catalog/eventsource/unbind/:
     post:
-      operationId: Catalog Eventsource Unbind
+      operationId: CatalogEventsourceUnbind
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1378,9 +1388,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Eventsource Unbind
   /catalog/eventsource_bind/get/:
     get:
-      operationId: Catalog Eventsource_bind Get
+      operationId: CatalogEventsource_bindGet
       parameters:
       - description: ''
         in: query
@@ -1494,9 +1506,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Eventsource_bind Get
   /catalog/feed/create/:
     post:
-      operationId: Catalog Feed Create
+      operationId: CatalogFeedCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1819,9 +1833,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Feed Create
   /catalog/feed/delete/:
     post:
-      operationId: Catalog Feed Delete
+      operationId: CatalogFeedDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1968,9 +1984,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Feed Delete
   /catalog/feed/get/:
     get:
-      operationId: Catalog Feed Get
+      operationId: CatalogFeedGet
       parameters:
       - description: ''
         in: query
@@ -2092,9 +2110,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Feed Get
   /catalog/feed/log/:
     get:
-      operationId: Catalog Feed Log
+      operationId: CatalogFeedLog
       parameters:
       - description: ''
         in: query
@@ -2250,9 +2270,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Feed Log
   /catalog/feed/update/:
     post:
-      operationId: Catalog Feed Update
+      operationId: CatalogFeedUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2592,9 +2614,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Feed Update
   /catalog/get/:
     get:
-      operationId: Catalog Get
+      operationId: CatalogGet
       parameters:
       - description: ''
         in: query
@@ -2753,9 +2777,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Get
   /catalog/lexicon/get/:
     get:
-      operationId: Catalog Lexicon Get
+      operationId: CatalogLexiconGet
       parameters:
       - description: ''
         in: query
@@ -2862,9 +2888,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Lexicon Get
   /catalog/location_currency/get/:
     get:
-      operationId: Catalog Location_currency Get
+      operationId: CatalogLocation_currencyGet
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2942,9 +2970,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Location_currency Get
   /catalog/overview/:
     get:
-      operationId: Catalog Overview
+      operationId: CatalogOverview
       parameters:
       - description: ''
         in: query
@@ -3045,9 +3075,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Overview
   /catalog/product/delete/:
     post:
-      operationId: Catalog Product Delete
+      operationId: CatalogProductDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4466,9 +4498,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Product Delete
   /catalog/product/file/:
     post:
-      operationId: Catalog Product File
+      operationId: CatalogProductFile
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4637,9 +4671,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Product File
   /catalog/product/log/:
     get:
-      operationId: Catalog Product Log
+      operationId: CatalogProductLog
       parameters:
       - description: ''
         in: query
@@ -4884,9 +4920,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Product Log
   /catalog/set/delete/:
     post:
-      operationId: Catalog Set Delete
+      operationId: CatalogSetDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5112,9 +5150,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Set Delete
   /catalog/set/get/:
     get:
-      operationId: Catalog Set Get
+      operationId: CatalogSetGet
       parameters:
       - description: ''
         in: query
@@ -5259,9 +5299,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Set Get
   /catalog/set/update/:
     post:
-      operationId: Catalog Set Update
+      operationId: CatalogSetUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5464,9 +5506,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Set Update
   /catalog/update/:
     post:
-      operationId: Catalog Update
+      operationId: CatalogUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5602,9 +5646,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Update
   /catalog/video/delete/:
     post:
-      operationId: Catalog Video Delete
+      operationId: CatalogVideoDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5734,9 +5780,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Video Delete
   /catalog/video/file/:
     post:
-      operationId: Catalog Video File
+      operationId: CatalogVideoFile
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5882,9 +5930,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Video File
   /catalog/video/get/:
     get:
-      operationId: Catalog Video Get
+      operationId: CatalogVideoGet
       parameters:
       - description: ''
         in: query
@@ -6049,9 +6099,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Video Get
   /catalog/set/product/get/:
     get:
-      operationId: Catalog Set Product Get
+      operationId: CatalogSetProductGet
       parameters:
       - description: ''
         in: query
@@ -6254,6 +6306,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Catalog Set Product Get
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /campaign/gmv_max/create/:
     post:
-      operationId: Campaign Gmv_max Create
+      operationId: CampaignGmv_maxCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1394,9 +1394,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Create
   /campaign/gmv_max/info/:
     get:
-      operationId: Campaign Gmv_max Info
+      operationId: CampaignGmv_maxInfo
       parameters:
       - description: ''
         in: query
@@ -1607,9 +1609,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Info
   /campaign/gmv_max/session/create/:
     post:
-      operationId: Campaign Gmv_max Session Create
+      operationId: CampaignGmv_maxSessionCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1903,9 +1907,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Session Create
   /campaign/gmv_max/session/delete/:
     post:
-      operationId: Campaign Gmv_max Session Delete
+      operationId: CampaignGmv_maxSessionDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2014,9 +2020,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Session Delete
   /campaign/gmv_max/session/get/:
     get:
-      operationId: Campaign Gmv_max Session Get
+      operationId: CampaignGmv_maxSessionGet
       parameters:
       - description: ''
         in: query
@@ -2141,9 +2149,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Session Get
   /campaign/gmv_max/session/list/:
     get:
-      operationId: Campaign Gmv_max Session List
+      operationId: CampaignGmv_maxSessionList
       parameters:
       - description: ''
         in: query
@@ -2256,9 +2266,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Session List
   /campaign/gmv_max/session/update/:
     post:
-      operationId: Campaign Gmv_max Session Update
+      operationId: CampaignGmv_maxSessionUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2484,9 +2496,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Session Update
   /campaign/gmv_max/update/:
     post:
-      operationId: Campaign Gmv_max Update
+      operationId: CampaignGmv_maxUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3324,9 +3338,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Campaign Gmv_max Update
   /gmv_max/bid/recommend/:
     get:
-      operationId: Gmv_max Bid Recommend
+      operationId: Gmv_maxBidRecommend
       parameters:
       - description: ''
         in: query
@@ -3663,9 +3679,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Bid Recommend
   /gmv_max/custom_anchor_video_list/get/:
     get:
-      operationId: Gmv_max Custom_anchor_video_list Get
+      operationId: Gmv_maxCustom_anchor_video_listGet
       parameters:
       - description: ''
         in: query
@@ -3971,9 +3989,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Custom_anchor_video_list Get
   /gmv_max/occupied_custom_shop_ads/list/:
     get:
-      operationId: Gmv_max Occupied_custom_shop_ads List
+      operationId: Gmv_maxOccupied_custom_shop_adsList
       parameters:
       - description: ''
         in: query
@@ -4183,9 +4203,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Gmv_max Occupied_custom_shop_ads List
   /smart_plus/campaign/create/:
     post:
-      operationId: Smart_plus Campaign Create
+      operationId: Smart_plusCampaignCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4916,9 +4938,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Campaign Create
   /smart_plus/campaign/get/:
     get:
-      operationId: Smart_plus Campaign Get
+      operationId: Smart_plusCampaignGet
       parameters:
       - description: ''
         in: query
@@ -5449,9 +5473,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Campaign Get
   /smart_plus/campaign/status/update/:
     post:
-      operationId: Smart_plus Campaign Status Update
+      operationId: Smart_plusCampaignStatusUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5649,9 +5675,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Campaign Status Update
   /smart_plus/campaign/update/:
     post:
-      operationId: Smart_plus Campaign Update
+      operationId: Smart_plusCampaignUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5821,6 +5849,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Campaign Update
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /adgroup/quota/:
     get:
-      operationId: Adgroup Quota
+      operationId: AdgroupQuota
       parameters:
       - description: Advertiser ID.
         in: query
@@ -111,6 +111,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Adgroup Quota
 components:
   securitySchemes:
     AccessToken:

@@ -22,7 +22,7 @@ tags:
 paths:
   /bc/account/transaction/get/:
     get:
-      operationId: Bc Account Transaction Get
+      operationId: BcAccountTransactionGet
       parameters:
       - description: ''
         in: query
@@ -320,9 +320,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Account Transaction Get
   /bc/asset/admin/delete/:
     post:
-      operationId: Bc Asset Admin Delete
+      operationId: BcAssetAdminDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -508,9 +510,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Admin Delete
   /bc/asset/admin/get/:
     get:
-      operationId: Bc Asset Admin Get
+      operationId: BcAssetAdminGet
       parameters:
       - description: ''
         in: query
@@ -865,9 +869,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Admin Get
   /bc/asset/assign/:
     post:
-      operationId: Bc Asset Assign
+      operationId: BcAssetAssign
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1207,9 +1213,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Assign
   /bc/asset/get/:
     get:
-      operationId: Bc Asset Get
+      operationId: BcAssetGet
       parameters:
       - description: ''
         in: query
@@ -1474,9 +1482,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Get
   /bc/asset/member/get/:
     get:
-      operationId: Bc Asset Member Get
+      operationId: BcAssetMemberGet
       parameters:
       - description: ''
         in: query
@@ -1701,9 +1711,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Member Get
   /bc/asset/partner/get/:
     get:
-      operationId: Bc Asset Partner Get
+      operationId: BcAssetPartnerGet
       parameters:
       - description: ''
         in: query
@@ -1927,9 +1939,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Partner Get
   /bc/asset/unassign/:
     post:
-      operationId: Bc Asset Unassign
+      operationId: BcAssetUnassign
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2108,9 +2122,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset Unassign
   /bc/asset_group/create/:
     post:
-      operationId: Bc Asset_group Create
+      operationId: BcAsset_groupCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2389,9 +2405,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset_group Create
   /bc/asset_group/delete/:
     post:
-      operationId: Bc Asset_group Delete
+      operationId: BcAsset_groupDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2531,9 +2549,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset_group Delete
   /bc/asset_group/get/:
     get:
-      operationId: Bc Asset_group Get
+      operationId: BcAsset_groupGet
       parameters:
       - description: ''
         in: query
@@ -2771,9 +2791,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset_group Get
   /bc/asset_group/list/:
     get:
-      operationId: Bc Asset_group List
+      operationId: BcAsset_groupList
       parameters:
       - description: ''
         in: query
@@ -2961,9 +2983,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset_group List
   /bc/asset_group/update/:
     post:
-      operationId: Bc Asset_group Update
+      operationId: BcAsset_groupUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3318,9 +3342,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Asset_group Update
   /bc/balance/get/:
     get:
-      operationId: Bc Balance Get
+      operationId: BcBalanceGet
       parameters:
       - description: ''
         in: query
@@ -3434,9 +3460,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Balance Get
   /bc/billing_group/create/:
     post:
-      operationId: Bc Billing_group Create
+      operationId: BcBilling_groupCreate
       parameters:
       - description: ''
         in: header
@@ -3644,9 +3672,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Billing_group Create
   /bc/billing_group/get/:
     get:
-      operationId: Bc Billing_group Get
+      operationId: BcBilling_groupGet
       parameters:
       - description: ''
         in: query
@@ -3938,9 +3968,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Billing_group Get
   /bc/billing_group/update/:
     post:
-      operationId: Bc Billing_group Update
+      operationId: BcBilling_groupUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4146,9 +4178,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Billing_group Update
   /bc/get/:
     get:
-      operationId: Bc Get
+      operationId: BcGet
       parameters:
       - description: ''
         in: query
@@ -4423,9 +4457,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Get
   /bc/invoice/unpaid/get/:
     get:
-      operationId: Bc Invoice Unpaid Get
+      operationId: BcInvoiceUnpaidGet
       parameters:
       - description: ''
         in: query
@@ -4540,9 +4576,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Invoice Unpaid Get
   /bc/member/delete/:
     post:
-      operationId: Bc Member Delete
+      operationId: BcMemberDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4677,9 +4715,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Member Delete
   /bc/member/get/:
     get:
-      operationId: Bc Member Get
+      operationId: BcMemberGet
       parameters:
       - description: ''
         in: query
@@ -4922,9 +4962,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Member Get
   /bc/member/invite/:
     post:
-      operationId: Bc Member Invite
+      operationId: BcMemberInvite
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5222,9 +5264,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Member Invite
   /bc/member/update/:
     post:
-      operationId: Bc Member Update
+      operationId: BcMemberUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5427,9 +5471,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Member Update
   /bc/partner/add/:
     post:
-      operationId: Bc Partner Add
+      operationId: BcPartnerAdd
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5707,9 +5753,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Partner Add
   /bc/partner/asset/delete/:
     post:
-      operationId: Bc Partner Asset Delete
+      operationId: BcPartnerAssetDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -5896,9 +5944,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Partner Asset Delete
   /bc/partner/asset/get/:
     get:
-      operationId: Bc Partner Asset Get
+      operationId: BcPartnerAssetGet
       parameters:
       - description: ''
         in: query
@@ -6155,9 +6205,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Partner Asset Get
   /bc/partner/delete/:
     post:
-      operationId: Bc Partner Delete
+      operationId: BcPartnerDelete
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -6266,9 +6318,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Partner Delete
   /bc/partner/get/:
     get:
-      operationId: Bc Partner Get
+      operationId: BcPartnerGet
       parameters:
       - description: ''
         in: query
@@ -6417,9 +6471,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Partner Get
   /bc/pixel/link/get/:
     get:
-      operationId: Bc Pixel Link Get
+      operationId: BcPixelLinkGet
       parameters:
       - description: ''
         in: query
@@ -6559,9 +6615,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Pixel Link Get
   /bc/pixel/link/update/:
     post:
-      operationId: Bc Pixel Link Update
+      operationId: BcPixelLinkUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -6722,9 +6780,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Pixel Link Update
   /bc/pixel/transfer/:
     post:
-      operationId: Bc Pixel Transfer
+      operationId: BcPixelTransfer
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -6832,9 +6892,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Pixel Transfer
   /bc/transaction/get/:
     get:
-      operationId: Bc Transaction Get
+      operationId: BcTransactionGet
       parameters:
       - description: ''
         in: query
@@ -7042,9 +7104,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Transaction Get
   /bc/transfer/:
     post:
-      operationId: Bc Transfer
+      operationId: BcTransfer
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -7276,9 +7340,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Transfer
   /bc/create/:
     post:
-      operationId: Bc Create
+      operationId: BcCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -7537,9 +7603,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Create
   /bc/image/upload/:
     post:
-      operationId: Bc Image Upload
+      operationId: BcImageUpload
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -7649,9 +7717,11 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Image Upload
   /bc/member/assign/:
     post:
-      operationId: Bc Member Assign
+      operationId: BcMemberAssign
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -7885,6 +7955,8 @@ paths:
       x-open-settings:
         pop_resp_nullvalue: false
       x-summary-source: derived
+      x-operation-id-source: normalized
+      x-operation-id-original: Bc Member Assign
 components:
   securitySchemes:
     AccessToken:

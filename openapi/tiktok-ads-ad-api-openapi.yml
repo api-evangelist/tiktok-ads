@@ -22,7 +22,7 @@ tags:
 paths:
   /smart_plus/ad/appeal/:
     post:
-      operationId: Smart_plus Ad Appeal
+      operationId: Smart_plusAdAppeal
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -163,9 +163,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Appeal
   /smart_plus/ad/create/:
     post:
-      operationId: Smart_plus Ad Create
+      operationId: Smart_plusAdCreate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -1726,9 +1728,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Create
   /smart_plus/ad/get/:
     get:
-      operationId: Smart_plus Ad Get
+      operationId: Smart_plusAdGet
       parameters:
       - description: ''
         in: query
@@ -2663,9 +2667,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Get
   /smart_plus/ad/material_status/update/:
     post:
-      operationId: Smart_plus Ad Material_status Update
+      operationId: Smart_plusAdMaterial_statusUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -2832,9 +2838,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Material_status Update
   /smart_plus/ad/review_info/:
     get:
-      operationId: Smart_plus Ad Review_info
+      operationId: Smart_plusAdReview_info
       parameters:
       - description: ''
         in: query
@@ -3173,9 +3181,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Review_info
   /smart_plus/ad/status/update/:
     post:
-      operationId: Smart_plus Ad Status Update
+      operationId: Smart_plusAdStatusUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -3330,9 +3340,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Status Update
   /smart_plus/ad/update/:
     post:
-      operationId: Smart_plus Ad Update
+      operationId: Smart_plusAdUpdate
       parameters:
       - description: Authorized access token. For details, see [Authentication](https://ads.tiktok.com/marketing_api/docs?id=1738373164380162).
         in: query
@@ -4771,9 +4783,11 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: true
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Ad Update
   /smart_plus/material/review_info/:
     get:
-      operationId: Smart_plus Material Review_info
+      operationId: Smart_plusMaterialReview_info
       parameters:
       - description: ''
         in: query
@@ -5089,6 +5103,8 @@ paths:
       x-open-scene-labels: []
       x-open-settings:
         pop_resp_nullvalue: false
+      x-operation-id-source: normalized
+      x-operation-id-original: Smart_plus Material Review_info
 components:
   securitySchemes:
     AccessToken:
