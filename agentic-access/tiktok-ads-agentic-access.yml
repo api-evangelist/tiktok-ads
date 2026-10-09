@@ -1,31 +1,29 @@
-generated: '2026-08-13'
+generated: '2026-09-23'
 method: generated
-source: openapi/tiktok-ads-marketing-api-openapi.yml
+source: openapi/tiktok-ads-account-management-api-openapi.yml, openapi/tiktok-ads-ad-api-openapi.yml,
+  openapi/tiktok-ads-ad-group-api-openapi.yml, openapi/tiktok-ads-ads-management-api-openapi.yml,
+  openapi/tiktok-ads-app-management-api-openapi.yml, openapi/tiktok-ads-audience-api-openapi.yml,
+  openapi/tiktok-ads-automated-rules-api-openapi.yml, openapi/tiktok-ads-bc-api-openapi.yml,
+  openapi/tiktok-ads-campaign-creation-api-openapi.yml, openapi/tiktok-ads-catalog-api-openapi.yml,
+  openapi/tiktok-ads-comments-api-openapi.yml, openapi/tiktok-ads-creative-management-api-openapi.yml,
+  openapi/tiktok-ads-identity-api-openapi.yml, openapi/tiktok-ads-measurement-api-openapi.yml,
+  openapi/tiktok-ads-reporting-api-openapi.yml, openapi/tiktok-ads-store-api-openapi.yml, openapi/tiktok-ads-tool-api-openapi.yml,
+  openapi/tiktok-ads-video-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
   operations: 202
   by_action_class:
-    connected: 100
-    acting: 102
+    connected: 102
+    acting: 100
   by_consequence:
-    read: 100
-    write: 98
+    read: 102
+    write: 96
     safety-critical: 2
     physical: 2
   human_in_the_loop_required: 2
 operations:
-- path: /adgroup/quota/
-  method: get
-  operationId: Adgroup Quota
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /advertiser/info/
   method: get
   operationId: Advertiser Info
@@ -52,6 +50,256 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /pangle_audience_package/get/
+  method: get
+  operationId: Pangle_audience_package Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pangle_block_list/get/
+  method: get
+  operationId: Pangle_block_list Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /pangle_block_list/update/
+  method: post
+  operationId: Pangle_block_list Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /term/check/
+  method: get
+  operationId: Term Check
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /term/confirm/
+  method: post
+  operationId: Term Confirm
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /term/get/
+  method: get
+  operationId: Term Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/ad/appeal/
+  method: post
+  operationId: Smart_plus Ad Appeal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/ad/create/
+  method: post
+  operationId: Smart_plus Ad Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/ad/get/
+  method: get
+  operationId: Smart_plus Ad Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/ad/material_status/update/
+  method: post
+  operationId: Smart_plus Ad Material_status Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/ad/review_info/
+  method: get
+  operationId: Smart_plus Ad Review_info
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/ad/status/update/
+  method: post
+  operationId: Smart_plus Ad Status Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/ad/update/
+  method: post
+  operationId: Smart_plus Ad Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/material/review_info/
+  method: get
+  operationId: Smart_plus Material Review_info
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/adgroup/create/
+  method: post
+  operationId: Smart_plus Adgroup Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/adgroup/get/
+  method: get
+  operationId: Smart_plus Adgroup Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/adgroup/status/update/
+  method: post
+  operationId: Smart_plus Adgroup Status Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/adgroup/update/
+  method: post
+  operationId: Smart_plus Adgroup Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /adgroup/quota/
+  method: get
+  operationId: Adgroup Quota
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /app/create/
   method: post
   operationId: App Create
@@ -134,6 +382,336 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /dmp/custom_audience/apply/
+  method: post
+  operationId: Dmp Custom_audience Apply
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/apply/log/
+  method: get
+  operationId: Dmp Custom_audience Apply Log
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dmp/custom_audience/create/
+  method: post
+  operationId: Dmp Custom_audience Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/delete/
+  method: post
+  operationId: Dmp Custom_audience Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/file/upload/
+  method: post
+  operationId: Dmp Custom_audience File Upload
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/get/
+  method: get
+  operationId: Dmp Custom_audience Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dmp/custom_audience/list/
+  method: get
+  operationId: Dmp Custom_audience List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dmp/custom_audience/lookalike/create/
+  method: post
+  operationId: Dmp Custom_audience Lookalike Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/lookalike/update/
+  method: post
+  operationId: Dmp Custom_audience Lookalike Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/rule/create/
+  method: post
+  operationId: Dmp Custom_audience Rule Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/share/
+  method: post
+  operationId: Dmp Custom_audience Share
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/custom_audience/share/cancel/
+  method: post
+  operationId: Dmp Custom_audience Share Cancel
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /dmp/custom_audience/share/log/
+  method: get
+  operationId: Dmp Custom_audience Share Log
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /dmp/custom_audience/update/
+  method: post
+  operationId: Dmp Custom_audience Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/saved_audience/create/
+  method: post
+  operationId: Dmp Saved_audience Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/saved_audience/delete/
+  method: post
+  operationId: Dmp Saved_audience Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /dmp/saved_audience/list/
+  method: get
+  operationId: Dmp Saved_audience List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /optimizer/rule/batch_bind/
+  method: post
+  operationId: Optimizer Rule Batch_bind
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /optimizer/rule/create/
+  method: post
+  operationId: Optimizer Rule Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /optimizer/rule/get/
+  method: get
+  operationId: Optimizer Rule Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /optimizer/rule/list/
+  method: get
+  operationId: Optimizer Rule List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /optimizer/rule/result/get/
+  method: get
+  operationId: Optimizer Rule Result Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /optimizer/rule/result/list/
+  method: get
+  operationId: Optimizer Rule Result List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /optimizer/rule/update/
+  method: post
+  operationId: Optimizer Rule Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /bc/account/transaction/get/
   method: get
   operationId: Bc Account Transaction Get
@@ -352,22 +930,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /bc/create/
-  method: post
-  operationId: Bc Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /bc/get/
   method: get
   operationId: Bc Get
@@ -378,22 +940,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /bc/image/upload/
-  method: post
-  operationId: Bc Image Upload
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /bc/invoice/unpaid/get/
   method: get
   operationId: Bc Invoice Unpaid Get
@@ -404,22 +950,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /bc/member/assign/
-  method: post
-  operationId: Bc Member Assign
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /bc/member/delete/
   method: post
   operationId: Bc Member Delete
@@ -618,19 +1148,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /blockedword/check/
-  method: get
-  operationId: Blockedword Check
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /blockedword/create/
+- path: /bc/create/
   method: post
-  operationId: Blockedword Create
+  operationId: Bc Create
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -644,9 +1164,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /blockedword/delete/
+- path: /bc/image/upload/
   method: post
-  operationId: Blockedword Delete
+  operationId: Bc Image Upload
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -660,45 +1180,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /blockedword/list/
-  method: get
-  operationId: Blockedword List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /blockedword/task/check/
-  method: get
-  operationId: Blockedword Task Check
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /blockedword/task/create/
+- path: /bc/member/assign/
   method: post
-  operationId: Blockedword Task Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /blockedword/update/
-  method: post
-  operationId: Blockedword Update
+  operationId: Bc Member Assign
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -809,6 +1293,94 @@ operations:
 - path: /campaign/gmv_max/update/
   method: post
   operationId: Campaign Gmv_max Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /gmv_max/bid/recommend/
+  method: get
+  operationId: Gmv_max Bid Recommend
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmv_max/custom_anchor_video_list/get/
+  method: get
+  operationId: Gmv_max Custom_anchor_video_list Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmv_max/occupied_custom_shop_ads/list/
+  method: get
+  operationId: Gmv_max Occupied_custom_shop_ads List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/campaign/create/
+  method: post
+  operationId: Smart_plus Campaign Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/campaign/get/
+  method: get
+  operationId: Smart_plus Campaign Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /smart_plus/campaign/status/update/
+  method: post
+  operationId: Smart_plus Campaign Status Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /smart_plus/campaign/update/
+  method: post
+  operationId: Smart_plus Campaign Update
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1098,16 +1670,6 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /catalog/set/product/get/
-  method: get
-  operationId: Catalog Set Product Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /catalog/set/update/
   method: post
   operationId: Catalog Set Update
@@ -1182,6 +1744,110 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /catalog/set/product/get/
+  method: get
+  operationId: Catalog Set Product Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /blockedword/check/
+  method: get
+  operationId: Blockedword Check
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /blockedword/create/
+  method: post
+  operationId: Blockedword Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /blockedword/delete/
+  method: post
+  operationId: Blockedword Delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /blockedword/list/
+  method: get
+  operationId: Blockedword List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /blockedword/task/check/
+  method: get
+  operationId: Blockedword Task Check
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /blockedword/task/create/
+  method: post
+  operationId: Blockedword Task Create
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /blockedword/update/
+  method: post
+  operationId: Blockedword Update
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /comment/delete/
   method: post
   operationId: Comment Delete
@@ -1412,9 +2078,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /dmp/custom_audience/apply/
+- path: /playable/delete/
   method: post
-  operationId: Dmp Custom_audience Apply
+  operationId: Playable Delete
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1428,9 +2094,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /dmp/custom_audience/apply/log/
+- path: /playable/get/
   method: get
-  operationId: Dmp Custom_audience Apply Log
+  operationId: Playable Get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1438,9 +2104,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /dmp/custom_audience/create/
+- path: /playable/save/
   method: post
-  operationId: Dmp Custom_audience Create
+  operationId: Playable Save
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1454,9 +2120,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /dmp/custom_audience/delete/
+- path: /playable/upload/
   method: post
-  operationId: Dmp Custom_audience Delete
+  operationId: Playable Upload
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1470,229 +2136,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /dmp/custom_audience/file/upload/
-  method: post
-  operationId: Dmp Custom_audience File Upload
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/custom_audience/get/
+- path: /playable/validate/
   method: get
-  operationId: Dmp Custom_audience Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /dmp/custom_audience/list/
-  method: get
-  operationId: Dmp Custom_audience List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /dmp/custom_audience/lookalike/create/
-  method: post
-  operationId: Dmp Custom_audience Lookalike Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/custom_audience/lookalike/update/
-  method: post
-  operationId: Dmp Custom_audience Lookalike Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/custom_audience/rule/create/
-  method: post
-  operationId: Dmp Custom_audience Rule Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/custom_audience/share/
-  method: post
-  operationId: Dmp Custom_audience Share
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/custom_audience/share/cancel/
-  method: post
-  operationId: Dmp Custom_audience Share Cancel
-  x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
-- path: /dmp/custom_audience/share/log/
-  method: get
-  operationId: Dmp Custom_audience Share Log
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /dmp/custom_audience/update/
-  method: post
-  operationId: Dmp Custom_audience Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/saved_audience/create/
-  method: post
-  operationId: Dmp Saved_audience Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/saved_audience/delete/
-  method: post
-  operationId: Dmp Saved_audience Delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /dmp/saved_audience/list/
-  method: get
-  operationId: Dmp Saved_audience List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/bid/recommend/
-  method: get
-  operationId: Gmv_max Bid Recommend
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/custom_anchor_video_list/get/
-  method: get
-  operationId: Gmv_max Custom_anchor_video_list Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/exclusive_authorization/create/
-  method: post
-  operationId: Gmv_max Exclusive_authorization Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /gmv_max/exclusive_authorization/get/
-  method: get
-  operationId: Gmv_max Exclusive_authorization Get
+  operationId: Playable Validate
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1703,56 +2149,6 @@ operations:
 - path: /gmv_max/identity/get/
   method: get
   operationId: Gmv_max Identity Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/occupied_custom_shop_ads/list/
-  method: get
-  operationId: Gmv_max Occupied_custom_shop_ads List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/report/get/
-  method: get
-  operationId: Gmv_max Report Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/store/list/
-  method: get
-  operationId: Gmv_max Store List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/store/shop_ad_usage_check/
-  method: get
-  operationId: Gmv_max Store Shop_ad_usage_check
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /gmv_max/video/get/
-  method: get
-  operationId: Gmv_max Video Get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1805,130 +2201,6 @@ operations:
 - path: /offline/update/
   method: post
   operationId: Offline Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /optimizer/rule/batch_bind/
-  method: post
-  operationId: Optimizer Rule Batch_bind
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /optimizer/rule/create/
-  method: post
-  operationId: Optimizer Rule Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /optimizer/rule/get/
-  method: get
-  operationId: Optimizer Rule Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /optimizer/rule/list/
-  method: get
-  operationId: Optimizer Rule List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /optimizer/rule/result/get/
-  method: get
-  operationId: Optimizer Rule Result Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /optimizer/rule/result/list/
-  method: get
-  operationId: Optimizer Rule Result List
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /optimizer/rule/update/
-  method: post
-  operationId: Optimizer Rule Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /pangle_audience_package/get/
-  method: get
-  operationId: Pangle_audience_package Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /pangle_block_list/get/
-  method: get
-  operationId: Pangle_block_list Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /pangle_block_list/update/
-  method: post
-  operationId: Pangle_block_list Update
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2042,67 +2314,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /playable/delete/
-  method: post
-  operationId: Playable Delete
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /playable/get/
+- path: /gmv_max/report/get/
   method: get
-  operationId: Playable Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /playable/save/
-  method: post
-  operationId: Playable Save
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /playable/upload/
-  method: post
-  operationId: Playable Upload
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /playable/validate/
-  method: get
-  operationId: Playable Validate
+  operationId: Gmv_max Report Get
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2162,242 +2376,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /search/region/
-  method: get
-  operationId: Search Region
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /smart_plus/ad/appeal/
-  method: post
-  operationId: Smart_plus Ad Appeal
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/ad/create/
-  method: post
-  operationId: Smart_plus Ad Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/ad/get/
-  method: get
-  operationId: Smart_plus Ad Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /smart_plus/ad/material_status/update/
-  method: post
-  operationId: Smart_plus Ad Material_status Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/ad/review_info/
-  method: get
-  operationId: Smart_plus Ad Review_info
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /smart_plus/ad/status/update/
-  method: post
-  operationId: Smart_plus Ad Status Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/ad/update/
-  method: post
-  operationId: Smart_plus Ad Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/adgroup/create/
-  method: post
-  operationId: Smart_plus Adgroup Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/adgroup/get/
-  method: get
-  operationId: Smart_plus Adgroup Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /smart_plus/adgroup/status/update/
-  method: post
-  operationId: Smart_plus Adgroup Status Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/adgroup/update/
-  method: post
-  operationId: Smart_plus Adgroup Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/campaign/create/
-  method: post
-  operationId: Smart_plus Campaign Create
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/campaign/get/
-  method: get
-  operationId: Smart_plus Campaign Get
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /smart_plus/campaign/status/update/
-  method: post
-  operationId: Smart_plus Campaign Status Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/campaign/update/
-  method: post
-  operationId: Smart_plus Campaign Update
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /smart_plus/material/review_info/
-  method: get
-  operationId: Smart_plus Material Review_info
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /smart_plus/material_report/breakdown/
   method: get
   operationId: Smart_plus Material_report Breakdown
@@ -2418,19 +2396,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /term/check/
-  method: get
-  operationId: Term Check
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /term/confirm/
+- path: /gmv_max/exclusive_authorization/create/
   method: post
-  operationId: Term Confirm
+  operationId: Gmv_max Exclusive_authorization Create
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -2444,9 +2412,39 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /term/get/
+- path: /gmv_max/exclusive_authorization/get/
   method: get
-  operationId: Term Get
+  operationId: Gmv_max Exclusive_authorization Get
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmv_max/store/list/
+  method: get
+  operationId: Gmv_max Store List
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmv_max/store/shop_ad_usage_check/
+  method: get
+  operationId: Gmv_max Store Shop_ad_usage_check
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /search/region/
+  method: get
+  operationId: Search Region
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -2468,18 +2466,12 @@ operations:
   method: post
   operationId: Tool Bid Recommend
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /tool/brand_safety/partner/authorize/status/
   method: get
   operationId: Tool Brand_safety Partner Authorize Status
@@ -2610,18 +2602,12 @@ operations:
   method: post
   operationId: Tool Targeting Search
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /tool/timezone/
   method: get
   operationId: Tool Timezone
@@ -2645,6 +2631,16 @@ operations:
 - path: /tool/vbo_status/
   method: get
   operationId: Tool Vbo_status
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /gmv_max/video/get/
+  method: get
+  operationId: Gmv_max Video Get
   x-agentic-access:
     action-class: connected
     consequence: read

@@ -132,3 +132,18 @@ x-evidence:
   - url: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth/.well-known/oauth-authorization-server
     method: GET
     http_status: 200
+rfc9728:
+  endpoint: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+  metadata_url: https://business-api.tiktok.com/.well-known/oauth-protected-resource/open_mcp/tt-ads-mcp-flat
+  discovered_via: WWW-Authenticate resource_metadata on an anonymous POST initialize
+  fetched: '2026-09-25'
+  http_status: 200
+  content_type: application/json
+  document:
+    resource: https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat
+    authorization_servers:
+    - https://business-api.tiktok.com/open_mcp/tt-ads-mcp-flat/oauth
+    scopes_supported:
+    - mcp:tt4b
+    bearer_methods_supported:
+    - header
