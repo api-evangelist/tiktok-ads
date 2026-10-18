@@ -41,3 +41,64 @@
     builder: Pipedream repo (component)
   status: not-a-workflow
   arazzo: null
+- slug: tiktok-ads-fivetran
+  label: Fivetran
+  partner: fivetran
+  partner_name: Fivetran
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  evidence: https://fivetran.com/docs/connectors/applications/tiktok-ads
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: TikTok Ads
+    matched_domain: tiktok.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/tiktok-ads
+    vendor_link: https://ads.tiktok.com/marketing_api/homepage
+    builder: Fivetran
+  status: pending-generation
+  arazzo: null
+- slug: tiktok-ads-meltano
+  label: Meltano
+  partner: meltano
+  partner_name: Meltano
+  type: marketplace
+  marketplace: meltano-hub
+  channel: elt-connector
+  evidence: https://hub.meltano.com/extractors/tap-tiktok--airbyte
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Meltano Hub (github.com/meltano/hub _data/meltano extractors + loaders)
+    spec_file: null
+    role: elt-connector:meltano-hub
+    registered_name: TikTok Ads
+    matched_domain: tiktok.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    plugins:
+    - tap-tiktok--airbyte
+    - tap-tiktok--gthesheep
+    - tap-tiktok--uptilab2
+    maintenance_status:
+    - active
+    - beta
+    - unknown
+    quality:
+    - bronze
+    - gold
+    - unknown
+    builder: 'community (Meltano Hub variant maintainers: airbyte, gthesheep, uptilab2)'
+  status: pending-partner-spec
+  arazzo: null
