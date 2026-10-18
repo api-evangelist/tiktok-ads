@@ -65,7 +65,7 @@
     - connectors/applications/tiktok-ads
     vendor_link: https://ads.tiktok.com/marketing_api/homepage
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: tiktok-ads-meltano
   label: Meltano
@@ -100,5 +100,5 @@
     - gold
     - unknown
     builder: 'community (Meltano Hub variant maintainers: airbyte, gthesheep, uptilab2)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
